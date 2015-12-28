@@ -43,6 +43,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell!.detailTextLabel?.text = "Mr Tolkien"
         }
         cell!.textLabel?.text = dwarves[indexPath.row]
+        cell!.textLabel?.font = UIFont.boldSystemFontOfSize(50)
         return cell!
     }
     
@@ -58,6 +59,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             return indexPath
         }
     }
+    
+    func tableView(tableView: UITableView,
+        didSelectRowAtIndexPath indexPath: NSIndexPath) {
+            let rowValue = dwarves[indexPath.row]
+            let message = "You selected \(rowValue)"
+            
+            let controller = UIAlertController(title: "Row Selected",
+                message: message, preferredStyle: .Alert)
+            let action = UIAlertAction(title: "Yes I Did",
+                style: .Default, handler: nil)
+            controller.addAction(action)
+            
+            presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return indexPath.row == 0 ? 120 : 70
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
