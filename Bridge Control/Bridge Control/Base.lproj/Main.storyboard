@@ -196,7 +196,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Main" image="singleicon" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="authorizationCodeLabel" destination="dbX-0w-2eB" id="OSh-Ih-7uj"/>
+                        <outlet property="favoriteAlienLabel" destination="zOQ-b7-EdW" id="MaZ-RN-hFp"/>
+                        <outlet property="favoriteCaptainLabel" destination="OEP-LV-lij" id="PiY-j6-02B"/>
+                        <outlet property="favoriteGadgetLabel" destination="gOc-Fb-ArL" id="5pH-Dc-30S"/>
+                        <outlet property="favoriteTeaLabel" destination="xVV-8v-Y1o" id="wjs-aE-uNb"/>
                         <outlet property="officerLabel" destination="5NH-xE-2bO" id="nJJ-4c-jSj"/>
+                        <outlet property="rankLabel" destination="lEg-a0-zte" id="8Vn-So-AGj"/>
+                        <outlet property="warpDriveLabel" destination="YIs-tg-dA5" id="bWx-cP-4gF"/>
+                        <outlet property="warpFactorLabel" destination="rUv-ip-5mc" id="yPU-pc-5Wi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -211,37 +219,67 @@
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
+                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW" userLabel="Main View">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="195" y="279" width="210" height="42"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warp Engines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uev-eR-Jt7">
+                                <rect key="frame" x="20" y="28" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="192" y="329" width="216" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warp Factor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUn-Ty-tsH">
+                                <rect key="frame" x="20" y="74" width="94" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUS-Wh-EYi">
+                                <rect key="frame" x="161" y="23" width="51" height="31"/>
+                                <connections>
+                                    <action selector="engineSwitchTapped:" destination="8rJ-Kc-sve" eventType="valueChanged" id="lSj-8J-pDP"/>
+                                </connections>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" minimumValueImage="turtle" maximumValueImage="rabbit" translatesAutoresizingMaskIntoConstraints="NO" id="M3r-YR-hdY">
+                                <rect key="frame" x="18" y="117" width="564" height="31"/>
+                                <connections>
+                                    <action selector="warpSliderTouched:" destination="8rJ-Kc-sve" eventType="valueChanged" id="WY4-qO-gzX"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S93-TZ-H1Q">
+                                <rect key="frame" x="251" y="285" width="98" height="30"/>
+                                <state key="normal" title="Open Settings"/>
+                                <connections>
+                                    <action selector="settingsButtonClicked:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="x2Z-bA-9xF"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="uev-eR-Jt7" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="8" id="3fg-ba-V1s"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="BUn-Ty-tsH" secondAttribute="leading" id="Cso-2G-B2I"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="M3r-YR-hdY" secondAttribute="leading" id="Ee6-i4-S3e"/>
+                            <constraint firstItem="PUS-Wh-EYi" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="3" id="NNL-EZ-ZnF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PUS-Wh-EYi" secondAttribute="trailing" constant="370" id="RWW-Gf-nzS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="uev-eR-Jt7" secondAttribute="leading" id="Rb8-QK-HPb"/>
+                            <constraint firstItem="S93-TZ-H1Q" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Z9l-Hu-Ixq"/>
+                            <constraint firstItem="BUn-Ty-tsH" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="54" id="b8f-aN-m4k"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="S93-TZ-H1Q" secondAttribute="bottom" constant="236" id="fqt-70-jv9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M3r-YR-hdY" secondAttribute="trailing" id="qUW-Ut-U4e"/>
+                            <constraint firstItem="M3r-YR-hdY" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="97" id="sU9-FV-rfe"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="doubleicon" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="engineSwitch" destination="PUS-Wh-EYi" id="pqz-ur-4qf"/>
+                        <outlet property="engineSwitchTapped" destination="PUS-Wh-EYi" id="PSA-ez-CaH"/>
+                        <outlet property="warpFactorSlider" destination="M3r-YR-hdY" id="zCK-fx-HVG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="688" y="465"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -265,6 +303,8 @@
     </scenes>
     <resources>
         <image name="doubleicon" width="25" height="24"/>
+        <image name="rabbit" width="21" height="21"/>
         <image name="singleicon" width="25" height="24"/>
+        <image name="turtle" width="21" height="21"/>
     </resources>
 </document>

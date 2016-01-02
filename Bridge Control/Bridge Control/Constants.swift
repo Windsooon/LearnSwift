@@ -2,8 +2,8 @@
 //  Constants.swift
 //  Bridge Control
 //
-//  Created by Windson on 16/1/2.
-//  Copyright © 2016年 Windson. All rights reserved.
+//  Created by Kim Topley on 7/29/14.
+//  Copyright (c) 2014 Apress. All rights reserved.
 //
 
 import Foundation
@@ -14,6 +14,6 @@ let rankKey = "rank"
 let warpDriveKey = "warp"
 let warpFactorKey = "warpFactor"
 let favoriteTeaKey = "favoriteTea"
-let favoriteGadgeKey = "favoriteGadget"
+let favoriteCaptainKey = "favoriteCaptain"
+let favoriteGadgetKey = "favoriteGadget"
 let favoriteAlienKey = "favoriteAlien"
-
