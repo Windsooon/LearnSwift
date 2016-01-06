@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1787971C3CCE35002B03D2 /* smiley.png in Resources */ = {isa = PBXBuildFile; fileRef = DC1787961C3CCE35002B03D2 /* smiley.png */; };
 		DCA28B281C3B9AEF009C78A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA28B271C3B9AEF009C78A0 /* AppDelegate.swift */; };
 		DCA28B2A1C3B9AEF009C78A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA28B291C3B9AEF009C78A0 /* ViewController.swift */; };
 		DCA28B2D1C3B9AEF009C78A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA28B2B1C3B9AEF009C78A0 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC1787961C3CCE35002B03D2 /* smiley.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smiley.png; sourceTree = "<group>"; };
 		DCA28B241C3B9AEF009C78A0 /* State Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "State Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA28B271C3B9AEF009C78A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCA28B291C3B9AEF009C78A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				DCA28B271C3B9AEF009C78A0 /* AppDelegate.swift */,
 				DCA28B291C3B9AEF009C78A0 /* ViewController.swift */,
 				DCA28B2B1C3B9AEF009C78A0 /* Main.storyboard */,
+				DC1787961C3CCE35002B03D2 /* smiley.png */,
 				DCA28B2E1C3B9AEF009C78A0 /* Assets.xcassets */,
 				DCA28B301C3B9AEF009C78A0 /* LaunchScreen.storyboard */,
 				DCA28B331C3B9AEF009C78A0 /* Info.plist */,
@@ -230,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1787971C3CCE35002B03D2 /* smiley.png in Resources */,
 				DCA28B321C3B9AEF009C78A0 /* LaunchScreen.storyboard in Resources */,
 				DCA28B2F1C3B9AEF009C78A0 /* Assets.xcassets in Resources */,
 				DCA28B2D1C3B9AEF009C78A0 /* Main.storyboard in Resources */,

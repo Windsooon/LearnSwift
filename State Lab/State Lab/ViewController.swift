@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
     private var label: UILabel!
+    private var smiley: UIImage!
+    private var smilyView: UIImageView!
     private var animate = false
 
     override func viewDidLoad() {
@@ -21,6 +23,9 @@ class ViewController: UIViewController {
         label.text = "Bazinga!"
         label.textAlignment = NSTextAlignment.Center
         label.backgroundColor = UIColor.clearColor()
+        
+        let smileyFrame = CGRectMake(CGRectGetMidX(bounds) - 42, CGRectGetMidY(bounds)/2 - 42, 84, 84)
+        smileyView = UIImageView(frame: smileyFrame)
         view.addSubview(label)
         
         let center = NSNotificationCenter.defaultCenter()
