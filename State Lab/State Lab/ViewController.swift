@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     private var label: UILabel!
     private var smiley: UIImage!
-    private var smilyView: UIImageView!
+    private var smileyView: UIImageView!
+    private var segmentedControl: UISegmentedControl!
+    private var index = 0
     private var animate = false
 
     override func viewDidLoad() {
@@ -26,11 +28,28 @@ class ViewController: UIViewController {
         
         let smileyFrame = CGRectMake(CGRectGetMidX(bounds) - 42, CGRectGetMidY(bounds)/2 - 42, 84, 84)
         smileyView = UIImageView(frame: smileyFrame)
+        smileyView.contentMode = UIViewContentMode.Center
+        let smileyPath = NSBundle.mainBundle().pathForResource("smiley", ofType: "png")
+        smiley = UIImage(contentsOfFile: smileyPath!)
+        smileyView.image = smiley
+        
+        segmentedControl = UISegmentedControl(items: ["One","Two", "Three", "Four"])
+        segmentedControl.frame = CGRectMake(bounds.origin.x + 20, 50,
+            bounds.size.width - 40, 30)
+        segmentedControl.addTarget(self, action: "selectionChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        view.addSubview(segmentedControl)
+        view.addSubview(smileyView)
         view.addSubview(label)
+        
+        index = NSUserDefaults.standardUserDefaults().integerForKey("index")
+        segmentedControl.selectedSegmentIndex = index
         
         let center = NSNotificationCenter.defaultCenter()
         center.addObserver(self, selector: "applicationWillResignActive", name: UIApplicationWillResignActiveNotification, object: nil)
         center.addObserver(self, selector: "applicationDidBecomeActive", name: UIApplicationDidBecomeActiveNotification, object: nil)
+        center.addObserver(self, selector: "applicationDidEnterBackground", name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        center.addObserver(self, selector: "applicationWillEnterForeground", name: UIApplicationWillEnterForegroundNotification, object: nil)
     }
     
     func rotateLabelDown() {
@@ -53,6 +72,10 @@ class ViewController: UIViewController {
         })
     }
     
+    func selectionChanged(sender:UISegmentedControl) {
+        index = segmentedControl.selectedSegmentIndex;
+    }
+    
     func applicationWillResignActive() {
         print("VC: \(__FUNCTION__)")
         animate = false
@@ -64,6 +87,19 @@ class ViewController: UIViewController {
         rotateLabelDown()
     }
 
+    func applicationDidEnterBackground() {
+        print("VC: \(__FUNCTION__)")
+        self.smiley = nil
+        self.smileyView.image = nil
+        NSUserDefaults.standardUserDefaults().setInteger(self.index, forKey: "index")
+    }
+    
+    func applicationWillEnterForeground() {
+        print("VC: \(__FUNCTION__)")
+        let smileyPath = NSBundle.mainBundle().pathForResource("smiley", ofType: "png")!
+        smiley = UIImage(contentsOfFile: smileyPath)
+        smileyView.image = smiley
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
