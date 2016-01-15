@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC9379C41C48D80D009272D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379C31C48D80D009272D2 /* AppDelegate.swift */; };
+		DC9379C61C48D80D009272D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379C51C48D80D009272D2 /* ViewController.swift */; };
+		DC9379C91C48D80D009272D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9379C71C48D80D009272D2 /* Main.storyboard */; };
+		DC9379CC1C48D80D009272D2 /* Unicooo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC9379CA1C48D80D009272D2 /* Unicooo.xcdatamodeld */; };
+		DC9379CE1C48D80D009272D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9379CD1C48D80D009272D2 /* Assets.xcassets */; };
+		DC9379D11C48D80D009272D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9379CF1C48D80D009272D2 /* LaunchScreen.storyboard */; };
+		DC9379DC1C48D80D009272D2 /* UnicoooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379DB1C48D80D009272D2 /* UnicoooTests.swift */; };
+		DC9379E71C48D80D009272D2 /* UnicoooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379E61C48D80D009272D2 /* UnicoooUITests.swift */; };
+		DC9379F71C48DC9B009272D2 /* HomePageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379F61C48DC9B009272D2 /* HomePageController.swift */; };
+		DC9379F91C48DCC3009272D2 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379F81C48DCC3009272D2 /* NotificationsController.swift */; };
+		DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379FA1C48DCD7009272D2 /* PersonalController.swift */; };
+		DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379FC1C48DCFB009272D2 /* SignupController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC9379D81C48D80D009272D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC9379B81C48D80C009272D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC9379BF1C48D80D009272D2;
+			remoteInfo = Unicooo;
+		};
+		DC9379E31C48D80D009272D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC9379B81C48D80C009272D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC9379BF1C48D80D009272D2;
+			remoteInfo = Unicooo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC9379C01C48D80D009272D2 /* Unicooo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unicooo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9379C31C48D80D009272D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC9379C51C48D80D009272D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC9379C81C48D80D009272D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC9379CB1C48D80D009272D2 /* Unicooo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Unicooo.xcdatamodel; sourceTree = "<group>"; };
+		DC9379CD1C48D80D009272D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC9379D01C48D80D009272D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DC9379D21C48D80D009272D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC9379D71C48D80D009272D2 /* UnicoooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnicoooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9379DB1C48D80D009272D2 /* UnicoooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicoooTests.swift; sourceTree = "<group>"; };
+		DC9379DD1C48D80D009272D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC9379E21C48D80D009272D2 /* UnicoooUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnicoooUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9379E61C48D80D009272D2 /* UnicoooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicoooUITests.swift; sourceTree = "<group>"; };
+		DC9379E81C48D80D009272D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC9379F61C48DC9B009272D2 /* HomePageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageController.swift; sourceTree = "<group>"; };
+		DC9379F81C48DCC3009272D2 /* NotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		DC9379FA1C48DCD7009272D2 /* PersonalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalController.swift; sourceTree = "<group>"; };
+		DC9379FC1C48DCFB009272D2 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC9379BD1C48D80D009272D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9379D41C48D80D009272D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9379DF1C48D80D009272D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC9379B71C48D80C009272D2 = {
+			isa = PBXGroup;
+			children = (
+				DC9379C21C48D80D009272D2 /* Unicooo */,
+				DC9379DA1C48D80D009272D2 /* UnicoooTests */,
+				DC9379E51C48D80D009272D2 /* UnicoooUITests */,
+				DC9379C11C48D80D009272D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC9379C11C48D80D009272D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC9379C01C48D80D009272D2 /* Unicooo.app */,
+				DC9379D71C48D80D009272D2 /* UnicoooTests.xctest */,
+				DC9379E21C48D80D009272D2 /* UnicoooUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC9379C21C48D80D009272D2 /* Unicooo */ = {
+			isa = PBXGroup;
+			children = (
+				DC9379C31C48D80D009272D2 /* AppDelegate.swift */,
+				DC9379C51C48D80D009272D2 /* ViewController.swift */,
+				DC9379C71C48D80D009272D2 /* Main.storyboard */,
+				DC9379CD1C48D80D009272D2 /* Assets.xcassets */,
+				DC9379CF1C48D80D009272D2 /* LaunchScreen.storyboard */,
+				DC9379D21C48D80D009272D2 /* Info.plist */,
+				DC9379CA1C48D80D009272D2 /* Unicooo.xcdatamodeld */,
+				DC9379F61C48DC9B009272D2 /* HomePageController.swift */,
+				DC9379F81C48DCC3009272D2 /* NotificationsController.swift */,
+				DC9379FA1C48DCD7009272D2 /* PersonalController.swift */,
+				DC9379FC1C48DCFB009272D2 /* SignupController.swift */,
+			);
+			path = Unicooo;
+			sourceTree = "<group>";
+		};
+		DC9379DA1C48D80D009272D2 /* UnicoooTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC9379DB1C48D80D009272D2 /* UnicoooTests.swift */,
+				DC9379DD1C48D80D009272D2 /* Info.plist */,
+			);
+			path = UnicoooTests;
+			sourceTree = "<group>";
+		};
+		DC9379E51C48D80D009272D2 /* UnicoooUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DC9379E61C48D80D009272D2 /* UnicoooUITests.swift */,
+				DC9379E81C48D80D009272D2 /* Info.plist */,
+			);
+			path = UnicoooUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC9379BF1C48D80D009272D2 /* Unicooo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC9379EB1C48D80D009272D2 /* Build configuration list for PBXNativeTarget "Unicooo" */;
+			buildPhases = (
+				DC9379BC1C48D80D009272D2 /* Sources */,
+				DC9379BD1C48D80D009272D2 /* Frameworks */,
+				DC9379BE1C48D80D009272D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Unicooo;
+			productName = Unicooo;
+			productReference = DC9379C01C48D80D009272D2 /* Unicooo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC9379D61C48D80D009272D2 /* UnicoooTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC9379EE1C48D80D009272D2 /* Build configuration list for PBXNativeTarget "UnicoooTests" */;
+			buildPhases = (
+				DC9379D31C48D80D009272D2 /* Sources */,
+				DC9379D41C48D80D009272D2 /* Frameworks */,
+				DC9379D51C48D80D009272D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC9379D91C48D80D009272D2 /* PBXTargetDependency */,
+			);
+			name = UnicoooTests;
+			productName = UnicoooTests;
+			productReference = DC9379D71C48D80D009272D2 /* UnicoooTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DC9379E11C48D80D009272D2 /* UnicoooUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC9379F11C48D80D009272D2 /* Build configuration list for PBXNativeTarget "UnicoooUITests" */;
+			buildPhases = (
+				DC9379DE1C48D80D009272D2 /* Sources */,
+				DC9379DF1C48D80D009272D2 /* Frameworks */,
+				DC9379E01C48D80D009272D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC9379E41C48D80D009272D2 /* PBXTargetDependency */,
+			);
+			name = UnicoooUITests;
+			productName = UnicoooUITests;
+			productReference = DC9379E21C48D80D009272D2 /* UnicoooUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC9379B81C48D80C009272D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Windson;
+				TargetAttributes = {
+					DC9379BF1C48D80D009272D2 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8834TCZAA5;
+					};
+					DC9379D61C48D80D009272D2 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8834TCZAA5;
+						TestTargetID = DC9379BF1C48D80D009272D2;
+					};
+					DC9379E11C48D80D009272D2 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8834TCZAA5;
+						TestTargetID = DC9379BF1C48D80D009272D2;
+					};
+				};
+			};
+			buildConfigurationList = DC9379BB1C48D80C009272D2 /* Build configuration list for PBXProject "Unicooo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC9379B71C48D80C009272D2;
+			productRefGroup = DC9379C11C48D80D009272D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC9379BF1C48D80D009272D2 /* Unicooo */,
+				DC9379D61C48D80D009272D2 /* UnicoooTests */,
+				DC9379E11C48D80D009272D2 /* UnicoooUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC9379BE1C48D80D009272D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9379D11C48D80D009272D2 /* LaunchScreen.storyboard in Resources */,
+				DC9379CE1C48D80D009272D2 /* Assets.xcassets in Resources */,
+				DC9379C91C48D80D009272D2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9379D51C48D80D009272D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9379E01C48D80D009272D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC9379BC1C48D80D009272D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9379C61C48D80D009272D2 /* ViewController.swift in Sources */,
+				DC9379F71C48DC9B009272D2 /* HomePageController.swift in Sources */,
+				DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */,
+				DC9379F91C48DCC3009272D2 /* NotificationsController.swift in Sources */,
+				DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */,
+				DC9379C41C48D80D009272D2 /* AppDelegate.swift in Sources */,
+				DC9379CC1C48D80D009272D2 /* Unicooo.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9379D31C48D80D009272D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9379DC1C48D80D009272D2 /* UnicoooTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9379DE1C48D80D009272D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9379E71C48D80D009272D2 /* UnicoooUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC9379D91C48D80D009272D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC9379BF1C48D80D009272D2 /* Unicooo */;
+			targetProxy = DC9379D81C48D80D009272D2 /* PBXContainerItemProxy */;
+		};
+		DC9379E41C48D80D009272D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC9379BF1C48D80D009272D2 /* Unicooo */;
+			targetProxy = DC9379E31C48D80D009272D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC9379C71C48D80D009272D2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC9379C81C48D80D009272D2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DC9379CF1C48D80D009272D2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC9379D01C48D80D009272D2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC9379E91C48D80D009272D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC9379EA1C48D80D009272D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC9379EC1C48D80D009272D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Unicooo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.Unicooo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DC9379ED1C48D80D009272D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Unicooo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.Unicooo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DC9379EF1C48D80D009272D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UnicoooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.UnicoooTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unicooo.app/Unicooo";
+			};
+			name = Debug;
+		};
+		DC9379F01C48D80D009272D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UnicoooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.UnicoooTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Unicooo.app/Unicooo";
+			};
+			name = Release;
+		};
+		DC9379F21C48D80D009272D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UnicoooUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.UnicoooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Unicooo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DC9379F31C48D80D009272D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = UnicoooUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.UnicoooUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Unicooo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC9379BB1C48D80C009272D2 /* Build configuration list for PBXProject "Unicooo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9379E91C48D80D009272D2 /* Debug */,
+				DC9379EA1C48D80D009272D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC9379EB1C48D80D009272D2 /* Build configuration list for PBXNativeTarget "Unicooo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9379EC1C48D80D009272D2 /* Debug */,
+				DC9379ED1C48D80D009272D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DC9379EE1C48D80D009272D2 /* Build configuration list for PBXNativeTarget "UnicoooTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9379EF1C48D80D009272D2 /* Debug */,
+				DC9379F01C48D80D009272D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DC9379F11C48D80D009272D2 /* Build configuration list for PBXNativeTarget "UnicoooUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9379F21C48D80D009272D2 /* Debug */,
+				DC9379F31C48D80D009272D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DC9379CA1C48D80D009272D2 /* Unicooo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DC9379CB1C48D80D009272D2 /* Unicooo.xcdatamodel */,
+			);
+			currentVersion = DC9379CB1C48D80D009272D2 /* Unicooo.xcdatamodel */;
+			path = Unicooo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DC9379B81C48D80C009272D2 /* Project object */;
+}

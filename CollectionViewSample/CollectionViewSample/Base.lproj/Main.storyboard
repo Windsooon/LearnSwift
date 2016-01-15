@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zez-8S-oVB">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="lLN-My-zb8">
+            <objects>
+                <collectionViewController id="zez-8S-oVB" customClass="ViewController" customModule="CollectionViewSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="mZc-K5-BGK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oYy-y9-WUg">
+                            <size key="itemSize" width="150" height="150"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="meE-fi-Vz1" customClass="Cell" customModule="CollectionViewSample" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iK3-bx-A8Y">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gH-Ou-3SN">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="8gH-Ou-3SN" firstAttribute="bottom" secondItem="meE-fi-Vz1" secondAttribute="bottomMargin" id="8Gu-VF-BDf"/>
+                                    <constraint firstItem="iK3-bx-A8Y" firstAttribute="leading" secondItem="meE-fi-Vz1" secondAttribute="leadingMargin" constant="5" id="HZU-zb-L1a"/>
+                                    <constraint firstItem="iK3-bx-A8Y" firstAttribute="centerX" secondItem="8gH-Ou-3SN" secondAttribute="centerX" id="Iu0-Wo-ZUc"/>
+                                    <constraint firstItem="iK3-bx-A8Y" firstAttribute="top" secondItem="meE-fi-Vz1" secondAttribute="topMargin" id="OUu-Wy-AkQ"/>
+                                    <constraint firstItem="8gH-Ou-3SN" firstAttribute="centerX" secondItem="meE-fi-Vz1" secondAttribute="centerX" id="rL7-Qb-sn3"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="iK3-bx-A8Y" secondAttribute="bottom" constant="20" id="zvC-Qd-i2T"/>
+                                </constraints>
+                                <size key="customSize" width="150" height="150"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="iK3-bx-A8Y"/>
+                                        <exclude reference="8gH-Ou-3SN"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="HZU-zb-L1a"/>
+                                        <exclude reference="Iu0-Wo-ZUc"/>
+                                        <exclude reference="OUu-Wy-AkQ"/>
+                                        <exclude reference="zvC-Qd-i2T"/>
+                                        <exclude reference="8Gu-VF-BDf"/>
+                                        <exclude reference="rL7-Qb-sn3"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="iK3-bx-A8Y"/>
+                                        <include reference="8gH-Ou-3SN"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="HZU-zb-L1a"/>
+                                        <include reference="Iu0-Wo-ZUc"/>
+                                        <include reference="OUu-Wy-AkQ"/>
+                                        <include reference="zvC-Qd-i2T"/>
+                                        <include reference="8Gu-VF-BDf"/>
+                                        <include reference="rL7-Qb-sn3"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="Label" destination="8gH-Ou-3SN" id="yy6-Ma-U5a"/>
+                                    <outlet property="imageView" destination="iK3-bx-A8Y" id="RbM-uC-R6x"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="zez-8S-oVB" id="jRW-wJ-jX7"/>
+                            <outlet property="delegate" destination="zez-8S-oVB" id="QAX-3q-9L3"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sFP-xb-6T6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457.5" y="462"/>
+        </scene>
+    </scenes>
+</document>
