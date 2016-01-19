@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C731E5865D9E627B252ECD6E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DA7C409396D6590B44A881 /* Pods.framework */; };
+		DC48CEF41C4A918E003DCB49 /* CoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC48CEF31C4A918E003DCB49 /* CoverController.swift */; };
+		DC916EFE1C4A279F0093DED5 /* extendForNextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC916EFD1C4A279F0093DED5 /* extendForNextField.swift */; };
 		DC9379C41C48D80D009272D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379C31C48D80D009272D2 /* AppDelegate.swift */; };
 		DC9379C61C48D80D009272D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379C51C48D80D009272D2 /* ViewController.swift */; };
 		DC9379C91C48D80D009272D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9379C71C48D80D009272D2 /* Main.storyboard */; };
@@ -19,6 +22,7 @@
 		DC9379F91C48DCC3009272D2 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379F81C48DCC3009272D2 /* NotificationsController.swift */; };
 		DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379FA1C48DCD7009272D2 /* PersonalController.swift */; };
 		DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379FC1C48DCFB009272D2 /* SignupController.swift */; };
+		DCB94A281C4D30CC006531A8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB94A271C4D30CC006531A8 /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		582BA29363EED99C79540782 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D9DA7C409396D6590B44A881 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC48CEF31C4A918E003DCB49 /* CoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverController.swift; sourceTree = "<group>"; };
+		DC916EFD1C4A279F0093DED5 /* extendForNextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extendForNextField.swift; sourceTree = "<group>"; };
 		DC9379C01C48D80D009272D2 /* Unicooo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unicooo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9379C31C48D80D009272D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC9379C51C48D80D009272D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +65,8 @@
 		DC9379F81C48DCC3009272D2 /* NotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		DC9379FA1C48DCD7009272D2 /* PersonalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalController.swift; sourceTree = "<group>"; };
 		DC9379FC1C48DCFB009272D2 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		DCB94A271C4D30CC006531A8 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		F81107F282B8F96234DA2C30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C731E5865D9E627B252ECD6E /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +95,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		081105A8E5A07BA38F5A1155 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F81107F282B8F96234DA2C30 /* Pods.debug.xcconfig */,
+				582BA29363EED99C79540782 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4C3EC1D630BAE44CCA97DB27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D9DA7C409396D6590B44A881 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DC9379B71C48D80C009272D2 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +119,8 @@
 				DC9379DA1C48D80D009272D2 /* UnicoooTests */,
 				DC9379E51C48D80D009272D2 /* UnicoooUITests */,
 				DC9379C11C48D80D009272D2 /* Products */,
+				081105A8E5A07BA38F5A1155 /* Pods */,
+				4C3EC1D630BAE44CCA97DB27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,9 +145,12 @@
 				DC9379D21C48D80D009272D2 /* Info.plist */,
 				DC9379CA1C48D80D009272D2 /* Unicooo.xcdatamodeld */,
 				DC9379F61C48DC9B009272D2 /* HomePageController.swift */,
+				DC916EFD1C4A279F0093DED5 /* extendForNextField.swift */,
+				DC48CEF31C4A918E003DCB49 /* CoverController.swift */,
 				DC9379F81C48DCC3009272D2 /* NotificationsController.swift */,
 				DC9379FA1C48DCD7009272D2 /* PersonalController.swift */,
 				DC9379FC1C48DCFB009272D2 /* SignupController.swift */,
+				DCB94A271C4D30CC006531A8 /* LoginController.swift */,
 			);
 			path = Unicooo;
 			sourceTree = "<group>";
@@ -147,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC9379EB1C48D80D009272D2 /* Build configuration list for PBXNativeTarget "Unicooo" */;
 			buildPhases = (
+				99E399E592A50D9712B3463D /* Check Pods Manifest.lock */,
 				DC9379BC1C48D80D009272D2 /* Sources */,
 				DC9379BD1C48D80D009272D2 /* Frameworks */,
 				DC9379BE1C48D80D009272D2 /* Resources */,
+				23B3E1196FD0CC6CAE1A2DDE /* Embed Pods Frameworks */,
+				B76F65A54D07C014D228A4D8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,6 +305,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23B3E1196FD0CC6CAE1A2DDE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99E399E592A50D9712B3463D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B76F65A54D07C014D228A4D8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DC9379BC1C48D80D009272D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -279,8 +363,11 @@
 				DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */,
 				DC9379F91C48DCC3009272D2 /* NotificationsController.swift in Sources */,
 				DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */,
+				DC48CEF41C4A918E003DCB49 /* CoverController.swift in Sources */,
+				DC916EFE1C4A279F0093DED5 /* extendForNextField.swift in Sources */,
 				DC9379C41C48D80D009272D2 /* AppDelegate.swift in Sources */,
 				DC9379CC1C48D80D009272D2 /* Unicooo.xcdatamodeld in Sources */,
+				DCB94A281C4D30CC006531A8 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +507,7 @@
 		};
 		DC9379EC1C48D80D009272D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F81107F282B8F96234DA2C30 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Unicooo/Info.plist;
@@ -431,6 +519,7 @@
 		};
 		DC9379ED1C48D80D009272D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 582BA29363EED99C79540782 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Unicooo/Info.plist;
@@ -507,6 +596,7 @@
 				DC9379ED1C48D80D009272D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC9379EE1C48D80D009272D2 /* Build configuration list for PBXNativeTarget "UnicoooTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +605,7 @@
 				DC9379F01C48D80D009272D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC9379F11C48D80D009272D2 /* Build configuration list for PBXNativeTarget "UnicoooUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +614,7 @@
 				DC9379F31C48D80D009272D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
