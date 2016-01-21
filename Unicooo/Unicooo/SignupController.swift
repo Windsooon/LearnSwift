@@ -12,6 +12,7 @@ import Alamofire
 class SignupController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
     
     
     @IBAction func cancelSignUp(sender: UIBarButtonItem) {
@@ -19,7 +20,7 @@ class SignupController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func siguUp(sender: UIButton) {
-        Alamofire.request(.GET, "http://127.0.0.1:8000/api/posts/1/")
+        Alamofire.request(.POST, "http://127.0.0.1:8000/api/users/", parameters: ["email": emailField.text!, "user_name": usernameField.text!, "password": passwordField.text!] )
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		230CFBD3846FC2350E9CA3C6 /* Pods_Unicooo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47BF622AF38977B38D32B07 /* Pods_Unicooo.framework */; };
 		C731E5865D9E627B252ECD6E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DA7C409396D6590B44A881 /* Pods.framework */; };
+		DC099D691C50B5400081C2FC /* ActListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC099D681C50B5400081C2FC /* ActListCell.xib */; };
+		DC099D6B1C50BDF10081C2FC /* ActListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC099D6A1C50BDF10081C2FC /* ActListCell.swift */; };
 		DC48CEF41C4A918E003DCB49 /* CoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC48CEF31C4A918E003DCB49 /* CoverController.swift */; };
 		DC916EFE1C4A279F0093DED5 /* extendForNextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC916EFD1C4A279F0093DED5 /* extendForNextField.swift */; };
 		DC9379C41C48D80D009272D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379C31C48D80D009272D2 /* AppDelegate.swift */; };
@@ -23,6 +26,7 @@
 		DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379FA1C48DCD7009272D2 /* PersonalController.swift */; };
 		DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379FC1C48DCFB009272D2 /* SignupController.swift */; };
 		DCB94A281C4D30CC006531A8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB94A271C4D30CC006531A8 /* LoginController.swift */; };
+		DCFF3AB51C4F437900ECE0D2 /* ActListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +48,10 @@
 
 /* Begin PBXFileReference section */
 		582BA29363EED99C79540782 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C47BF622AF38977B38D32B07 /* Pods_Unicooo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unicooo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DA7C409396D6590B44A881 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC099D681C50B5400081C2FC /* ActListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActListCell.xib; sourceTree = "<group>"; };
+		DC099D6A1C50BDF10081C2FC /* ActListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActListCell.swift; sourceTree = "<group>"; };
 		DC48CEF31C4A918E003DCB49 /* CoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverController.swift; sourceTree = "<group>"; };
 		DC916EFD1C4A279F0093DED5 /* extendForNextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extendForNextField.swift; sourceTree = "<group>"; };
 		DC9379C01C48D80D009272D2 /* Unicooo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unicooo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +73,7 @@
 		DC9379FA1C48DCD7009272D2 /* PersonalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalController.swift; sourceTree = "<group>"; };
 		DC9379FC1C48DCFB009272D2 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		DCB94A271C4D30CC006531A8 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActListController.swift; sourceTree = "<group>"; };
 		F81107F282B8F96234DA2C30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C731E5865D9E627B252ECD6E /* Pods.framework in Frameworks */,
+				230CFBD3846FC2350E9CA3C6 /* Pods_Unicooo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D9DA7C409396D6590B44A881 /* Pods.framework */,
+				C47BF622AF38977B38D32B07 /* Pods_Unicooo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,6 +150,7 @@
 				DC9379C31C48D80D009272D2 /* AppDelegate.swift */,
 				DC9379C51C48D80D009272D2 /* ViewController.swift */,
 				DC9379C71C48D80D009272D2 /* Main.storyboard */,
+				DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */,
 				DC9379CD1C48D80D009272D2 /* Assets.xcassets */,
 				DC9379CF1C48D80D009272D2 /* LaunchScreen.storyboard */,
 				DC9379D21C48D80D009272D2 /* Info.plist */,
@@ -151,6 +162,8 @@
 				DC9379FA1C48DCD7009272D2 /* PersonalController.swift */,
 				DC9379FC1C48DCFB009272D2 /* SignupController.swift */,
 				DCB94A271C4D30CC006531A8 /* LoginController.swift */,
+				DC099D681C50B5400081C2FC /* ActListCell.xib */,
+				DC099D6A1C50BDF10081C2FC /* ActListCell.swift */,
 			);
 			path = Unicooo;
 			sourceTree = "<group>";
@@ -283,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC099D691C50B5400081C2FC /* ActListCell.xib in Resources */,
 				DC9379D11C48D80D009272D2 /* LaunchScreen.storyboard in Resources */,
 				DC9379CE1C48D80D009272D2 /* Assets.xcassets in Resources */,
 				DC9379C91C48D80D009272D2 /* Main.storyboard in Resources */,
@@ -318,7 +332,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Unicooo/Pods-Unicooo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		99E399E592A50D9712B3463D /* Check Pods Manifest.lock */ = {
@@ -348,7 +362,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Unicooo/Pods-Unicooo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -358,10 +372,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC099D6B1C50BDF10081C2FC /* ActListCell.swift in Sources */,
 				DC9379C61C48D80D009272D2 /* ViewController.swift in Sources */,
 				DC9379F71C48DC9B009272D2 /* HomePageController.swift in Sources */,
 				DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */,
 				DC9379F91C48DCC3009272D2 /* NotificationsController.swift in Sources */,
+				DCFF3AB51C4F437900ECE0D2 /* ActListController.swift in Sources */,
 				DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */,
 				DC48CEF41C4A918E003DCB49 /* CoverController.swift in Sources */,
 				DC916EFE1C4A279F0093DED5 /* extendForNextField.swift in Sources */,
