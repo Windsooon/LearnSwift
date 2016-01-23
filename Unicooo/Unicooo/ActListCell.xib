@@ -49,20 +49,12 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爱不分地域，种族与性别，上传你的照片，会随机吻上一位陌生人。和TA聊聊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-Lr-NpP">
                         <rect key="frame" x="201" y="43" width="159" height="72"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="16" id="7x5-Yz-ePa"/>
                             <constraint firstAttribute="height" constant="72" id="SlB-s4-ZXm"/>
-                            <constraint firstAttribute="width" constant="160" id="mjz-Ff-MMO"/>
                             <constraint firstAttribute="width" constant="159" id="vt0-t3-y8A"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="7x5-Yz-ePa"/>
-                                <exclude reference="mjz-Ff-MMO"/>
-                            </mask>
-                        </variation>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIndson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sl-sv-mbj">
                         <rect key="frame" x="303" y="128" width="57" height="17"/>
@@ -81,6 +73,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="9Gu-Lr-NpP" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="19" id="8Fj-Ur-QDd"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="2sl-sv-mbj" secondAttribute="bottom" constant="6" id="BkX-cw-Dew"/>
                     <constraint firstAttribute="trailingMargin" secondItem="2sl-sv-mbj" secondAttribute="trailing" constant="7" id="SBA-13-0Ex"/>
                     <constraint firstItem="q4y-ZH-qjc" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="19" id="Sxp-TH-SMk"/>
                     <constraint firstAttribute="bottomMargin" secondItem="iKb-2U-TjC" secondAttribute="bottom" constant="6" id="cgF-RN-S1l"/>
@@ -90,9 +83,6 @@
                     <constraint firstItem="9Gu-Lr-NpP" firstAttribute="top" secondItem="q4y-ZH-qjc" secondAttribute="bottom" constant="8" id="oe7-UE-vz0"/>
                 </constraints>
             </tableViewCellContentView>
-            <constraints>
-                <constraint firstAttribute="bottom" secondItem="2sl-sv-mbj" secondAttribute="bottom" constant="15" id="lgR-pj-Un6"/>
-            </constraints>
             <connections>
                 <outlet property="actAuthorLabel" destination="2sl-sv-mbj" id="TIw-On-UTj"/>
                 <outlet property="actContentLabel" destination="9Gu-Lr-NpP" id="dmi-1n-2Wi"/>

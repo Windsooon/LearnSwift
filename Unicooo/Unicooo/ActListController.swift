@@ -22,7 +22,7 @@ class ActListController: UITableViewController {
         let nib = UINib(nibName: "ActListCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: "ActIdentifier")
        
-        Alamofire.request(.GET, "http://127.0.0.1:8000/api/acts/", parameters: ["page": 1])
+        Alamofire.request(.GET, "http://119.29.68.183:8000/api/acts/", parameters: ["page": 1])
             .validate()
             .responseJSON { response in
                 switch response.result {
@@ -30,7 +30,6 @@ class ActListController: UITableViewController {
                     let JSONDATA = JSON(response.result.value!)
                     if let resultsData = JSONDATA["results"].arrayObject {
                         self.actData = resultsData as! [[String:AnyObject]]
-                        print(self.actData[0])
                     }
                     if self.actData.count > 0 {
                         self.tableView.reloadData()
