@@ -35,10 +35,10 @@ class DownloadedPhotoBrowserCollectionViewController: UICollectionViewController
     if let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0] as? NSURL {
       var error: NSError?
       
-      let urls = NSFileManager.defaultManager().contentsOfDirectoryAtURL(directoryURL, includingPropertiesForKeys: nil, options: nil, error: &error)
+        let urls = try? NSFileManager.defaultManager().contentsOfDirectoryAtURL(directoryURL, includingPropertiesForKeys: nil, options: [])
       
       if error == nil {
-        downloadedPhotoURLs = urls as? [NSURL]
+        downloadedPhotoURLs = urls as [NSURL]!
         collectionView!.reloadData()
       }
     }
@@ -67,7 +67,7 @@ class DownloadedPhotoBrowserCollectionViewCell: UICollectionViewCell {
   let imageView = UIImageView()
   
   required init(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+    super.init(coder: aDecoder)!
   }
   
   override init(frame: CGRect) {

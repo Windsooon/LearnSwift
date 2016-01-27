@@ -11,35 +11,22 @@ import Alamofire
 import SwiftyJSON
 
 class ActListController: UITableViewController {
+    var requestingActList = false
+    var currentPage = 1
     var actData = [[String:AnyObject]]()
-    
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerClass(ActListCell.self, forCellReuseIdentifier: "ActIdentifier")
-        let nib = UINib(nibName: "ActListCell", bundle: nil)
-        self.tableView.registerNib(nib, forCellReuseIdentifier: "ActIdentifier")
-       
-        Alamofire.request(.GET, "http://119.29.68.183:8000/api/acts/", parameters: ["page": 1])
-            .validate()
-            .responseJSON { response in
-                switch response.result {
-                case .Success:
-                    let JSONDATA = JSON(response.result.value!)
-                    if let resultsData = JSONDATA["results"].arrayObject {
-                        self.actData = resultsData as! [[String:AnyObject]]
-                    }
-                    if self.actData.count > 0 {
-                        self.tableView.reloadData()
-                    }
-                case .Failure(let error):
-                    //server haven't open and 404 api request problem
-                    print(error.code)
-                }
-            }
+        customTableCell()
+        requestActList()
         
+        
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y + view.frame.size.height > scrollView.contentSize.height * 0.8 {
+            requestActList()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,4 +70,37 @@ class ActListController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 160
     }
+    
+    func customTableCell() {
+        self.tableView.registerClass(ActListCell.self, forCellReuseIdentifier: "ActIdentifier")
+        let nib = UINib(nibName: "ActListCell", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: "ActIdentifier")
+    }
+    
+    func requestActList() {
+        if requestingActList {
+            return
+        }
+        requestingActList = true
+        Alamofire.request(Unicooo.Router.ReadActList("",["page": self.currentPage]))
+            .validate()
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+                    let JSONDATA = JSON(response.result.value!)
+                        if let resultsData = JSONDATA["results"].arrayObject {
+                            self.actData = resultsData as! [[String:AnyObject]]
+                        }
+                        if self.actData.count > 0 {
+                            self.tableView.reloadData()
+                        }
+                    }
+                case .Failure(let error):
+                    //server haven't open and 404 api request problem
+                    print(error.code)
+                }
+            }
+    }
+    
 }

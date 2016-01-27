@@ -49,10 +49,14 @@ class PhotoBrowserCollectionViewController: UICollectionViewController, UICollec
     cell.imageView.image = nil
     cell.request?.cancel()
     
-    cell.request = Alamofire.request(.GET, imageURL).responseImage() {
-      (request, _, image, error) in
-      if error == nil && image != nil {
-        cell.imageView.image = image
+    cell.request = Alamofire.request(.GET, imageURL).validate().responseData{
+      response in
+        switch response.result {
+        case .Success:
+            let image = UIImage(data: response.result.value!)
+            cell.imageView.image = image
+        case .Failure(let error):
+            print(error)
       }
     }
     
@@ -111,28 +115,28 @@ class PhotoBrowserCollectionViewController: UICollectionViewController, UICollec
     
     populatingPhotos = true
     
-    Alamofire.request(Five100px.Router.PopularPhotos(self.currentPage)).validate().responseJSON() {
-      (_, _, JSON, error) in
-      
-      if error == nil {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
-          let photoInfos = ((JSON as! NSDictionary).valueForKey("photos") as! [NSDictionary]).filter({ ($0["nsfw"] as! Bool) == false }).map { PhotoInfo(id: $0["id"] as! Int, url: $0["image_url"] as! String) }
+    Alamofire.request(Five100px.Router.PopularPhotos(self.currentPage)).validate().responseJSON {
+      response in
+        switch response.result {
+        case .Success:
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+            let photoInfos = ((response.result.value as! NSDictionary).valueForKey("photos") as! [NSDictionary]).filter({ ($0["nsfw"] as! Bool) == false }).map { PhotoInfo(id: $0["id"] as! Int, url: $0["image_url"] as! String) }
+            let lastItem = self.photos.count
+            self.photos.addObjectsFromArray(photoInfos)
           
-          let lastItem = self.photos.count
-          self.photos.addObjectsFromArray(photoInfos)
+            let indexPaths = (lastItem..<self.photos.count).map { NSIndexPath(forItem: $0, inSection: 0) }
+            
+            dispatch_async(dispatch_get_main_queue()) {
+              self.collectionView!.insertItemsAtIndexPaths(indexPaths)
           
-          let indexPaths = (lastItem..<self.photos.count).map { NSIndexPath(forItem: $0, inSection: 0) }
-          
-          dispatch_async(dispatch_get_main_queue()) {
-            self.collectionView!.insertItemsAtIndexPaths(indexPaths)
-          }
-          
-          self.currentPage++
+            self.currentPage++
+        
+            }
+            }
+        case .Failure(let error):
+            print(error)
         }
-      } else {
-        println("Have you set your consumer key? Error: \(error!)")
-      }
-      
+        
       self.populatingPhotos = false
     }
   }
@@ -164,7 +168,7 @@ class PhotoBrowserCollectionViewCell: UICollectionViewCell {
 class PhotoBrowserCollectionViewLoadingCell: UICollectionReusableView {
   let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
   
-  required init(coder aDecoder: NSCoder) {
+  required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
   

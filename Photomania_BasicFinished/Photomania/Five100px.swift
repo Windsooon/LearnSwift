@@ -10,52 +10,62 @@ import UIKit
 import Alamofire
 
 extension Alamofire.Request {
-  public static func imageResponseSerializer() -> GenericResponseSerializer<UIImage> {
-    return GenericResponseSerializer { request, response, data in
-      if data == nil {
-        return (nil, nil)
-      }
-      
-      let image = UIImage(data: data!, scale: UIScreen.mainScreen().scale)
-      
-      return (image, nil)
+    
+    /** Response serializer for images from: http://www.raywenderlich.com/85080/beginning-alamofire-tutorial */
+    public static func imageResponseSerializer() -> ResponseSerializer<UIImage, NSError> {
+        return ResponseSerializer { request, response, data, error in
+            
+            guard let validData = data else {
+                let failureReason = "Data could not be serialized. Input data was nil."
+                let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
+                return .Failure(error)
+            }
+            
+            if let image = UIImage(data: validData, scale: UIScreen.mainScreen().scale) {
+                return .Success(image)
+            }
+            else {
+                return .Failure(Error.errorWithCode(.DataSerializationFailed, failureReason: "Unable to create image."))
+            }
+            
+        }
     }
-  }
-  
-  public func responseImage(completionHandler: (NSURLRequest, NSHTTPURLResponse?, UIImage?, NSError?) -> Void) -> Self {
-    return response(responseSerializer: Request.imageResponseSerializer(), completionHandler: completionHandler)
-  }
+    
+    /** Convenience method for returning images from: http://www.raywenderlich.com/85080/beginning-alamofire-tutorial */
+    func responseImage(completionHandler: Response<UIImage, NSError> -> Void) -> Self {
+        return response(responseSerializer: Request.imageResponseSerializer(), completionHandler: completionHandler)
+    }
 }
 
 struct Five100px {
   enum Router: URLRequestConvertible {
     static let baseURLString = "https://api.500px.com/v1"
-    static let consumerKey = "PASTE_YOUR_CONSUMER_KEY_HERE"
+    static let consumerKey = "ImOLbXsCkxN2L8WEttDV3ptaqQqUDYrqR1uHItWT"
     
     case PopularPhotos(Int)
     case PhotoInfo(Int, ImageSize)
     case Comments(Int, Int)
     
-    var URLRequest: NSURLRequest {
-      let (path: String, parameters: [String: AnyObject]) = {
+    var URLRequest: NSMutableURLRequest {
+      let result: (path: String, parameters: [String: AnyObject]) = {
         switch self {
         case .PopularPhotos (let page):
           let params = ["consumer_key": Router.consumerKey, "page": "\(page)", "feature": "popular", "rpp": "50",  "include_store": "store_download", "include_states": "votes"]
           return ("/photos", params)
         case .PhotoInfo(let photoID, let imageSize):
-          var params = ["consumer_key": Router.consumerKey, "image_size": "\(imageSize.rawValue)"]
+          let params = ["consumer_key": Router.consumerKey, "image_size": "\(imageSize.rawValue)"]
           return ("/photos/\(photoID)", params)
         case .Comments(let photoID, let commentsPage):
-          var params = ["consumer_key": Router.consumerKey, "comments": "1", "comments_page": "\(commentsPage)"]
+          let params = ["consumer_key": Router.consumerKey, "comments": "1", "comments_page": "\(commentsPage)"]
           return ("/photos/\(photoID)/comments", params)
         }
         }()
       
       let URL = NSURL(string: Router.baseURLString)
-      let URLRequest = NSURLRequest(URL: URL!.URLByAppendingPathComponent(path))
+      let URLRequest = NSURLRequest(URL: URL!.URLByAppendingPathComponent(result.path))
       let encoding = Alamofire.ParameterEncoding.URL
       
-      return encoding.encode(URLRequest, parameters: parameters).0
+      return encoding.encode(URLRequest, parameters: result.parameters).0
     }
   }
   

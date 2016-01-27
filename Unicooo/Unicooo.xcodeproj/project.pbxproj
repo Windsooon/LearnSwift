@@ -12,7 +12,7 @@
 		DC099D691C50B5400081C2FC /* ActListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC099D681C50B5400081C2FC /* ActListCell.xib */; };
 		DC099D6B1C50BDF10081C2FC /* ActListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC099D6A1C50BDF10081C2FC /* ActListCell.swift */; };
 		DC48CEF41C4A918E003DCB49 /* CoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC48CEF31C4A918E003DCB49 /* CoverController.swift */; };
-		DC916EFE1C4A279F0093DED5 /* extendForNextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC916EFD1C4A279F0093DED5 /* extendForNextField.swift */; };
+		DC916EFE1C4A279F0093DED5 /* ExtendForNextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */; };
 		DC9379C41C48D80D009272D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379C31C48D80D009272D2 /* AppDelegate.swift */; };
 		DC9379C61C48D80D009272D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379C51C48D80D009272D2 /* ViewController.swift */; };
 		DC9379C91C48D80D009272D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC9379C71C48D80D009272D2 /* Main.storyboard */; };
@@ -26,6 +26,7 @@
 		DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379FA1C48DCD7009272D2 /* PersonalController.swift */; };
 		DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379FC1C48DCFB009272D2 /* SignupController.swift */; };
 		DCB94A281C4D30CC006531A8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB94A271C4D30CC006531A8 /* LoginController.swift */; };
+		DCFF13481C57360C00C5FC70 /* RouterForAlamoftire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFF13471C57360C00C5FC70 /* RouterForAlamoftire.swift */; };
 		DCFF3AB51C4F437900ECE0D2 /* ActListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +54,7 @@
 		DC099D681C50B5400081C2FC /* ActListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActListCell.xib; sourceTree = "<group>"; };
 		DC099D6A1C50BDF10081C2FC /* ActListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActListCell.swift; sourceTree = "<group>"; };
 		DC48CEF31C4A918E003DCB49 /* CoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverController.swift; sourceTree = "<group>"; };
-		DC916EFD1C4A279F0093DED5 /* extendForNextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extendForNextField.swift; sourceTree = "<group>"; };
+		DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendForNextField.swift; sourceTree = "<group>"; };
 		DC9379C01C48D80D009272D2 /* Unicooo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unicooo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9379C31C48D80D009272D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC9379C51C48D80D009272D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 		DC9379FA1C48DCD7009272D2 /* PersonalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalController.swift; sourceTree = "<group>"; };
 		DC9379FC1C48DCFB009272D2 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		DCB94A271C4D30CC006531A8 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		DCFF13471C57360C00C5FC70 /* RouterForAlamoftire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterForAlamoftire.swift; sourceTree = "<group>"; };
 		DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActListController.swift; sourceTree = "<group>"; };
 		F81107F282B8F96234DA2C30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,12 +153,13 @@
 				DC9379C51C48D80D009272D2 /* ViewController.swift */,
 				DC9379C71C48D80D009272D2 /* Main.storyboard */,
 				DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */,
+				DCFF13471C57360C00C5FC70 /* RouterForAlamoftire.swift */,
 				DC9379CD1C48D80D009272D2 /* Assets.xcassets */,
 				DC9379CF1C48D80D009272D2 /* LaunchScreen.storyboard */,
 				DC9379D21C48D80D009272D2 /* Info.plist */,
 				DC9379CA1C48D80D009272D2 /* Unicooo.xcdatamodeld */,
 				DC9379F61C48DC9B009272D2 /* HomePageController.swift */,
-				DC916EFD1C4A279F0093DED5 /* extendForNextField.swift */,
+				DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */,
 				DC48CEF31C4A918E003DCB49 /* CoverController.swift */,
 				DC9379F81C48DCC3009272D2 /* NotificationsController.swift */,
 				DC9379FA1C48DCD7009272D2 /* PersonalController.swift */,
@@ -372,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCFF13481C57360C00C5FC70 /* RouterForAlamoftire.swift in Sources */,
 				DC099D6B1C50BDF10081C2FC /* ActListCell.swift in Sources */,
 				DC9379C61C48D80D009272D2 /* ViewController.swift in Sources */,
 				DC9379F71C48DC9B009272D2 /* HomePageController.swift in Sources */,
@@ -380,7 +384,7 @@
 				DCFF3AB51C4F437900ECE0D2 /* ActListController.swift in Sources */,
 				DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */,
 				DC48CEF41C4A918E003DCB49 /* CoverController.swift in Sources */,
-				DC916EFE1C4A279F0093DED5 /* extendForNextField.swift in Sources */,
+				DC916EFE1C4A279F0093DED5 /* ExtendForNextField.swift in Sources */,
 				DC9379C41C48D80D009272D2 /* AppDelegate.swift in Sources */,
 				DC9379CC1C48D80D009272D2 /* Unicooo.xcdatamodeld in Sources */,
 				DCB94A281C4D30CC006531A8 /* LoginController.swift in Sources */,

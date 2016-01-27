@@ -75,6 +75,7 @@
                     <constraint firstItem="9Gu-Lr-NpP" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="19" id="8Fj-Ur-QDd"/>
                     <constraint firstAttribute="bottomMargin" secondItem="2sl-sv-mbj" secondAttribute="bottom" constant="6" id="BkX-cw-Dew"/>
                     <constraint firstAttribute="trailingMargin" secondItem="2sl-sv-mbj" secondAttribute="trailing" constant="7" id="SBA-13-0Ex"/>
+                    <constraint firstItem="9Gu-Lr-NpP" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="19" id="Sx8-qc-1z2"/>
                     <constraint firstItem="q4y-ZH-qjc" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="19" id="Sxp-TH-SMk"/>
                     <constraint firstAttribute="bottomMargin" secondItem="iKb-2U-TjC" secondAttribute="bottom" constant="6" id="cgF-RN-S1l"/>
                     <constraint firstItem="q4y-ZH-qjc" firstAttribute="top" secondItem="bLV-hW-wqi" secondAttribute="topMargin" constant="4" id="e2r-TJ-TdZ"/>
@@ -82,6 +83,12 @@
                     <constraint firstAttribute="leadingMargin" secondItem="iKb-2U-TjC" secondAttribute="leading" id="fCL-KI-NYf"/>
                     <constraint firstItem="9Gu-Lr-NpP" firstAttribute="top" secondItem="q4y-ZH-qjc" secondAttribute="bottom" constant="8" id="oe7-UE-vz0"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="cgF-RN-S1l"/>
+                        <exclude reference="8Fj-Ur-QDd"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="actAuthorLabel" destination="2sl-sv-mbj" id="TIw-On-UTj"/>
