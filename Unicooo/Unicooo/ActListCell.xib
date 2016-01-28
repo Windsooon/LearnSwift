@@ -16,10 +16,34 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车厘子的明信片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4y-ZH-qjc">
-                        <rect key="frame" x="201" y="12" width="133" height="23"/>
+                        <rect key="frame" x="201" y="15" width="133" height="23"/>
                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爱不分地域，种族与性别，上传你的照片，会随机吻上一位陌生人。和TA聊聊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-Lr-NpP">
+                        <rect key="frame" x="201" y="50" width="159" height="72"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="72" id="SlB-s4-ZXm"/>
+                            <constraint firstAttribute="width" constant="159" id="vt0-t3-y8A"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIndson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sl-sv-mbj">
+                        <rect key="frame" x="310" y="130" width="50" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="68" id="ERM-KM-sf0"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ERM-KM-sf0"/>
+                            </mask>
+                        </variation>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iKb-2U-TjC">
                         <rect key="frame" x="8" y="15" width="174" height="130"/>
@@ -46,30 +70,6 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爱不分地域，种族与性别，上传你的照片，会随机吻上一位陌生人。和TA聊聊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-Lr-NpP">
-                        <rect key="frame" x="201" y="43" width="159" height="72"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="72" id="SlB-s4-ZXm"/>
-                            <constraint firstAttribute="width" constant="159" id="vt0-t3-y8A"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIndson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sl-sv-mbj">
-                        <rect key="frame" x="303" y="128" width="57" height="17"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="68" id="ERM-KM-sf0"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="ERM-KM-sf0"/>
-                            </mask>
-                        </variation>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="9Gu-Lr-NpP" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="19" id="8Fj-Ur-QDd"/>
@@ -78,10 +78,10 @@
                     <constraint firstItem="9Gu-Lr-NpP" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="19" id="Sx8-qc-1z2"/>
                     <constraint firstItem="q4y-ZH-qjc" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="19" id="Sxp-TH-SMk"/>
                     <constraint firstAttribute="bottomMargin" secondItem="iKb-2U-TjC" secondAttribute="bottom" constant="6" id="cgF-RN-S1l"/>
-                    <constraint firstItem="q4y-ZH-qjc" firstAttribute="top" secondItem="bLV-hW-wqi" secondAttribute="topMargin" constant="4" id="e2r-TJ-TdZ"/>
+                    <constraint firstItem="q4y-ZH-qjc" firstAttribute="top" secondItem="bLV-hW-wqi" secondAttribute="topMargin" constant="7" id="e2r-TJ-TdZ"/>
                     <constraint firstItem="iKb-2U-TjC" firstAttribute="top" secondItem="bLV-hW-wqi" secondAttribute="topMargin" constant="7" id="eDz-bM-2Mn"/>
                     <constraint firstAttribute="leadingMargin" secondItem="iKb-2U-TjC" secondAttribute="leading" id="fCL-KI-NYf"/>
-                    <constraint firstItem="9Gu-Lr-NpP" firstAttribute="top" secondItem="q4y-ZH-qjc" secondAttribute="bottom" constant="8" id="oe7-UE-vz0"/>
+                    <constraint firstItem="9Gu-Lr-NpP" firstAttribute="top" secondItem="q4y-ZH-qjc" secondAttribute="bottom" constant="12" id="oe7-UE-vz0"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">

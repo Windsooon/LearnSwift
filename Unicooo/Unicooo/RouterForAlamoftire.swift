@@ -69,3 +69,48 @@ struct Unicooo {
         }
     }
 }
+
+class ActPhotoInfo: NSObject {
+    let id: Int
+    let url: String
+    
+    //var name: String?
+    //
+    //var favoritesCount: Int?
+    //var votesCount: Int?
+    //var commentsCount: Int?
+    //
+    //var highest: Float?
+    //var pulse: Float?
+    //var views: Int?
+    //var camera: String?
+    //var desc: String?
+    
+    init(id: Int, url: String) {
+        self.id = id
+        self.url = url
+    }
+    
+    required init(response: NSHTTPURLResponse, representation: AnyObject) {
+        self.id = representation.valueForKeyPath("actPhotoInfo.id") as! Int
+        self.url = representation.valueForKeyPath("actPhotoInfo.act_thumb_url") as! String
+        
+        //self.favoritesCount = representation.valueForKeyPath("actPhotoInfo.favorites_count") as? Int
+        //self.votesCount = representation.valueForKeyPath("actPhotoInfo.votes_count") as? Int
+        //self.commentsCount = representation.valueForKeyPath("actPhotoInfo.comments_count") as? Int
+        //self.highest = representation.valueForKeyPath("actPhotoInfo.highest_rating") as? Float
+        //self.pulse = representation.valueForKeyPath("actPhotoInfo.rating") as? Float
+        //self.views = representation.valueForKeyPath("actPhotoInfo.times_viewed") as? Int
+        //self.camera = representation.valueForKeyPath("actPhotoInfo.camera") as? String
+        //self.desc = representation.valueForKeyPath("actPhotoInfo.description") as? String
+        //self.name = representation.valueForKeyPath("actPhotoInfo.name") as? String
+    }
+    
+    override func isEqual(object: AnyObject!) -> Bool {
+        return (object as! ActPhotoInfo).id == self.id
+    }
+    
+    override var hash: Int {
+        return (self as ActPhotoInfo).id
+    }
+}

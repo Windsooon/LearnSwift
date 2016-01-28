@@ -24,6 +24,22 @@ class ActListCell: UITableViewCell {
             }
         }
     }
+    
+    var actAuthor: String = "" {
+        didSet {
+            if (actAuthor != oldValue) {
+                actAuthorLabel.text = actAuthor
+            }
+        }
+    }
+    
+    var actThumb: UIImage! {
+        didSet {
+            if (actThumb != oldValue) {
+                actThumbUrl.image = actThumb
+            }
+        }
+    }
 
     @IBOutlet var actTitleLabel: UILabel!
     @IBOutlet var actContentLabel: UILabel!

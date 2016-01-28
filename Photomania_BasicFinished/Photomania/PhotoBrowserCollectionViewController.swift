@@ -45,7 +45,6 @@ class PhotoBrowserCollectionViewController: UICollectionViewController, UICollec
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PhotoBrowserCellIdentifier, forIndexPath: indexPath) as! PhotoBrowserCollectionViewCell
     
     let imageURL = (photos.objectAtIndex(indexPath.row) as! PhotoInfo).url
-    
     cell.imageView.image = nil
     cell.request?.cancel()
     
