@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Alamofire
 
 class ActListCell: UITableViewCell {
+    var request: Alamofire.Request?
     var actTitle: String = "" {
         didSet {
             if (actTitle != oldValue) {

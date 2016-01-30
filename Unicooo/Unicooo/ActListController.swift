@@ -25,6 +25,17 @@ class ActListController: UITableViewController {
         
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        performSegueWithIdentifier("ActDetailIdentifier", sender: cell )
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+        let listVC = segue.destinationViewController as! ActDetailsController
+        listVC.actTest = "what"
+    }
+    
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView.contentOffset.y + view.frame.size.height > scrollView.contentSize.height * 0.8 {
             requestActList()
@@ -43,32 +54,31 @@ class ActListController: UITableViewController {
         return actPhotos.count
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Activities List"
-    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellTableIdentifier, forIndexPath: indexPath) as! ActListCell
         
         let imageURL = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).url
+        let title = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).title
+        let content = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).content
+        cell.imageView!.image = nil
+        cell.request?.cancel()
+        cell.actTitle = title
+        cell.actContent = content
         
-        cell.request = Alamofire.request(.GET, imageURL).validate(contentType: ["image/*"]).responseImage() {
+        cell.request = Alamofire.request(.GET, imageURL).responseImage() {
             response in
-            
-            //If you did not receive an error and you downloaded a proper photo, cache it for later
-            if let img = response.result.value where response.result.error == nil {
-                
-                //Set the cell’s image accordingly
-                self.imageCache.setObject(img, forKey: response.request!.URLString)
-                
-                cell.imageView.image = img
-            } else {
-                /*
-                If the cell went off-screen before the image was downloaded, we cancel it and
-                an NSURLErrorDomain (-999: cancelled) is returned. This is a normal behavior.
-                */
+            if let image = response.result.value {
+                cell.setNeedsLayout()
+                cell.actThumbUrl.image = image
+            }
+            else {
+                print("can't get image")
             }
         }
+        
+        return cell
+            
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -87,13 +97,14 @@ class ActListController: UITableViewController {
         
         requestingActList = true
         
-        Alamofire.request(Unicooo.Router.ReadActList("",["page": self.currentPage])).responseJSON {
+        Alamofire.request(Unicooo.Router.ReadActList("",["page": self.currentPage])).validate().responseJSON {
             response in
-            if let JSON = response.result.value {
-                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
-                    
+                switch response.result {
+                case .Success:
+                    let JSON = response.result.value
+                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
                     let photoInfos =  ((JSON as! NSDictionary).valueForKey("results") as! [NSDictionary]).map {
-                            ActPhotoInfo(id: ($0["id"] as! Int), url: $0["act_thumb_url"] as! String)
+                        ActPhotoInfo(id: ($0["id"] as! Int), url: $0["act_thumb_url"] as! String, title: $0["act_title"] as! String, content: $0["act_content"] as! String)
                     }
                     
                     let lastItem = self.actPhotos.count
@@ -105,12 +116,13 @@ class ActListController: UITableViewController {
                     dispatch_async(dispatch_get_main_queue()) {
                         self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
                     }
-                    
                     self.currentPage++
+                    }
+                    self.requestingActList = false
+                case .Failure(let error):
+                    print(error)
                 }
             }
             // Notify that we are no longer populating photos
-            self.requestingActList = false
         }
     }
-}

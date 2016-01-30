@@ -11,6 +11,7 @@
 		C731E5865D9E627B252ECD6E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DA7C409396D6590B44A881 /* Pods.framework */; };
 		DC099D691C50B5400081C2FC /* ActListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC099D681C50B5400081C2FC /* ActListCell.xib */; };
 		DC099D6B1C50BDF10081C2FC /* ActListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC099D6A1C50BDF10081C2FC /* ActListCell.swift */; };
+		DC473FE11C5B7594001166B1 /* ActDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC473FE01C5B7594001166B1 /* ActDetailsController.swift */; };
 		DC48CEF41C4A918E003DCB49 /* CoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC48CEF31C4A918E003DCB49 /* CoverController.swift */; };
 		DC916EFE1C4A279F0093DED5 /* ExtendForNextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */; };
 		DC9379C41C48D80D009272D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379C31C48D80D009272D2 /* AppDelegate.swift */; };
@@ -53,6 +54,7 @@
 		D9DA7C409396D6590B44A881 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC099D681C50B5400081C2FC /* ActListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActListCell.xib; sourceTree = "<group>"; };
 		DC099D6A1C50BDF10081C2FC /* ActListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActListCell.swift; sourceTree = "<group>"; };
+		DC473FE01C5B7594001166B1 /* ActDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActDetailsController.swift; sourceTree = "<group>"; };
 		DC48CEF31C4A918E003DCB49 /* CoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverController.swift; sourceTree = "<group>"; };
 		DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendForNextField.swift; sourceTree = "<group>"; };
 		DC9379C01C48D80D009272D2 /* Unicooo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unicooo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 				DC9379C51C48D80D009272D2 /* ViewController.swift */,
 				DC9379C71C48D80D009272D2 /* Main.storyboard */,
 				DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */,
+				DC473FE01C5B7594001166B1 /* ActDetailsController.swift */,
 				DCFF13471C57360C00C5FC70 /* RouterForAlamoftire.swift */,
 				DC9379CD1C48D80D009272D2 /* Assets.xcassets */,
 				DC9379CF1C48D80D009272D2 /* LaunchScreen.storyboard */,
@@ -380,6 +383,7 @@
 				DC9379C61C48D80D009272D2 /* ViewController.swift in Sources */,
 				DC9379F71C48DC9B009272D2 /* HomePageController.swift in Sources */,
 				DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */,
+				DC473FE11C5B7594001166B1 /* ActDetailsController.swift in Sources */,
 				DC9379F91C48DCC3009272D2 /* NotificationsController.swift in Sources */,
 				DCFF3AB51C4F437900ECE0D2 /* ActListController.swift in Sources */,
 				DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */,

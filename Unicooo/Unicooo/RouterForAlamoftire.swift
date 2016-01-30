@@ -9,6 +9,63 @@
 import UIKit
 import Alamofire
 
+public protocol ResponseObjectSerializable {
+    init?(response: NSHTTPURLResponse, representation: AnyObject)
+}
+extension Alamofire.Request {
+    public func responseObject<T: ResponseObjectSerializable>(completionHandler: Response<T,NSError> -> Void) -> Self {
+        let responseSerializer = ResponseSerializer<T,NSError> {
+            request, response, data, error in
+            
+            guard error == nil else { return .Failure(error!) }
+            
+            let JSONResponseSerializer = Request.JSONResponseSerializer(options: .AllowFragments)
+            let result = JSONResponseSerializer.serializeResponse(request, response, data, error)
+            
+            switch result {
+            case .Success(let value):
+                if let response = response, JSON = T(response: response, representation: value) {
+                    return .Success(JSON)
+                } else {
+                    let failureReason = "JSON could not be serialized into response object \(value)"
+                    let error =  Error.errorWithCode(.JSONSerializationFailed, failureReason: failureReason)
+                    return .Failure(error)
+                }
+            case .Failure(let error):
+                return .Failure(error)
+                
+            }
+        }
+        
+        return response(responseSerializer: responseSerializer, completionHandler: completionHandler)
+    }
+}
+
+extension Alamofire.Request {
+    public static func imageResponseSerializer() -> ResponseSerializer<UIImage, NSError> {
+        return ResponseSerializer { request, response, data, error in
+            guard error == nil else { return .Failure(error!)}
+            
+            guard let validData = data else {
+                let failureReason = "Data could not be serialized. Input data was nil"
+                let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
+                return .Failure(error)
+            }
+            
+            guard let image = UIImage(data: validData, scale: UIScreen.mainScreen().scale) else {
+                let failureReason = "Data could not be converted to UIImage"
+                let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
+                return .Failure(error)
+            }
+            return .Success(image)
+        }
+    }
+    public func responseImage(completionHandler: Response<UIImage, NSError> -> Void) -> Self {
+        return response(responseSerializer: Request.imageResponseSerializer(), completionHandler: completionHandler)
+    }
+}
+
+
 struct Unicooo {
     enum Router: URLRequestConvertible {
         static let baseURLString = "http://127.0.0.1:8000/api"
@@ -73,7 +130,8 @@ struct Unicooo {
 class ActPhotoInfo: NSObject {
     let id: Int
     let url: String
-    
+    let title: String
+    let content: String
     //var name: String?
     //
     //var favoritesCount: Int?
@@ -86,14 +144,18 @@ class ActPhotoInfo: NSObject {
     //var camera: String?
     //var desc: String?
     
-    init(id: Int, url: String) {
+    init(id: Int, url: String, title: String, content: String) {
         self.id = id
         self.url = url
+        self.title = title
+        self.content = content
     }
     
     required init(response: NSHTTPURLResponse, representation: AnyObject) {
         self.id = representation.valueForKeyPath("actPhotoInfo.id") as! Int
         self.url = representation.valueForKeyPath("actPhotoInfo.act_thumb_url") as! String
+        self.title = representation.valueForKeyPath("actPhotoInfo.act_titl") as! String
+        self.content = representation.valueForKeyPath("actPhotoInfo.act_content") as! String
         
         //self.favoritesCount = representation.valueForKeyPath("actPhotoInfo.favorites_count") as? Int
         //self.votesCount = representation.valueForKeyPath("actPhotoInfo.votes_count") as? Int
