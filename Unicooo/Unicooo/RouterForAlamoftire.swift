@@ -76,21 +76,27 @@ struct Unicooo {
         case UpdateAct(String, [String: AnyObject])
         case DestroyAct(String)
         
+        case CreatePost([String: AnyObject])
+        case ReadPostList(String, [String: AnyObject]?)
+        case UpdatePost(String, [String: AnyObject])
+        case DestroyPost(String)
+        
         var method: Alamofire.Method {
             switch self {
-            case .CreateAct:
+            case .CreateAct, .CreatePost:
                 return .POST
-            case .ReadActList:
+            case .ReadActList, .ReadPostList:
                 return .GET
-            case .UpdateAct:
+            case .UpdateAct, .UpdatePost:
                 return .PUT
-            case .DestroyAct:
+            case .DestroyAct, .DestroyPost:
                 return .DELETE
             }
         }
         
         var path: String {
             switch self {
+            //RESTAPI for act
             case .CreateAct:
                 return "/acts"
             case .ReadActList(let actId, _):
@@ -99,6 +105,15 @@ struct Unicooo {
                 return "/acts/\(actId)"
             case .DestroyAct(let actId):
                 return "/acts/\(actId)"
+            //RESTAPI for post
+            case .CreatePost:
+                return "/posts"
+            case .ReadPostList(let postId, _):
+                return "/posts/\(postId)"
+            case .UpdatePost(let postId, _):
+                return "/posts/\(postId)"
+            case .DestroyPost(let postId):
+                return "/posts/\(postId)"
             }
         }
         
@@ -109,16 +124,18 @@ struct Unicooo {
             let mutableURLRequest = NSMutableURLRequest(URL: URL.URLByAppendingPathComponent(path))
             mutableURLRequest.HTTPMethod = method.rawValue
             
-            if let token = Router.OAuthToken {
-                mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-            }
-            
             switch self {
             case .CreateAct(let parameters):
                 return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
             case .ReadActList(_, let parameters):
                 return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
             case .UpdateAct(_, let parameters):
+                return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
+            case .CreatePost(let parameters):
+                return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
+            case .ReadPostList(_, let parameters):
+                return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
+            case .UpdatePost(_, let parameters):
                 return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
             default:
                 return mutableURLRequest
@@ -132,40 +149,25 @@ class ActPhotoInfo: NSObject {
     let url: String
     let title: String
     let content: String
-    //var name: String?
-    //
-    //var favoritesCount: Int?
-    //var votesCount: Int?
-    //var commentsCount: Int?
-    //
-    //var highest: Float?
-    //var pulse: Float?
-    //var views: Int?
-    //var camera: String?
-    //var desc: String?
+    let user: String
+    let createTime: String
     
-    init(id: Int, url: String, title: String, content: String) {
+    init(id: Int, url: String, title: String, content: String, author: String, createTime: String) {
         self.id = id
         self.url = url
         self.title = title
         self.content = content
+        self.user = author
+        self.createTime = createTime
     }
     
     required init(response: NSHTTPURLResponse, representation: AnyObject) {
         self.id = representation.valueForKeyPath("actPhotoInfo.id") as! Int
         self.url = representation.valueForKeyPath("actPhotoInfo.act_thumb_url") as! String
-        self.title = representation.valueForKeyPath("actPhotoInfo.act_titl") as! String
+        self.title = representation.valueForKeyPath("actPhotoInfo.act_title") as! String
         self.content = representation.valueForKeyPath("actPhotoInfo.act_content") as! String
-        
-        //self.favoritesCount = representation.valueForKeyPath("actPhotoInfo.favorites_count") as? Int
-        //self.votesCount = representation.valueForKeyPath("actPhotoInfo.votes_count") as? Int
-        //self.commentsCount = representation.valueForKeyPath("actPhotoInfo.comments_count") as? Int
-        //self.highest = representation.valueForKeyPath("actPhotoInfo.highest_rating") as? Float
-        //self.pulse = representation.valueForKeyPath("actPhotoInfo.rating") as? Float
-        //self.views = representation.valueForKeyPath("actPhotoInfo.times_viewed") as? Int
-        //self.camera = representation.valueForKeyPath("actPhotoInfo.camera") as? String
-        //self.desc = representation.valueForKeyPath("actPhotoInfo.description") as? String
-        //self.name = representation.valueForKeyPath("actPhotoInfo.name") as? String
+        self.user = representation.valueForKeyPath("actPhotoInfo.user") as! String
+        self.createTime = representation.valueForKeyPath("actPhotoInfo.act_create_time") as! String
     }
     
     override func isEqual(object: AnyObject!) -> Bool {
@@ -174,5 +176,40 @@ class ActPhotoInfo: NSObject {
     
     override var hash: Int {
         return (self as ActPhotoInfo).id
+    }
+}
+
+class PostPhotoInfo: NSObject {
+    let id: Int
+    let url: String
+    let title: String
+    let content: String
+    let user: String
+    let createTime: String
+    
+    init(id: Int, url: String, title: String, content: String, author: String, createTime: String) {
+        self.id = id
+        self.url = url
+        self.title = title
+        self.content = content
+        self.user = author
+        self.createTime = createTime
+    }
+    
+    required init(response: NSHTTPURLResponse, representation: AnyObject) {
+        self.id = representation.valueForKeyPath("postPhotoInfo.id") as! Int
+        self.url = representation.valueForKeyPath("postPhotoInfo.post_thumb_url") as! String
+        self.title = representation.valueForKeyPath("postPhotoInfo.postt_title") as! String
+        self.content = representation.valueForKeyPath("postPhotoInfo.post_content") as! String
+        self.user = representation.valueForKeyPath("postPhotoInfo.user") as! String
+        self.createTime = representation.valueForKeyPath("postPhotoInfo.post_create_time") as! String
+    }
+    
+    override func isEqual(object: AnyObject!) -> Bool {
+        return (object as! PostPhotoInfo).id == self.id
+    }
+    
+    override var hash: Int {
+        return (self as PostPhotoInfo).id
     }
 }

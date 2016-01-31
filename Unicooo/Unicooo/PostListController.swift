@@ -1,30 +1,31 @@
 //
-//  ActDetailsController.swift
+//  PostListController.swift
 //  Unicooo
 //
-//  Created by Windson on 16/1/29.
+//  Created by Windson on 16/1/30.
 //  Copyright © 2016年 Windson. All rights reserved.
 //
 
 import UIKit
+import Alamofire
 
-private let reuseIdentifier = "Cell"
 
-class ActDetailsController: UICollectionViewController {
-    var actTitle: UILabel!
-    var actContent: UILabel!
-    var actTest: String = "hey"
-    
+class PostListController: UICollectionViewController {
+    let reuseIdentifier = "Cell"
+    var postPhotos = NSMutableOrderedSet()
+    var requestingPostList = false
+    var currentPage = 1
+    var actId: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(actTest)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.registerClass(PostListCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        requestPostList()
 
         // Do any additional setup after loading the view.
     }
@@ -48,23 +49,58 @@ class ActDetailsController: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return postPhotos.count
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-    
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PostListCell
+        //cell.postContent = (postPhotos.objectAtIndex(indexPath.row) as! PostPhotoInfo).content
+        cell.postTime = (postPhotos.objectAtIndex(indexPath.row) as! PostPhotoInfo).createTime
         // Configure the cell
-    
         return cell
     }
-
+    
+    func requestPostList() {
+        if requestingPostList {
+            return
+        }
+        
+        requestingPostList = true
+        
+        Alamofire.request(Unicooo.Router.ReadPostList("",["act_id": self.actId, "page": self.currentPage])).validate().responseJSON {
+            response in
+            switch response.result {
+            case .Success:
+                let JSON = response.result.value
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+                    let photoInfos =  ((JSON as! NSDictionary).valueForKey("results") as! [NSDictionary]).map {
+                        PostPhotoInfo(id: ($0["id"] as! Int), url: ($0["post_thumb_url"] as! String), title: ($0["post_title"] as! String), content: ($0["post_content"] as! String), author: ($0["post_user"]!["user_name"] as! String), createTime: ($0["post_create_time"] as! String))
+                    }
+                    
+                    let lastItem = self.postPhotos.count
+                    
+                    self.postPhotos.addObjectsFromArray(photoInfos)
+                    
+                    let indexPaths = (lastItem..<self.postPhotos.count).map { NSIndexPath(forItem: $0, inSection: 0)}
+                    
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.collectionView!.insertItemsAtIndexPaths(indexPaths)
+                    }
+                    self.currentPage++
+                }
+                self.requestingPostList = false
+            case .Failure(let error):
+                print(error)
+            }
+        }
+        // Notify that we are no longer populating photos
+    }
     // MARK: UICollectionViewDelegate
 
     /*

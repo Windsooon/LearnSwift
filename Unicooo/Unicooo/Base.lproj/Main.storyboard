@@ -400,50 +400,72 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Activities List" id="vS6-ne-WNZ"/>
                     <connections>
-                        <segue destination="cYn-Ic-v0h" kind="show" identifier="ActDetailIdentifier" id="hxt-gF-I4O"/>
+                        <segue destination="pqe-PP-NvE" kind="show" identifier="ActDetailIdentifier" id="TnZ-zv-qhQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Lu-qn-x20" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="986" y="-757"/>
         </scene>
-        <!--Act Details Controller-->
-        <scene sceneID="LM2-hS-Bmt">
+        <!--Post List Controller-->
+        <scene sceneID="0op-dn-A82">
             <objects>
-                <collectionViewController id="cYn-Ic-v0h" customClass="ActDetailsController" customModule="Unicooo" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="QLp-gg-jsS">
+                <collectionViewController id="pqe-PP-NvE" customClass="PostListController" customModule="Unicooo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="laH-In-uh1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j43-VG-c0b">
-                            <size key="itemSize" width="99" height="79"/>
-                            <size key="headerReferenceSize" width="50" height="50"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RrD-q0-zc2">
+                            <size key="itemSize" width="260" height="325"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Mt0-4k-zkp">
-                                <rect key="frame" x="0.0" y="114" width="99" height="79"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="ZNs-rN-BtK" customClass="PostListCell" customModule="Unicooo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="260" height="325"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="99" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="260" height="325"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="postAuthor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2f-ok-KIc">
+                                            <rect key="frame" x="22" y="194" width="86" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="postTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="362-4y-RJL">
+                                            <rect key="frame" x="22" y="229" width="72" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="postContent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnG-n5-5z7">
+                                            <rect key="frame" x="23" y="270" width="96" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outlet property="postAuthorLabel" destination="I2f-ok-KIc" id="YMN-Kg-mEA"/>
+                                    <outlet property="postContentLabel" destination="BnG-n5-5z7" id="ROu-si-vHn"/>
+                                    <outlet property="postTimeLabel" destination="362-4y-RJL" id="zWi-NF-Aji"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KL1-zN-a4s">
-                            <rect key="frame" x="0.0" y="64" width="600" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </collectionReusableView>
                         <connections>
-                            <outlet property="dataSource" destination="cYn-Ic-v0h" id="Xgn-LB-LKa"/>
-                            <outlet property="delegate" destination="cYn-Ic-v0h" id="hC7-AG-ZVD"/>
+                            <outlet property="dataSource" destination="pqe-PP-NvE" id="CSI-hk-ZvJ"/>
+                            <outlet property="delegate" destination="pqe-PP-NvE" id="uuI-2U-kcQ"/>
                         </connections>
                     </collectionView>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Kl3-ZV-fvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cJK-lT-WCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1689" y="-757"/>
+            <point key="canvasLocation" x="1712" y="-757"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0dk-Pf-gob">

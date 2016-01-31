@@ -15,7 +15,6 @@ class ActListController: UITableViewController {
     var requestingActList = false
     var actPhotos = NSMutableOrderedSet()
     var currentPage = 1
-    var actData = [[String:AnyObject]]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,8 +31,12 @@ class ActListController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
-        let listVC = segue.destinationViewController as! ActDetailsController
-        listVC.actTest = "what"
+        let actDetails = segue.destinationViewController as! PostListController
+        actDetails.actId = (actPhotos.objectAtIndex(indexPath!.row) as! ActPhotoInfo).id
+        //actDetails.actTitle = (actPhotos.objectAtIndex(indexPath!.row) as! ActPhotoInfo).title
+        //actDetails.actContent = (actPhotos.objectAtIndex(indexPath!.row) as! ActPhotoInfo).content
+        //actDetails.actAuthor = (actPhotos.objectAtIndex(indexPath!.row) as! ActPhotoInfo).author
+        //actDetails.actCreateTime = (actPhotos.objectAtIndex(indexPath!.row) as! ActPhotoInfo).createTime
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -102,9 +105,10 @@ class ActListController: UITableViewController {
                 switch response.result {
                 case .Success:
                     let JSON = response.result.value
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+                    let actQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+                    dispatch_async(actQueue) {
                     let photoInfos =  ((JSON as! NSDictionary).valueForKey("results") as! [NSDictionary]).map {
-                        ActPhotoInfo(id: ($0["id"] as! Int), url: $0["act_thumb_url"] as! String, title: $0["act_title"] as! String, content: $0["act_content"] as! String)
+                        ActPhotoInfo(id: ($0["id"] as! Int), url: ($0["act_thumb_url"] as! String), title: ($0["act_title"] as! String), content: ($0["act_content"] as! String), author: ($0["user"] as! String), createTime: ($0["act_create_time"] as! String))
                     }
                     
                     let lastItem = self.actPhotos.count
