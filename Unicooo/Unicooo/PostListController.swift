@@ -11,7 +11,8 @@ import Alamofire
 
 
 class PostListController: UICollectionViewController {
-    let reuseIdentifier = "Cell"
+    private let reuseIdentifier = "Cell"
+    //var postPhotos = NSMutableOrderedSet()
     var postPhotos = NSMutableOrderedSet()
     var requestingPostList = false
     var currentPage = 1
@@ -61,7 +62,7 @@ class PostListController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PostListCell
         //cell.postContent = (postPhotos.objectAtIndex(indexPath.row) as! PostPhotoInfo).content
-        cell.postTime = (postPhotos.objectAtIndex(indexPath.row) as! PostPhotoInfo).createTime
+        cell.postContent = (postPhotos.objectAtIndex(indexPath.row) as! PostPhotoInfo).content
         // Configure the cell
         return cell
     }
