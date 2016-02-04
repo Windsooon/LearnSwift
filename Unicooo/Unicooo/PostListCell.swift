@@ -11,6 +11,11 @@ import Alamofire
 
 class PostListCell: UICollectionViewCell {
     var request: Alamofire.Request?
+    
+    @IBOutlet weak var postAuthorLabel: UILabel!
+    @IBOutlet weak var postTimeLabel: UILabel!
+    @IBOutlet weak var postContentLabel: UILabel!
+    @IBOutlet weak var postImageView: UIImageView!
     var postAuthor: String = "" {
         didSet {
             if (postAuthor != oldValue) {
@@ -26,6 +31,7 @@ class PostListCell: UICollectionViewCell {
             }
         }
     }
+   
     
     var postContent: String = "" {
         didSet {
@@ -35,9 +41,11 @@ class PostListCell: UICollectionViewCell {
         }
     }
     
-    @IBOutlet weak var postAuthorLabel: UILabel!
-    @IBOutlet weak var postTimeLabel: UILabel!
-    @IBOutlet weak var postContentLabel: UILabel!
-    
-    
+    var postThumb: UIImage! {
+        didSet {
+            if (postThumb != oldValue) {
+                postImageView.image = postThumb
+            }
+        }
+    }
 }

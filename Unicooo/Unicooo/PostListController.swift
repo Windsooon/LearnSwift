@@ -20,20 +20,11 @@ class PostListController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.registerClass(PostListCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         requestPostList()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     /*
@@ -61,9 +52,22 @@ class PostListController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PostListCell
-        //cell.postContent = (postPhotos.objectAtIndex(indexPath.row) as! PostPhotoInfo).content
+        let imageURL = (postPhotos.objectAtIndex(indexPath.row) as! PostPhotoInfo).url
         cell.postContent = (postPhotos.objectAtIndex(indexPath.row) as! PostPhotoInfo).content
-        // Configure the cell
+        cell.postAuthor = (postPhotos.objectAtIndex(indexPath.row) as! PostPhotoInfo).user
+        cell.postTime = (postPhotos.objectAtIndex(indexPath.row) as! PostPhotoInfo).createTime
+        
+        cell.request = Alamofire.request(.GET, imageURL).responseImage() {
+            response in
+            if let image = response.result.value {
+                cell.setNeedsLayout()
+                cell.postThumb = image
+            }
+            else {
+                print("can't get image")
+            }
+        }
+        
         return cell
     }
     

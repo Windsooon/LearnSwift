@@ -12,6 +12,7 @@
 		DC099D691C50B5400081C2FC /* ActListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC099D681C50B5400081C2FC /* ActListCell.xib */; };
 		DC099D6B1C50BDF10081C2FC /* ActListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC099D6A1C50BDF10081C2FC /* ActListCell.swift */; };
 		DC48CEF41C4A918E003DCB49 /* CoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC48CEF31C4A918E003DCB49 /* CoverController.swift */; };
+		DC6571B21C61CF5A00AAB9A9 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6571B11C61CF5A00AAB9A9 /* RoundedCornersView.swift */; };
 		DC916EFE1C4A279F0093DED5 /* ExtendForNextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */; };
 		DC918F8F1C5C85B5004F36D3 /* PostListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC918F8E1C5C85B5004F36D3 /* PostListController.swift */; };
 		DC918F911C5CA906004F36D3 /* PostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC918F901C5CA906004F36D3 /* PostListCell.swift */; };
@@ -56,6 +57,7 @@
 		DC099D681C50B5400081C2FC /* ActListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActListCell.xib; sourceTree = "<group>"; };
 		DC099D6A1C50BDF10081C2FC /* ActListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActListCell.swift; sourceTree = "<group>"; };
 		DC48CEF31C4A918E003DCB49 /* CoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverController.swift; sourceTree = "<group>"; };
+		DC6571B11C61CF5A00AAB9A9 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendForNextField.swift; sourceTree = "<group>"; };
 		DC918F8E1C5C85B5004F36D3 /* PostListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListController.swift; sourceTree = "<group>"; };
 		DC918F901C5CA906004F36D3 /* PostListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListCell.swift; sourceTree = "<group>"; };
@@ -128,6 +130,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC6571B31C61CF6800AAB9A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DC099D6A1C50BDF10081C2FC /* ActListCell.swift */,
+				DC918F901C5CA906004F36D3 /* PostListCell.swift */,
+				DC6571B11C61CF5A00AAB9A9 /* RoundedCornersView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DC6571B41C61CF9F00AAB9A9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC9379C51C48D80D009272D2 /* ViewController.swift */,
+				DC918F8E1C5C85B5004F36D3 /* PostListController.swift */,
+				DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */,
+				DC9379F61C48DC9B009272D2 /* HomePageController.swift */,
+				DC48CEF31C4A918E003DCB49 /* CoverController.swift */,
+				DC9379F81C48DCC3009272D2 /* NotificationsController.swift */,
+				DC9379FA1C48DCD7009272D2 /* PersonalController.swift */,
+				DC9379FC1C48DCFB009272D2 /* SignupController.swift */,
+				DCB94A271C4D30CC006531A8 /* LoginController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DC6571B51C61E21500AAB9A9 /* SB & XIB */ = {
+			isa = PBXGroup;
+			children = (
+				DC9379C71C48D80D009272D2 /* Main.storyboard */,
+				DC9379CF1C48D80D009272D2 /* LaunchScreen.storyboard */,
+				DC099D681C50B5400081C2FC /* ActListCell.xib */,
+			);
+			name = "SB & XIB";
+			sourceTree = "<group>";
+		};
 		DC9379B71C48D80C009272D2 = {
 			isa = PBXGroup;
 			children = (
@@ -154,25 +192,14 @@
 			isa = PBXGroup;
 			children = (
 				DC9379C31C48D80D009272D2 /* AppDelegate.swift */,
-				DC9379C51C48D80D009272D2 /* ViewController.swift */,
-				DC9379C71C48D80D009272D2 /* Main.storyboard */,
-				DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */,
 				DCFF13471C57360C00C5FC70 /* RouterForAlamoftire.swift */,
-				DC918F8E1C5C85B5004F36D3 /* PostListController.swift */,
-				DC918F901C5CA906004F36D3 /* PostListCell.swift */,
 				DC9379CD1C48D80D009272D2 /* Assets.xcassets */,
-				DC9379CF1C48D80D009272D2 /* LaunchScreen.storyboard */,
 				DC9379D21C48D80D009272D2 /* Info.plist */,
 				DC9379CA1C48D80D009272D2 /* Unicooo.xcdatamodeld */,
-				DC9379F61C48DC9B009272D2 /* HomePageController.swift */,
 				DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */,
-				DC48CEF31C4A918E003DCB49 /* CoverController.swift */,
-				DC9379F81C48DCC3009272D2 /* NotificationsController.swift */,
-				DC9379FA1C48DCD7009272D2 /* PersonalController.swift */,
-				DC9379FC1C48DCFB009272D2 /* SignupController.swift */,
-				DCB94A271C4D30CC006531A8 /* LoginController.swift */,
-				DC099D681C50B5400081C2FC /* ActListCell.xib */,
-				DC099D6A1C50BDF10081C2FC /* ActListCell.swift */,
+				DC6571B51C61E21500AAB9A9 /* SB & XIB */,
+				DC6571B41C61CF9F00AAB9A9 /* Controllers */,
+				DC6571B31C61CF6800AAB9A9 /* Views */,
 			);
 			path = Unicooo;
 			sourceTree = "<group>";
@@ -392,6 +419,7 @@
 				DC918F8F1C5C85B5004F36D3 /* PostListController.swift in Sources */,
 				DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */,
 				DC48CEF41C4A918E003DCB49 /* CoverController.swift in Sources */,
+				DC6571B21C61CF5A00AAB9A9 /* RoundedCornersView.swift in Sources */,
 				DC916EFE1C4A279F0093DED5 /* ExtendForNextField.swift in Sources */,
 				DC9379C41C48D80D009272D2 /* AppDelegate.swift in Sources */,
 				DC9379CC1C48D80D009272D2 /* Unicooo.xcdatamodeld in Sources */,

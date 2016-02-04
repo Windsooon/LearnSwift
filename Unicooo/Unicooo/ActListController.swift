@@ -71,7 +71,7 @@ class ActListController: UITableViewController {
             response in
             if let image = response.result.value {
                 cell.setNeedsLayout()
-                cell.actThumbUrl.image = image
+                cell.actThumb = image
             }
             else {
                 print("can't get image")
