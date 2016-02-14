@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,14 +16,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="159"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车厘子的明信片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4y-ZH-qjc">
-                        <rect key="frame" x="201" y="15" width="133" height="23"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="车厘子的明信片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4y-ZH-qjc">
+                        <rect key="frame" x="0.0" y="15" width="133" height="23"/>
                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爱不分地域，种族与性别，上传你的照片，会随机吻上一位陌生人。和TA聊聊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-Lr-NpP">
-                        <rect key="frame" x="201" y="50" width="159" height="72"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="爱不分地域，种族与性别，上传你的照片，会随机吻上一位陌生人。和TA聊聊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-Lr-NpP">
+                        <rect key="frame" x="0.0" y="50" width="159" height="72"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="72" id="SlB-s4-ZXm"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="159" id="kCp-Fe-atI"/>
@@ -51,8 +52,8 @@
                             </mask>
                         </variation>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iKb-2U-TjC">
-                        <rect key="frame" x="8" y="15" width="174" height="130"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKb-2U-TjC">
+                        <rect key="frame" x="8" y="16" width="169" height="127"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="5J1-ff-yq4"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="225" id="IvK-Iv-HVH"/>
@@ -71,6 +72,8 @@
                                 <exclude reference="Jtd-fH-iA1"/>
                                 <exclude reference="QHS-IZ-sdt"/>
                                 <exclude reference="TTn-uf-UpC"/>
+                                <exclude reference="clf-l3-aug"/>
+                                <exclude reference="hy8-OL-kfG"/>
                                 <exclude reference="jJJ-vu-vTE"/>
                                 <exclude reference="yie-OA-ylr"/>
                             </mask>
@@ -78,21 +81,33 @@
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="iKb-2U-TjC" firstAttribute="height" secondItem="bLV-hW-wqi" secondAttribute="height" multiplier="0.8" id="45x-tD-4lU"/>
                     <constraint firstItem="9Gu-Lr-NpP" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="19" id="8Fj-Ur-QDd"/>
+                    <constraint firstItem="iKb-2U-TjC" firstAttribute="width" secondItem="bLV-hW-wqi" secondAttribute="width" multiplier="0.45" id="91q-2R-N6O"/>
                     <constraint firstAttribute="bottomMargin" secondItem="2sl-sv-mbj" secondAttribute="bottom" constant="6" id="BkX-cw-Dew"/>
                     <constraint firstAttribute="trailingMargin" secondItem="2sl-sv-mbj" secondAttribute="trailing" constant="7" id="SBA-13-0Ex"/>
                     <constraint firstItem="9Gu-Lr-NpP" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="19" id="Sx8-qc-1z2"/>
                     <constraint firstItem="q4y-ZH-qjc" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="19" id="Sxp-TH-SMk"/>
+                    <constraint firstItem="iKb-2U-TjC" firstAttribute="height" secondItem="bLV-hW-wqi" secondAttribute="height" multiplier="0.8" id="aEt-Kj-ncK"/>
+                    <constraint firstItem="iKb-2U-TjC" firstAttribute="height" secondItem="bLV-hW-wqi" secondAttribute="height" id="aJ5-Td-IRQ"/>
                     <constraint firstAttribute="bottomMargin" secondItem="iKb-2U-TjC" secondAttribute="bottom" constant="6" id="cgF-RN-S1l"/>
                     <constraint firstItem="q4y-ZH-qjc" firstAttribute="top" secondItem="bLV-hW-wqi" secondAttribute="topMargin" constant="7" id="e2r-TJ-TdZ"/>
                     <constraint firstItem="iKb-2U-TjC" firstAttribute="top" secondItem="bLV-hW-wqi" secondAttribute="topMargin" constant="7" id="eDz-bM-2Mn"/>
                     <constraint firstAttribute="leadingMargin" secondItem="iKb-2U-TjC" secondAttribute="leading" id="fCL-KI-NYf"/>
                     <constraint firstItem="9Gu-Lr-NpP" firstAttribute="top" secondItem="q4y-ZH-qjc" secondAttribute="bottom" constant="12" id="oe7-UE-vz0"/>
+                    <constraint firstItem="iKb-2U-TjC" firstAttribute="width" secondItem="bLV-hW-wqi" secondAttribute="width" multiplier="0.4" id="yfy-ox-4fg"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
+                        <exclude reference="45x-tD-4lU"/>
+                        <exclude reference="aJ5-Td-IRQ"/>
                         <exclude reference="cgF-RN-S1l"/>
+                        <exclude reference="eDz-bM-2Mn"/>
+                        <exclude reference="fCL-KI-NYf"/>
+                        <exclude reference="yfy-ox-4fg"/>
+                        <exclude reference="Sxp-TH-SMk"/>
                         <exclude reference="8Fj-Ur-QDd"/>
+                        <exclude reference="Sx8-qc-1z2"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
