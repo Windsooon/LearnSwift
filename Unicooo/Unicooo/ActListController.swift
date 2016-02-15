@@ -17,9 +17,12 @@ class ActListController: UITableViewController {
     var currentPage = 1
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         customTableCell()
         requestActList()
+        //let navigationHeight = self.navigationController!.navigationBar.frame.size.height
+        //let statusHeight = statusBarHeight()
+        //let tableHeight = tableView.frame.size.height
+        self.tableView.rowHeight = 140
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -82,9 +85,6 @@ class ActListController: UITableViewController {
             
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 160
-    }
     
     func customTableCell() {
         let nib = UINib(nibName: "ActListCell", bundle: nil)
@@ -127,4 +127,10 @@ class ActListController: UITableViewController {
             }
             // Notify that we are no longer populating photos
         }
+    }
+
+    //get statusbar height
+    func statusBarHeight() -> CGFloat {
+        let statusBarSize = UIApplication.sharedApplication().statusBarFrame.size
+        return Swift.min(statusBarSize.width, statusBarSize.height)
     }
