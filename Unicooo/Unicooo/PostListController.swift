@@ -94,9 +94,9 @@ class PostListController: UICollectionViewController {
                     
                     let indexPaths = (lastItem..<self.postPhotos.count).map { NSIndexPath(forItem: $0, inSection: 0)}
                     
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.collectionView!.insertItemsAtIndexPaths(indexPaths)
-                    }
+                    //dispatch_async(dispatch_get_main_queue()) {
+                    //    self.collectionView!.insertItemsAtIndexPaths(indexPaths)
+                    //}
                     self.currentPage++
                 }
                 self.requestingPostList = false
@@ -107,6 +107,30 @@ class PostListController: UICollectionViewController {
         // Notify that we are no longer populating photos
     }
     // MARK: UICollectionViewDelegate
+}
+
+extension PostListController : GridLayoutDelegate {
+    // 1
+    func collectionView(collectionView:UICollectionView, heightForPhotoAtIndexPath indexPath: NSIndexPath,
+        withWidth width: CGFloat) -> CGFloat {
+            let photo = photos[indexPath.item]
+            let boundingRect =  CGRect(x: 0, y: 0, width: width, height: CGFloat(MAXFLOAT))
+            let rect  = AVMakeRectWithAspectRatioInsideRect(photo.image.size, boundingRect)
+            return rect.size.height
+    }
+    
+    // 2
+    func collectionView(collectionView: UICollectionView,
+        heightForAnnotationAtIndexPath indexPath: NSIndexPath, withWidth width: CGFloat) -> CGFloat {
+            let annotationPadding = CGFloat(4)
+            let annotationHeaderHeight = CGFloat(17)
+            let photo = photos[indexPath.item]
+            let font = UIFont(name: "AvenirNext-Regular", size: 10)!
+            let commentHeight = photo.heightForComment(font, width: width)
+            let height = annotationPadding + annotationHeaderHeight + commentHeight + annotationPadding
+            return height
+    }
+}
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
@@ -137,4 +161,3 @@ class PostListController: UICollectionViewController {
     }
     */
 
-}

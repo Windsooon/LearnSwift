@@ -29,6 +29,7 @@
 		DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379FA1C48DCD7009272D2 /* PersonalController.swift */; };
 		DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9379FC1C48DCFB009272D2 /* SignupController.swift */; };
 		DCB94A281C4D30CC006531A8 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB94A271C4D30CC006531A8 /* LoginController.swift */; };
+		DCECF0B71C733F020069218B /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCECF0B61C733F020069218B /* GridLayout.swift */; };
 		DCFF13481C57360C00C5FC70 /* RouterForAlamoftire.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFF13471C57360C00C5FC70 /* RouterForAlamoftire.swift */; };
 		DCFF3AB51C4F437900ECE0D2 /* ActListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */; };
 /* End PBXBuildFile section */
@@ -80,6 +81,7 @@
 		DC9379FA1C48DCD7009272D2 /* PersonalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalController.swift; sourceTree = "<group>"; };
 		DC9379FC1C48DCFB009272D2 /* SignupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
 		DCB94A271C4D30CC006531A8 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		DCECF0B61C733F020069218B /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		DCFF13471C57360C00C5FC70 /* RouterForAlamoftire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterForAlamoftire.swift; sourceTree = "<group>"; };
 		DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActListController.swift; sourceTree = "<group>"; };
 		F81107F282B8F96234DA2C30 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */,
 				DC6571B51C61E21500AAB9A9 /* SB & XIB */,
 				DC6571B41C61CF9F00AAB9A9 /* Controllers */,
+				DCECF0B51C733E770069218B /* Layouts */,
 				DC6571B31C61CF6800AAB9A9 /* Views */,
 			);
 			path = Unicooo;
@@ -220,6 +223,14 @@
 				DC9379E81C48D80D009272D2 /* Info.plist */,
 			);
 			path = UnicoooUITests;
+			sourceTree = "<group>";
+		};
+		DCECF0B51C733E770069218B /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				DCECF0B61C733F020069218B /* GridLayout.swift */,
+			);
+			name = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -416,6 +427,7 @@
 				DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */,
 				DC9379F91C48DCC3009272D2 /* NotificationsController.swift in Sources */,
 				DCFF3AB51C4F437900ECE0D2 /* ActListController.swift in Sources */,
+				DCECF0B71C733F020069218B /* GridLayout.swift in Sources */,
 				DC918F8F1C5C85B5004F36D3 /* PostListController.swift in Sources */,
 				DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */,
 				DC48CEF41C4A918E003DCB49 /* CoverController.swift in Sources */,
