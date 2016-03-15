@@ -71,19 +71,21 @@ struct Unicooo {
         static let baseURLString = "http://127.0.0.1:8000/api"
         static var OAuthToken: String?
         
+        case CreateUser([String: AnyObject])
+        
         case CreateAct([String: AnyObject])
-        case ReadActList(String, [String: AnyObject]?)
+        case ReadActList([String: AnyObject]?)
         case UpdateAct(String, [String: AnyObject])
         case DestroyAct(String)
         
         case CreatePost([String: AnyObject])
-        case ReadPostList(String, [String: AnyObject]?)
+        case ReadPostList([String: AnyObject]?)
         case UpdatePost(String, [String: AnyObject])
         case DestroyPost(String)
         
         var method: Alamofire.Method {
             switch self {
-            case .CreateAct, .CreatePost:
+            case .CreateUser, .CreateAct, .CreatePost:
                 return .POST
             case .ReadActList, .ReadPostList:
                 return .GET
@@ -96,11 +98,14 @@ struct Unicooo {
         
         var path: String {
             switch self {
+            //RESTAPI for user
+            case .CreateUser:
+                return "/users"
             //RESTAPI for act
             case .CreateAct:
                 return "/acts"
-            case .ReadActList(let actId, _):
-                return "/acts/\(actId)"
+            case .ReadActList:
+                return "/acts/"
             case .UpdateAct(let actId, _):
                 return "/acts/\(actId)"
             case .DestroyAct(let actId):
@@ -108,8 +113,8 @@ struct Unicooo {
             //RESTAPI for post
             case .CreatePost:
                 return "/posts"
-            case .ReadPostList(let postId, _):
-                return "/posts/\(postId)"
+            case .ReadPostList:
+                return "/posts/"
             case .UpdatePost(let postId, _):
                 return "/posts/\(postId)"
             case .DestroyPost(let postId):
@@ -125,15 +130,20 @@ struct Unicooo {
             mutableURLRequest.HTTPMethod = method.rawValue
             
             switch self {
+            //for user
+            case .CreateUser(let parameters):
+                return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
+            //for act
             case .CreateAct(let parameters):
                 return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
-            case .ReadActList(_, let parameters):
+            case .ReadActList(let parameters):
                 return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
             case .UpdateAct(_, let parameters):
                 return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
+            //for post
             case .CreatePost(let parameters):
                 return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
-            case .ReadPostList(_, let parameters):
+            case .ReadPostList(let parameters):
                 return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
             case .UpdatePost(_, let parameters):
                 return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
@@ -184,16 +194,20 @@ class PostPhotoInfo: NSObject {
     let url: String
     let title: String
     let content: String
-    let user: String
+    let author: String
     let createTime: String
+    let width: CGFloat
+    let height: CGFloat
     
-    init(id: Int, url: String, title: String, content: String, author: String, createTime: String) {
+    init(id: Int, url: String, title: String, content: String, author: String, createTime: String, width: CGFloat, height: CGFloat) {
         self.id = id
         self.url = url
         self.title = title
         self.content = content
-        self.user = author
+        self.author = author
         self.createTime = createTime
+        self.width = width
+        self.height = height
     }
     
     required init(response: NSHTTPURLResponse, representation: AnyObject) {
@@ -201,8 +215,10 @@ class PostPhotoInfo: NSObject {
         self.url = representation.valueForKeyPath("postPhotoInfo.post_thumb_url") as! String
         self.title = representation.valueForKeyPath("postPhotoInfo.postt_title") as! String
         self.content = representation.valueForKeyPath("postPhotoInfo.post_content") as! String
-        self.user = representation.valueForKeyPath("postPhotoInfo.user") as! String
+        self.author = representation.valueForKeyPath("postPhotoInfo.post_user.user_name") as! String
         self.createTime = representation.valueForKeyPath("postPhotoInfo.post_create_time") as! String
+        self.width = representation.valueForKeyPath("postPhotoInfo.post_thumb_width") as! CGFloat
+        self.height = representation.valueForKeyPath("postPhotoInfo.post_thumb_height") as! CGFloat
     }
     
     override func isEqual(object: AnyObject!) -> Bool {
@@ -212,4 +228,12 @@ class PostPhotoInfo: NSObject {
     override var hash: Int {
         return (self as PostPhotoInfo).id
     }
+    
+    func heightForContent(font: UIFont, width: CGFloat) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: CGFloat.max)
+        let boundingBox = NSString(string: content).boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        return boundingBox.height
+    }
 }
+
+

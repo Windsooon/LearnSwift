@@ -20,10 +20,12 @@ class SignupController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func siguUp(sender: UIButton) {
-        Alamofire.request(.POST, "http://127.0.0.1:8000/api/users/", parameters: ["email": emailField.text!, "user_name": usernameField.text!, "password": passwordField.text!] )
+        Alamofire.request(.POST, "http://127.0.0.1:8000/api/users/", parameters: ["email": emailField.text!, "user_name": usernameField.text!, "password": passwordField.text!], encoding: .URL )
             .responseJSON { response in
                 print(response.request)  // original URL request
                 print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)
                 if let JSON = response.result.value {
                     print("JSON: \(JSON)")
                 }

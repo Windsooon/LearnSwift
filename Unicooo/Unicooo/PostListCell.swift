@@ -12,10 +12,12 @@ import Alamofire
 class PostListCell: UICollectionViewCell {
     var request: Alamofire.Request?
     
+    @IBOutlet weak var imageViewLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var postAuthorLabel: UILabel!
     @IBOutlet weak var postTimeLabel: UILabel!
     @IBOutlet weak var postContentLabel: UILabel!
     @IBOutlet weak var postImageView: UIImageView!
+    
     var postAuthor: String = "" {
         didSet {
             if (postAuthor != oldValue) {
@@ -31,7 +33,6 @@ class PostListCell: UICollectionViewCell {
             }
         }
     }
-   
     
     var postContent: String = "" {
         didSet {
@@ -46,6 +47,18 @@ class PostListCell: UICollectionViewCell {
             if (postThumb != oldValue) {
                 postImageView.image = postThumb
             }
+        }
+    }
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func applyLayoutAttributes(layoutAttributes: UICollectionViewLayoutAttributes) {
+        super.applyLayoutAttributes(layoutAttributes)
+        if let attributes = layoutAttributes as? PostListLayoutAttributes {
+            imageViewLayoutConstraint.constant = attributes.photoHeight
         }
     }
 }

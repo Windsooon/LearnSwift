@@ -19,9 +19,6 @@ class ActListController: UITableViewController {
         super.viewDidLoad()
         customTableCell()
         requestActList()
-        //let navigationHeight = self.navigationController!.navigationBar.frame.size.height
-        //let statusHeight = statusBarHeight()
-        //let tableHeight = tableView.frame.size.height
         self.tableView.rowHeight = 140
     }
     
@@ -98,7 +95,7 @@ class ActListController: UITableViewController {
         
         requestingActList = true
         
-        Alamofire.request(Unicooo.Router.ReadActList("",["page": self.currentPage])).validate().responseJSON {
+        Alamofire.request(Unicooo.Router.ReadActList(["page": self.currentPage, "act_type": 1])).validate().responseJSON {
             response in
                 switch response.result {
                 case .Success:
@@ -106,7 +103,7 @@ class ActListController: UITableViewController {
                     let actQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
                     dispatch_async(actQueue) {
                     let photoInfos =  ((JSON as! NSDictionary).valueForKey("results") as! [NSDictionary]).map {
-                        ActPhotoInfo(id: ($0["id"] as! Int), url: ($0["act_thumb_url"] as! String), title: ($0["act_title"] as! String), content: ($0["act_content"] as! String), author: ($0["user"] as! String), createTime: ($0["act_create_time"] as! String))
+                        ActPhotoInfo(id: ($0["id"] as! Int), url: httpsUrl + ($0["act_thumb_url"] as! String) + actCoverSmall, title: ($0["act_title"] as! String), content: ($0["act_content"] as! String), author: ($0["act_user"]!["user_name"] as! String), createTime: ($0["act_create_time"] as! String))
                     }
                     
                     let lastItem = self.actPhotos.count
