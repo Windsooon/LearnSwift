@@ -27,14 +27,6 @@ class ActListCell: UITableViewCell {
         }
     }
     
-    var actAuthor: String = "" {
-        didSet {
-            if (actAuthor != oldValue) {
-                actAuthorLabel.text = actAuthor
-            }
-        }
-    }
-    
     var actThumb: UIImage! {
         didSet {
             if (actThumb != oldValue) {
@@ -45,7 +37,6 @@ class ActListCell: UITableViewCell {
 
     @IBOutlet var actTitleLabel: UILabel!
     @IBOutlet var actContentLabel: UILabel!
-    @IBOutlet var actAuthorLabel: UILabel!
     @IBOutlet var actThumbUrl: UIImageView!
     
     override func awakeFromNib() {

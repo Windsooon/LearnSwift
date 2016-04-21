@@ -12,6 +12,7 @@ import Alamofire
 public protocol ResponseObjectSerializable {
     init?(response: NSHTTPURLResponse, representation: AnyObject)
 }
+
 extension Alamofire.Request {
     public func responseObject<T: ResponseObjectSerializable>(completionHandler: Response<T,NSError> -> Void) -> Self {
         let responseSerializer = ResponseSerializer<T,NSError> {
@@ -100,10 +101,10 @@ struct Unicooo {
             switch self {
             //RESTAPI for user
             case .CreateUser:
-                return "/users"
+                return "/users/"
             //RESTAPI for act
             case .CreateAct:
-                return "/acts"
+                return "/acts/"
             case .ReadActList:
                 return "/acts/"
             case .UpdateAct(let actId, _):
@@ -112,7 +113,7 @@ struct Unicooo {
                 return "/acts/\(actId)"
             //RESTAPI for post
             case .CreatePost:
-                return "/posts"
+                return "/posts/"
             case .ReadPostList:
                 return "/posts/"
             case .UpdatePost(let postId, _):
@@ -132,7 +133,7 @@ struct Unicooo {
             switch self {
             //for user
             case .CreateUser(let parameters):
-                return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
+                return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
             //for act
             case .CreateAct(let parameters):
                 return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0

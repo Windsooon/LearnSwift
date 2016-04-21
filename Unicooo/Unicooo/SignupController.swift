@@ -20,15 +20,21 @@ class SignupController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func siguUp(sender: UIButton) {
-        Alamofire.request(.POST, "http://127.0.0.1:8000/api/users/", parameters: ["email": emailField.text!, "user_name": usernameField.text!, "password": passwordField.text!], encoding: .URL )
-            .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
+        if (emailField.text?.characters.count > 6 && usernameField.text?.characters.count > 6 && passwordField.text?.characters.count > 8) {
+            //if the field not empty
+            Alamofire.request(Unicooo.Router.CreateUser(["email": emailField.text!, "user_name": usernameField.text!, "password": passwordField.text!])).validate()
+                .responseJSON { response in
+                    switch response.result {
+                    case .Success:
+                        //Alamofire.request(.POST, REGISTER_ROUTER
+                        print(response.response)
+                    case .Failure(let error):
+                        print("server may have some problem \(error)")
+                    }
+            }
+        }
+        else {
+            print("some field is missing")
         }
     }
     

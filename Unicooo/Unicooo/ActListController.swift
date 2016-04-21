@@ -12,14 +12,28 @@ import SwiftyJSON
 
 class ActListController: UITableViewController {
     let cellTableIdentifier = "ActIdentifier"
+    // status tell request actlist or not
     var requestingActList = false
     var actPhotos = NSMutableOrderedSet()
     var currentPage = 1
+    
+    //for search act
+    var searchController: UISearchController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         customTableCell()
         requestActList()
         self.tableView.rowHeight = 140
+        
+        //add details for search results
+        let resultsController = SearchResultsTableViewController()
+        searchController = UISearchController(searchResultsController: resultsController)
+        let searchBar = searchController.searchBar
+        searchBar.placeholder = "Enter the Act Id."
+        searchBar.sizeToFit()
+        tableView.tableHeaderView = searchBar
+        searchController.searchResultsUpdater = resultsController
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -31,10 +45,6 @@ class ActListController: UITableViewController {
         let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
         let actDetails = segue.destinationViewController as! PostListController
         actDetails.actId = (actPhotos.objectAtIndex(indexPath!.row) as! ActPhotoInfo).id
-        //actDetails.actTitle = (actPhotos.objectAtIndex(indexPath!.row) as! ActPhotoInfo).title
-        //actDetails.actContent = (actPhotos.objectAtIndex(indexPath!.row) as! ActPhotoInfo).content
-        //actDetails.actAuthor = (actPhotos.objectAtIndex(indexPath!.row) as! ActPhotoInfo).author
-        //actDetails.actCreateTime = (actPhotos.objectAtIndex(indexPath!.row) as! ActPhotoInfo).createTime
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -109,13 +119,12 @@ class ActListController: UITableViewController {
                     let lastItem = self.actPhotos.count
                     
                     self.actPhotos.addObjectsFromArray(photoInfos)
-                    
                     let indexPaths = (lastItem..<self.actPhotos.count).map { NSIndexPath(forItem: $0, inSection: 0)}
                     
                     dispatch_async(dispatch_get_main_queue()) {
                         self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
                     }
-                    self.currentPage++
+                    self.currentPage += 1
                     }
                     self.requestingActList = false
                 case .Failure(let error):
