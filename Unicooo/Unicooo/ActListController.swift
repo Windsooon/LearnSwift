@@ -47,6 +47,7 @@ class ActListController: UITableViewController {
         actDetails.actId = (actPhotos.objectAtIndex(indexPath!.row) as! ActPhotoInfo).id
     }
     
+    //load more when you scroll to 80% of the bottom of screen
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView.contentOffset.y + view.frame.size.height > scrollView.contentSize.height * 0.8 {
             requestActList()
@@ -72,22 +73,17 @@ class ActListController: UITableViewController {
         let imageURL = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).url
         let title = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).title
         let content = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).content
-        cell.imageView!.image = nil
-        cell.request?.cancel()
         cell.actTitle = title
         cell.actContent = content
+        cell.actThumb = nil
+        cell.request?.cancel()
         
-        cell.request = Alamofire.request(.GET, imageURL).responseImage() {
+        cell.request = Alamofire.request(.GET, imageURL).responseImage {
             response in
-            if let image = response.result.value {
-                cell.setNeedsLayout()
-                cell.actThumb = image
-            }
-            else {
-                print("can't get image")
-            }
+            guard let image = response.result.value where response.result.error == nil else { return }
+            cell.setNeedsLayout()
+            cell.actThumb = image
         }
-        
         return cell
             
     }
@@ -102,9 +98,7 @@ class ActListController: UITableViewController {
         if requestingActList {
             return
         }
-        
         requestingActList = true
-        
         Alamofire.request(Unicooo.Router.ReadActList(["page": self.currentPage, "act_type": 1])).validate().responseJSON {
             response in
                 switch response.result {
@@ -112,19 +106,19 @@ class ActListController: UITableViewController {
                     let JSON = response.result.value
                     let actQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
                     dispatch_async(actQueue) {
-                    let photoInfos =  ((JSON as! NSDictionary).valueForKey("results") as! [NSDictionary]).map {
-                        ActPhotoInfo(id: ($0["id"] as! Int), url: httpsUrl + ($0["act_thumb_url"] as! String) + actCoverSmall, title: ($0["act_title"] as! String), content: ($0["act_content"] as! String), author: ($0["act_user"]!["user_name"] as! String), createTime: ($0["act_create_time"] as! String))
-                    }
-                    
-                    let lastItem = self.actPhotos.count
-                    
-                    self.actPhotos.addObjectsFromArray(photoInfos)
-                    let indexPaths = (lastItem..<self.actPhotos.count).map { NSIndexPath(forItem: $0, inSection: 0)}
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
-                    }
-                    self.currentPage += 1
+                        let photoInfos =  ((JSON as! NSDictionary).valueForKey("results") as! [NSDictionary]).map {
+                            ActPhotoInfo(id: ($0["id"] as! Int), url: httpsUrl + ($0["act_thumb_url"] as! String) + actCoverSmall, title: ($0["act_title"] as! String), content: ($0["act_content"] as! String), author: ($0["act_user"]!["user_name"] as! String), createTime: ($0["act_create_time"] as! String))
+                        }
+                        
+                        let lastItem = self.actPhotos.count
+                        
+                        self.actPhotos.addObjectsFromArray(photoInfos)
+                        let indexPaths = (lastItem..<self.actPhotos.count).map { NSIndexPath(forItem: $0, inSection: 0)}
+                        
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
+                        }
+                        self.currentPage += 1
                     }
                     self.requestingActList = false
                 case .Failure(let error):

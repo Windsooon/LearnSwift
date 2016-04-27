@@ -8,22 +8,27 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class SearchResultsTableViewController: UITableViewController, UISearchResultsUpdating {
     
     let searchTableIdentifier = "ActIdentifier"
-    var filteredNames: [String] = []
+    var searchResultDict: [String: String] = [:]
+    var searchResultArray: [String] = []
+    var actPhotos = NSMutableOrderedSet()
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         
-        let buttonIndex = searchController.searchBar.selectedScopeButtonIndex
         let numbersCharacters = NSCharacterSet.decimalDigitCharacterSet().invertedSet
+        searchResultArray.removeAll(keepCapacity: true)
+        
         if let searchString = searchController.searchBar.text {
             // tell the string only contains numbers
             if searchString.rangeOfCharacterFromSet(numbersCharacters) == nil && searchString.characters.count == 1 {
                     searchAct(searchString)
             }
         }
+        tableView.reloadData()
     }
 
     func searchAct(id: String) {
@@ -32,8 +37,18 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
             .responseJSON { response in
                 switch response.result {
                 case .Success:
-                    let JSON = response.result.value
-                    print(JSON)
+                    let actSearchQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+                    dispatch_async(actSearchQueue) {
+                        let json = JSON(response.result.value!)
+                        let act_title = json["results"][0]["act_title"].stringValue
+                        let act_content = json["results"][0]["act_content"].stringValue
+                        let act_thumb_url = json["results"][0]["act_thumb_url"].stringValue
+                        self.searchResultArray = [act_title, act_content, act_thumb_url]
+                        let indexPaths = (0..<1).map { NSIndexPath(forItem: $0, inSection: 0)}
+                        dispatch_async(dispatch_get_main_queue()) {
+                            self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
+                        }
+                    }
                 case .Failure(let error):
                     print(error)
                 }
@@ -44,9 +59,10 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
         let nib = UINib(nibName: "ActListCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: searchTableIdentifier)
     }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.rowHeight = 140
         customTableCell()
     }
 
@@ -57,25 +73,37 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+    //override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    //    // #warning Incomplete implementation, return the number of sections
+    //    return 1
+    //}
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return (self.searchResultArray.count > 0) ? 1 : 0
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier(searchTableIdentifier, forIndexPath: indexPath) as! ActListCell
+        
+        let title = self.searchResultArray[0]
+        let content = self.searchResultArray[1]
+        let imageURL = self.searchResultArray[2]
+        cell.actTitle = title
+        cell.actContent = content
+        cell.actThumb = nil
+        cell.request?.cancel()
+        cell.request = Alamofire.request(.GET, imageURL).responseImage {
+            response in
+            guard let image = response.result.value where response.result.error == nil else { return }
+            cell.setNeedsLayout()
+            cell.actThumb = image
+        }
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

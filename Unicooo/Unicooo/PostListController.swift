@@ -109,7 +109,7 @@ class PostListController: UICollectionViewController {
                     dispatch_async(dispatch_get_main_queue()) {
                         self.collectionView!.insertItemsAtIndexPaths(indexPaths)
                     }
-                    self.currentPage++
+                    self.currentPage += 1
                 }
                 self.requestingPostList = false
             case .Failure(let error):
