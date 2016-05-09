@@ -63,6 +63,8 @@ class PostListController: UICollectionViewController {
         cell.postContent = postInfo.content
         cell.postAuthor = postInfo.author
         cell.postTime = postInfo.createTime
+        cell.postThumb = nil
+        cell.request?.cancel()
         cell.request = Alamofire.request(.GET, imageURL).responseImage() {
             response in
             if let image = response.result.value {

@@ -16,6 +16,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
     var searchResultDict: [String: String] = [:]
     var searchResultArray: [String] = []
     var actPhotos = NSMutableOrderedSet()
+    var postListController: PostListController!
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         
@@ -30,7 +31,13 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
         }
         tableView.reloadData()
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.rowHeight = 140
+        customTableCell()
+    }
+    
     func searchAct(id: String) {
         Alamofire.request(Unicooo.Router.ReadActList(["act_id": id]))
             .validate()
@@ -55,22 +62,28 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
         }
     }
     
+    //register custom cell
     func customTableCell() {
         let nib = UINib(nibName: "ActListCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: searchTableIdentifier)
     }
    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tableView.rowHeight = 140
-        customTableCell()
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        performSegueWithIdentifier("ActDetailSearchIdentifier", sender: cell )
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)
+        let actDetails = segue.destinationViewController as! PostListController
+        actDetails.actId = 1
+    }
+    
     // MARK: - Table view data source
 
     //override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -89,7 +102,7 @@ class SearchResultsTableViewController: UITableViewController, UISearchResultsUp
         
         let title = self.searchResultArray[0]
         let content = self.searchResultArray[1]
-        let imageURL = self.searchResultArray[2]
+        let imageURL = httpsUrl + self.searchResultArray[2]
         cell.actTitle = title
         cell.actContent = content
         cell.actThumb = nil

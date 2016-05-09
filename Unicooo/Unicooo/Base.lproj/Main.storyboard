@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="foa-A8-o9C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="foa-A8-o9C">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -412,10 +412,31 @@
             </objects>
             <point key="canvasLocation" x="986" y="-757"/>
         </scene>
+        <!--Search Results Table View Controller-->
+        <scene sceneID="QFl-ub-Y5n">
+            <objects>
+                <tableViewController id="NhZ-Xr-IED" customClass="SearchResultsTableViewController" customModule="Unicooo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4dP-I4-ZLO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="NhZ-Xr-IED" id="wex-HU-bhS"/>
+                            <outlet property="delegate" destination="NhZ-Xr-IED" id="zWs-m0-ogB"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="pqe-PP-NvE" kind="show" identifier="ActDetailSearchIdentifier" id="0wt-B5-Qic"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7MZ-HI-Ae3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712" y="-1540"/>
+        </scene>
         <!--Post List Controller-->
         <scene sceneID="0op-dn-A82">
             <objects>
-                <collectionViewController id="pqe-PP-NvE" customClass="PostListController" customModule="Unicooo" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="postList" id="pqe-PP-NvE" customClass="PostListController" customModule="Unicooo" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="laH-In-uh1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -423,7 +444,7 @@
                         <collectionViewLayout key="collectionViewLayout" id="3Ow-44-gKM" customClass="PostListLayout" customModule="Unicooo" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="ZNs-rN-BtK" customClass="PostListCell" customModule="Unicooo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="180" height="210"/>
+                                <rect key="frame" x="0.0" y="0.0" width="180" height="210"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="180" height="210"/>
@@ -448,9 +469,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnG-n5-5z7">
-                                                    <rect key="frame" x="14" y="168" width="150" height="15"/>
+                                                    <rect key="frame" x="14" y="168" width="158" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="150" id="pwd-Ei-GYG"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="pwd-Ei-GYG"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -474,6 +495,7 @@
                                                 <constraint firstItem="BnG-n5-5z7" firstAttribute="top" secondItem="362-4y-RJL" secondAttribute="bottom" constant="18" id="6M4-uv-4AQ"/>
                                                 <constraint firstItem="362-4y-RJL" firstAttribute="top" secondItem="I2f-ok-KIc" secondAttribute="bottom" constant="2" id="AFQ-Hn-dRn"/>
                                                 <constraint firstItem="BnG-n5-5z7" firstAttribute="leading" secondItem="IVa-of-Jaj" secondAttribute="leading" constant="14" id="BM2-rC-Qlp"/>
+                                                <constraint firstAttribute="trailing" secondItem="BnG-n5-5z7" secondAttribute="trailing" constant="8" id="FzW-VL-s2k"/>
                                                 <constraint firstItem="362-4y-RJL" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="28" id="HNJ-qR-8c7"/>
                                                 <constraint firstItem="I2f-ok-KIc" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="8" id="JuQ-2a-6Bv"/>
                                                 <constraint firstItem="362-4y-RJL" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="28" id="Jvf-cZ-Hni"/>
@@ -540,6 +562,7 @@
                             <outlet property="delegate" destination="pqe-PP-NvE" id="uuI-2U-kcQ"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="XNk-B6-AdL"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="xxq-IM-PFA" id="0hK-aF-pjO"/>
                     </connections>
@@ -572,7 +595,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yeu-zs-ixb">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yeu-zs-ixb">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YMG-0N-o7z">
@@ -709,4 +732,7 @@
         <image name="LogoImage" width="120" height="120"/>
         <image name="Password" width="22" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0wt-B5-Qic"/>
+    </inferredMetricsTieBreakers>
 </document>

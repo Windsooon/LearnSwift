@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -16,12 +16,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爱不分地域，种族与性别，上传你的照片，会随机吻上一位陌生人。和TA聊聊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-Lr-NpP">
-                        <rect key="frame" x="196" y="61" width="159" height="60"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="爱不分地域，种族与性别，上传你的照片，会随机吻上一位陌生人。和TA聊聊" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Gu-Lr-NpP">
+                        <rect key="frame" x="176" y="72" width="183" height="50"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="159" id="QGE-tr-Eld"/>
-                            <constraint firstAttribute="height" constant="60" id="SlB-s4-ZXm"/>
-                            <constraint firstAttribute="width" constant="159" id="vt0-t3-y8A"/>
+                            <constraint firstAttribute="height" constant="50" id="SlB-s4-ZXm"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="vt0-t3-y8A"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -32,15 +32,30 @@
                             </mask>
                         </variation>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车厘子的明信片还有七天" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="q4y-ZH-qjc">
+                        <rect key="frame" x="176" y="17" width="183" height="47"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="74r-W3-5sq"/>
+                            <constraint firstAttribute="width" constant="133" id="xMK-We-qHT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="xMK-We-qHT"/>
+                            </mask>
+                        </variation>
+                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iKb-2U-TjC">
-                        <rect key="frame" x="8" y="10" width="160" height="120"/>
+                        <rect key="frame" x="15" y="17" width="140" height="105"/>
                         <constraints>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="5J1-ff-yq4"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="225" id="IvK-Iv-HVH"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="225" id="Jtd-fH-iA1"/>
-                            <constraint firstAttribute="width" constant="160" id="Pbm-k3-J0Z"/>
+                            <constraint firstAttribute="width" constant="140" id="Pbm-k3-J0Z"/>
                             <constraint firstAttribute="height" constant="225" id="QHS-IZ-sdt"/>
-                            <constraint firstAttribute="height" constant="120" id="QSd-ee-QBl"/>
+                            <constraint firstAttribute="height" constant="105" id="QSd-ee-QBl"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="TTn-uf-UpC"/>
                             <constraint firstAttribute="width" constant="174" id="clf-l3-aug"/>
                             <constraint firstAttribute="height" constant="130" id="hy8-OL-kfG"/>
@@ -61,34 +76,22 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车厘子的明信片还有七天" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="q4y-ZH-qjc">
-                        <rect key="frame" x="196" y="8" width="133" height="37"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="133" id="74r-W3-5sq"/>
-                            <constraint firstAttribute="width" constant="133" id="xMK-We-qHT"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="xMK-We-qHT"/>
-                            </mask>
-                        </variation>
-                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="iKb-2U-TjC" firstAttribute="top" secondItem="bLV-hW-wqi" secondAttribute="topMargin" constant="2" id="86f-RH-uK6"/>
-                    <constraint firstAttribute="leadingMargin" secondItem="iKb-2U-TjC" secondAttribute="leading" id="8Kz-S2-OXf"/>
-                    <constraint firstItem="9Gu-Lr-NpP" firstAttribute="top" secondItem="q4y-ZH-qjc" secondAttribute="bottom" constant="16" id="Fhi-go-tGK"/>
+                    <constraint firstItem="iKb-2U-TjC" firstAttribute="top" secondItem="bLV-hW-wqi" secondAttribute="topMargin" constant="9" id="86f-RH-uK6"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="iKb-2U-TjC" secondAttribute="leading" constant="-7" id="8Kz-S2-OXf"/>
+                    <constraint firstItem="9Gu-Lr-NpP" firstAttribute="top" secondItem="q4y-ZH-qjc" secondAttribute="bottom" constant="8" id="Fhi-go-tGK"/>
                     <constraint firstItem="iKb-2U-TjC" firstAttribute="width" secondItem="bLV-hW-wqi" secondAttribute="width" multiplier="0.427" id="IXh-e0-6Nz"/>
                     <constraint firstAttribute="bottomMargin" secondItem="9Gu-Lr-NpP" secondAttribute="bottom" constant="30" id="SG2-Ax-ExM"/>
-                    <constraint firstItem="q4y-ZH-qjc" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="28" id="euJ-sH-pj9"/>
-                    <constraint firstItem="9Gu-Lr-NpP" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="28" id="hjm-1E-Ahn"/>
-                    <constraint firstItem="q4y-ZH-qjc" firstAttribute="top" secondItem="bLV-hW-wqi" secondAttribute="topMargin" id="jqe-Lz-lmO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9Gu-Lr-NpP" secondAttribute="trailing" constant="8" id="a1Y-XZ-kx3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9Gu-Lr-NpP" secondAttribute="trailing" constant="12" id="bRY-VK-EYX"/>
+                    <constraint firstItem="q4y-ZH-qjc" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="21" id="euJ-sH-pj9"/>
+                    <constraint firstItem="9Gu-Lr-NpP" firstAttribute="leading" secondItem="iKb-2U-TjC" secondAttribute="trailing" constant="21" id="hjm-1E-Ahn"/>
+                    <constraint firstItem="q4y-ZH-qjc" firstAttribute="top" secondItem="bLV-hW-wqi" secondAttribute="topMargin" constant="9" id="jqe-Lz-lmO"/>
                     <constraint firstItem="9Gu-Lr-NpP" firstAttribute="top" secondItem="q4y-ZH-qjc" secondAttribute="bottom" constant="12" id="qcV-GE-uSl"/>
                     <constraint firstItem="iKb-2U-TjC" firstAttribute="height" secondItem="bLV-hW-wqi" secondAttribute="height" multiplier="0.86" id="sJw-ax-BiL"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="9Gu-Lr-NpP" secondAttribute="bottom" constant="10" id="sQF-4U-oUM"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="9Gu-Lr-NpP" secondAttribute="bottom" constant="9" id="sQF-4U-oUM"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="q4y-ZH-qjc" secondAttribute="trailing" constant="8" id="t3i-3F-evb"/>
                     <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="9Gu-Lr-NpP" secondAttribute="trailing" constant="1" id="xPn-20-x5g"/>
                 </constraints>
                 <variation key="default">
@@ -96,6 +99,7 @@
                         <exclude reference="IXh-e0-6Nz"/>
                         <exclude reference="sJw-ax-BiL"/>
                         <exclude reference="SG2-Ax-ExM"/>
+                        <exclude reference="bRY-VK-EYX"/>
                         <exclude reference="qcV-GE-uSl"/>
                         <exclude reference="xPn-20-x5g"/>
                     </mask>
