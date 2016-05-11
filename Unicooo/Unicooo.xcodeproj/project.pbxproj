@@ -16,6 +16,7 @@
 		DC6571B21C61CF5A00AAB9A9 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6571B11C61CF5A00AAB9A9 /* RoundedCornersView.swift */; };
 		DC6A9E7D1CC67D7500B37074 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6A9E7C1CC67D7500B37074 /* SearchResultsTableViewController.swift */; };
 		DC79B7CC1C967836006C27A3 /* PostListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC79B7CB1C967836006C27A3 /* PostListLayout.swift */; };
+		DC89A8601CE3591200DCB7F7 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A85F1CE3591200DCB7F7 /* PostDetailsViewController.swift */; };
 		DC916EFE1C4A279F0093DED5 /* ExtendForNextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */; };
 		DC918F8F1C5C85B5004F36D3 /* PostListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC918F8E1C5C85B5004F36D3 /* PostListController.swift */; };
 		DC918F911C5CA906004F36D3 /* PostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC918F901C5CA906004F36D3 /* PostListCell.swift */; };
@@ -65,6 +66,7 @@
 		DC6571B11C61CF5A00AAB9A9 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		DC6A9E7C1CC67D7500B37074 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		DC79B7CB1C967836006C27A3 /* PostListLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLayout.swift; sourceTree = "<group>"; };
+		DC89A85F1CE3591200DCB7F7 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendForNextField.swift; sourceTree = "<group>"; };
 		DC918F8E1C5C85B5004F36D3 /* PostListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListController.swift; sourceTree = "<group>"; };
 		DC918F901C5CA906004F36D3 /* PostListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListCell.swift; sourceTree = "<group>"; };
@@ -153,15 +155,16 @@
 			children = (
 				DC9379C51C48D80D009272D2 /* ViewController.swift */,
 				DCF56A7A1C914C8700DA17ED /* qiniuAndSettings.swift */,
-				DC918F8E1C5C85B5004F36D3 /* PostListController.swift */,
-				DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */,
 				DC9379F61C48DC9B009272D2 /* HomePageController.swift */,
 				DC48CEF31C4A918E003DCB49 /* CoverController.swift */,
 				DC9379F81C48DCC3009272D2 /* NotificationsController.swift */,
-				DC9379FA1C48DCD7009272D2 /* PersonalController.swift */,
 				DC9379FC1C48DCFB009272D2 /* SignupController.swift */,
 				DCB94A271C4D30CC006531A8 /* LoginController.swift */,
+				DCFF3AB41C4F437900ECE0D2 /* ActListController.swift */,
+				DC918F8E1C5C85B5004F36D3 /* PostListController.swift */,
+				DC9379FA1C48DCD7009272D2 /* PersonalController.swift */,
 				DC0C2C5E1C97D6350089D811 /* PostDetailsController.swift */,
+				DC89A85F1CE3591200DCB7F7 /* PostDetailsViewController.swift */,
 				DC6A9E7C1CC67D7500B37074 /* SearchResultsTableViewController.swift */,
 			);
 			name = Controllers;
@@ -437,6 +440,7 @@
 				DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */,
 				DC9379F91C48DCC3009272D2 /* NotificationsController.swift in Sources */,
 				DCFF3AB51C4F437900ECE0D2 /* ActListController.swift in Sources */,
+				DC89A8601CE3591200DCB7F7 /* PostDetailsViewController.swift in Sources */,
 				DC918F8F1C5C85B5004F36D3 /* PostListController.swift in Sources */,
 				DC9379FB1C48DCD7009272D2 /* PersonalController.swift in Sources */,
 				DCF56A7B1C914C8700DA17ED /* qiniuAndSettings.swift in Sources */,
