@@ -30,13 +30,21 @@ class PostListController: UICollectionViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        performSegueWithIdentifier("PostDetailsIdentifier", sender: cell )
+    }
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath = collectionView!.indexPathForCell(sender as! UICollectionViewCell)
-        let postDetails = segue.destinationViewController as! PostDetailsController
+        let postDetails = segue.destinationViewController as! PostDetailsViewController
         let postPhotosInfo = (postPhotos.objectAtIndex(indexPath!.row) as! PostPhotoInfo)
+        
         postDetails.postId = postPhotosInfo.id
         postDetails.postAuthor = postPhotosInfo.author
-        postDetails.postUrl = postPhotosInfo.url
+        postDetails.postMime = postPhotosInfo.mime_types
+        postDetails.postUrl = httpsUrl + postPhotosInfo.url + postList
         postDetails.postRadio = (postPhotosInfo.width)/(postPhotosInfo.height)
         postDetails.postPosttime = postPhotosInfo.createTime
         postDetails.postContent = postPhotosInfo.content
@@ -59,7 +67,7 @@ class PostListController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! PostListCell
         
         let postInfo = postPhotos.objectAtIndex(indexPath.row) as! PostPhotoInfo
-        let imageURL = postInfo.url
+        let imageURL = httpsUrl + postInfo.url + postList
         cell.postContent = postInfo.content
         cell.postAuthor = postInfo.author
         cell.postTime = postInfo.createTime
@@ -95,10 +103,11 @@ class PostListController: UICollectionViewController {
                     let photoInfos =  ((JSON as! NSDictionary).valueForKey("results") as! [NSDictionary]).map {
                         PostPhotoInfo(
                             id: ($0["id"] as! Int),
-                            url: httpsUrl + ($0["post_thumb_url"] as! String) + postList,
+                            url: ($0["post_thumb_url"] as! String),
                             title: ($0["post_title"] as! String),
                             content: ($0["post_content"] as! String),
                             author: ($0["post_user"]!["user_name"] as! String),
+                            mime_types: ($0["post_mime_types"] as! Int),
                             createTime: ($0["post_create_time"] as! String),
                             width: ($0["post_thumb_width"] as! CGFloat),
                             height: ($0["post_thumb_height"] as! CGFloat))

@@ -27,6 +27,7 @@ class PostDetailsController: UIViewController {
    
     var postId: Int!
     var postAuthor: String!
+    var postMime: Int!
     var postUrl: String!
     var postPosttime: String!
     var postContent: String!
@@ -57,7 +58,6 @@ class PostDetailsController: UIViewController {
                 //self.postDetailsImage.frame = CGRectMake(0, 0, self.postImageWidth, self.postImageWidth/self.postRadio)
                 self.postDetailsImage.image = image
             }
-                
             else {
                 print("can't get image")
             }

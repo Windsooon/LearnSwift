@@ -69,7 +69,7 @@ extension Alamofire.Request {
 
 struct Unicooo {
     enum Router: URLRequestConvertible {
-        static let baseURLString = "https://unicooo.com/api"
+        static let baseURLString = "http://127.0.0.1:8000/api"
         static var OAuthToken: String?
         
         case CreateUser([String: AnyObject])
@@ -196,16 +196,18 @@ class PostPhotoInfo: NSObject {
     let title: String
     let content: String
     let author: String
+    let mime_types: Int
     let createTime: String
     let width: CGFloat
     let height: CGFloat
     
-    init(id: Int, url: String, title: String, content: String, author: String, createTime: String, width: CGFloat, height: CGFloat) {
+    init(id: Int, url: String, title: String, content: String, author: String, mime_types: Int, createTime: String, width: CGFloat, height: CGFloat) {
         self.id = id
         self.url = url
         self.title = title
         self.content = content
         self.author = author
+        self.mime_types = mime_types
         self.createTime = createTime
         self.width = width
         self.height = height
@@ -217,6 +219,7 @@ class PostPhotoInfo: NSObject {
         self.title = representation.valueForKeyPath("postPhotoInfo.postt_title") as! String
         self.content = representation.valueForKeyPath("postPhotoInfo.post_content") as! String
         self.author = representation.valueForKeyPath("postPhotoInfo.post_user.user_name") as! String
+        self.mime_types = representation.valueForKeyPath("postPhotoInfo.post_mime_types") as! Int
         self.createTime = representation.valueForKeyPath("postPhotoInfo.post_create_time") as! String
         self.width = representation.valueForKeyPath("postPhotoInfo.post_thumb_width") as! CGFloat
         self.height = representation.valueForKeyPath("postPhotoInfo.post_thumb_height") as! CGFloat
@@ -236,5 +239,3 @@ class PostPhotoInfo: NSObject {
         return boundingBox.height
     }
 }
-
-

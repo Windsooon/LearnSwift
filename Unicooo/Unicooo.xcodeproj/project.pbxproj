@@ -12,11 +12,15 @@
 		DC099D691C50B5400081C2FC /* ActListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC099D681C50B5400081C2FC /* ActListCell.xib */; };
 		DC099D6B1C50BDF10081C2FC /* ActListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC099D6A1C50BDF10081C2FC /* ActListCell.swift */; };
 		DC0C2C5F1C97D6350089D811 /* PostDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0C2C5E1C97D6350089D811 /* PostDetailsController.swift */; };
+		DC3842701CE7404A00C328C9 /* PostDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38426F1CE7404A00C328C9 /* PostDetailsCell.swift */; };
+		DC3842721CE750ED00C328C9 /* PostCommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3842711CE750ED00C328C9 /* PostCommentsCell.swift */; };
 		DC48CEF41C4A918E003DCB49 /* CoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC48CEF31C4A918E003DCB49 /* CoverController.swift */; };
 		DC6571B21C61CF5A00AAB9A9 /* RoundedCornersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6571B11C61CF5A00AAB9A9 /* RoundedCornersView.swift */; };
 		DC6A9E7D1CC67D7500B37074 /* SearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC6A9E7C1CC67D7500B37074 /* SearchResultsTableViewController.swift */; };
 		DC79B7CC1C967836006C27A3 /* PostListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC79B7CB1C967836006C27A3 /* PostListLayout.swift */; };
 		DC89A8601CE3591200DCB7F7 /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC89A85F1CE3591200DCB7F7 /* PostDetailsViewController.swift */; };
+		DC89A8641CE4B9BA00DCB7F7 /* CommentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC89A8631CE4B9BA00DCB7F7 /* CommentsCell.xib */; };
+		DC89A8681CE6FE5500DCB7F7 /* PostDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC89A8671CE6FE5500DCB7F7 /* PostDetailsCell.xib */; };
 		DC916EFE1C4A279F0093DED5 /* ExtendForNextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */; };
 		DC918F8F1C5C85B5004F36D3 /* PostListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC918F8E1C5C85B5004F36D3 /* PostListController.swift */; };
 		DC918F911C5CA906004F36D3 /* PostListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC918F901C5CA906004F36D3 /* PostListCell.swift */; };
@@ -62,11 +66,15 @@
 		DC099D681C50B5400081C2FC /* ActListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActListCell.xib; sourceTree = "<group>"; };
 		DC099D6A1C50BDF10081C2FC /* ActListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActListCell.swift; sourceTree = "<group>"; };
 		DC0C2C5E1C97D6350089D811 /* PostDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsController.swift; sourceTree = "<group>"; };
+		DC38426F1CE7404A00C328C9 /* PostDetailsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsCell.swift; sourceTree = "<group>"; };
+		DC3842711CE750ED00C328C9 /* PostCommentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCommentsCell.swift; sourceTree = "<group>"; };
 		DC48CEF31C4A918E003DCB49 /* CoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverController.swift; sourceTree = "<group>"; };
 		DC6571B11C61CF5A00AAB9A9 /* RoundedCornersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornersView.swift; sourceTree = "<group>"; };
 		DC6A9E7C1CC67D7500B37074 /* SearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		DC79B7CB1C967836006C27A3 /* PostListLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListLayout.swift; sourceTree = "<group>"; };
 		DC89A85F1CE3591200DCB7F7 /* PostDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		DC89A8631CE4B9BA00DCB7F7 /* CommentsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentsCell.xib; sourceTree = "<group>"; };
+		DC89A8671CE6FE5500DCB7F7 /* PostDetailsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostDetailsCell.xib; sourceTree = "<group>"; };
 		DC916EFD1C4A279F0093DED5 /* ExtendForNextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendForNextField.swift; sourceTree = "<group>"; };
 		DC918F8E1C5C85B5004F36D3 /* PostListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListController.swift; sourceTree = "<group>"; };
 		DC918F901C5CA906004F36D3 /* PostListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListCell.swift; sourceTree = "<group>"; };
@@ -144,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				DC099D6A1C50BDF10081C2FC /* ActListCell.swift */,
+				DC38426F1CE7404A00C328C9 /* PostDetailsCell.swift */,
+				DC3842711CE750ED00C328C9 /* PostCommentsCell.swift */,
 				DC918F901C5CA906004F36D3 /* PostListCell.swift */,
 				DC6571B11C61CF5A00AAB9A9 /* RoundedCornersView.swift */,
 			);
@@ -176,6 +186,8 @@
 				DC9379C71C48D80D009272D2 /* Main.storyboard */,
 				DC9379CF1C48D80D009272D2 /* LaunchScreen.storyboard */,
 				DC099D681C50B5400081C2FC /* ActListCell.xib */,
+				DC89A8671CE6FE5500DCB7F7 /* PostDetailsCell.xib */,
+				DC89A8631CE4B9BA00DCB7F7 /* CommentsCell.xib */,
 			);
 			name = "SB & XIB";
 			sourceTree = "<group>";
@@ -356,8 +368,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC099D691C50B5400081C2FC /* ActListCell.xib in Resources */,
+				DC89A8681CE6FE5500DCB7F7 /* PostDetailsCell.xib in Resources */,
 				DC9379D11C48D80D009272D2 /* LaunchScreen.storyboard in Resources */,
 				DC9379CE1C48D80D009272D2 /* Assets.xcassets in Resources */,
+				DC89A8641CE4B9BA00DCB7F7 /* CommentsCell.xib in Resources */,
 				DC9379C91C48D80D009272D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +451,7 @@
 				DC918F911C5CA906004F36D3 /* PostListCell.swift in Sources */,
 				DC0C2C5F1C97D6350089D811 /* PostDetailsController.swift in Sources */,
 				DC9379F71C48DC9B009272D2 /* HomePageController.swift in Sources */,
+				DC3842701CE7404A00C328C9 /* PostDetailsCell.swift in Sources */,
 				DC9379FD1C48DCFB009272D2 /* SignupController.swift in Sources */,
 				DC9379F91C48DCC3009272D2 /* NotificationsController.swift in Sources */,
 				DCFF3AB51C4F437900ECE0D2 /* ActListController.swift in Sources */,
@@ -450,6 +465,7 @@
 				DC916EFE1C4A279F0093DED5 /* ExtendForNextField.swift in Sources */,
 				DC9379C41C48D80D009272D2 /* AppDelegate.swift in Sources */,
 				DC9379CC1C48D80D009272D2 /* Unicooo.xcdatamodeld in Sources */,
+				DC3842721CE750ED00C328C9 /* PostCommentsCell.swift in Sources */,
 				DCB94A281C4D30CC006531A8 /* LoginController.swift in Sources */,
 				DC79B7CC1C967836006C27A3 /* PostListLayout.swift in Sources */,
 			);

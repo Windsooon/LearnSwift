@@ -16,7 +16,6 @@ class ActListController: UITableViewController {
     var requestingActList = false
     var actPhotos = NSMutableOrderedSet()
     var currentPage = 1
-    
     //for search act
     var searchController: UISearchController!
 
@@ -24,16 +23,8 @@ class ActListController: UITableViewController {
         super.viewDidLoad()
         customTableCell()
         requestActList()
+        searchAct()
         self.tableView.rowHeight = 140
-        
-        //add details for search results
-        let resultsController = SearchResultsTableViewController()
-        searchController = UISearchController(searchResultsController: resultsController)
-        let searchBar = searchController.searchBar
-        searchBar.placeholder = "Enter the Act Id."
-        searchBar.sizeToFit()
-        tableView.tableHeaderView = searchBar
-        searchController.searchResultsUpdater = resultsController
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -56,7 +47,6 @@ class ActListController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - Table view data source
@@ -92,6 +82,17 @@ class ActListController: UITableViewController {
     func customTableCell() {
         let nib = UINib(nibName: "ActListCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: cellTableIdentifier)
+    }
+    
+    func searchAct() {
+        //add details for search results
+        let resultsController = SearchResultsTableViewController()
+        searchController = UISearchController(searchResultsController: resultsController)
+        let searchBar = searchController.searchBar
+        searchBar.placeholder = "Enter the Act Id."
+        searchBar.sizeToFit()
+        tableView.tableHeaderView = searchBar
+        searchController.searchResultsUpdater = resultsController
     }
     
     func requestActList() {

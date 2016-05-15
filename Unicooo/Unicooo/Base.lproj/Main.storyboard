@@ -489,53 +489,23 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="I2f-ok-KIc" secondAttribute="bottom" constant="70" id="1w5-bg-hdv"/>
                                                 <constraint firstItem="BnG-n5-5z7" firstAttribute="top" secondItem="362-4y-RJL" secondAttribute="bottom" constant="10" id="3ea-rm-LzN"/>
                                                 <constraint firstAttribute="trailing" secondItem="rVh-Mr-mIN" secondAttribute="trailing" id="4As-oQ-XnF"/>
-                                                <constraint firstItem="BnG-n5-5z7" firstAttribute="top" secondItem="362-4y-RJL" secondAttribute="bottom" constant="18" id="6M4-uv-4AQ"/>
-                                                <constraint firstItem="362-4y-RJL" firstAttribute="top" secondItem="I2f-ok-KIc" secondAttribute="bottom" constant="2" id="AFQ-Hn-dRn"/>
                                                 <constraint firstItem="BnG-n5-5z7" firstAttribute="leading" secondItem="IVa-of-Jaj" secondAttribute="leading" constant="14" id="BM2-rC-Qlp"/>
                                                 <constraint firstAttribute="trailing" secondItem="BnG-n5-5z7" secondAttribute="trailing" constant="8" id="FzW-VL-s2k"/>
                                                 <constraint firstItem="362-4y-RJL" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="28" id="HNJ-qR-8c7"/>
-                                                <constraint firstItem="I2f-ok-KIc" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="8" id="JuQ-2a-6Bv"/>
-                                                <constraint firstItem="362-4y-RJL" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="28" id="Jvf-cZ-Hni"/>
                                                 <constraint firstItem="rVh-Mr-mIN" firstAttribute="top" secondItem="IVa-of-Jaj" secondAttribute="top" id="Owy-yn-Uqg"/>
-                                                <constraint firstAttribute="bottom" secondItem="BnG-n5-5z7" secondAttribute="bottom" constant="17" id="UDJ-OT-jEC"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BnG-n5-5z7" secondAttribute="bottom" constant="10" id="V8r-GW-X3F"/>
                                                 <constraint firstItem="I2f-ok-KIc" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="14" id="VQN-OO-Hto"/>
-                                                <constraint firstItem="I2f-ok-KIc" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="14" id="XEF-Cg-U39"/>
                                                 <constraint firstItem="rVh-Mr-mIN" firstAttribute="leading" secondItem="IVa-of-Jaj" secondAttribute="leading" id="Z4p-5i-eZj"/>
                                                 <constraint firstItem="362-4y-RJL" firstAttribute="leading" secondItem="IVa-of-Jaj" secondAttribute="leading" constant="14" id="aJu-at-LaU"/>
-                                                <constraint firstItem="BnG-n5-5z7" firstAttribute="top" secondItem="362-4y-RJL" secondAttribute="bottom" constant="10" id="cZl-nS-yns"/>
-                                                <constraint firstItem="BnG-n5-5z7" firstAttribute="top" secondItem="I2f-ok-KIc" secondAttribute="bottom" constant="38" id="cjN-Wj-8kq"/>
                                                 <constraint firstItem="I2f-ok-KIc" firstAttribute="leading" secondItem="IVa-of-Jaj" secondAttribute="leading" constant="14" id="hLK-Xh-9TY"/>
-                                                <constraint firstItem="BnG-n5-5z7" firstAttribute="top" secondItem="I2f-ok-KIc" secondAttribute="bottom" constant="24" id="hv1-cb-h37"/>
-                                                <constraint firstAttribute="bottom" secondItem="BnG-n5-5z7" secondAttribute="bottom" constant="17" id="jxg-9i-Pnr"/>
-                                                <constraint firstAttribute="bottom" secondItem="362-4y-RJL" secondAttribute="bottom" constant="50" id="sxg-Op-v6Q"/>
-                                                <constraint firstItem="BnG-n5-5z7" firstAttribute="top" secondItem="362-4y-RJL" secondAttribute="bottom" constant="10" id="x6q-IA-b3Q"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="4"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="1w5-bg-hdv"/>
-                                                    <exclude reference="JuQ-2a-6Bv"/>
-                                                    <exclude reference="XEF-Cg-U39"/>
-                                                    <exclude reference="AFQ-Hn-dRn"/>
-                                                    <exclude reference="Jvf-cZ-Hni"/>
-                                                    <exclude reference="sxg-Op-v6Q"/>
-                                                    <exclude reference="6M4-uv-4AQ"/>
-                                                    <exclude reference="UDJ-OT-jEC"/>
-                                                    <exclude reference="cZl-nS-yns"/>
-                                                    <exclude reference="cjN-Wj-8kq"/>
-                                                    <exclude reference="hv1-cb-h37"/>
-                                                    <exclude reference="jxg-9i-Pnr"/>
-                                                    <exclude reference="x6q-IA-b3Q"/>
-                                                </mask>
-                                            </variation>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -553,7 +523,6 @@
                                     <outlet property="postContentLabel" destination="BnG-n5-5z7" id="ulP-xY-8l8"/>
                                     <outlet property="postImageView" destination="rVh-Mr-mIN" id="neN-AB-wse"/>
                                     <outlet property="postTimeLabel" destination="362-4y-RJL" id="Qhn-aS-pJY"/>
-                                    <segue destination="Upy-Ue-RwX" kind="show" id="VHe-ar-SsM"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -565,6 +534,7 @@
                     <navigationItem key="navigationItem" id="XNk-B6-AdL"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="xxq-IM-PFA" id="0hK-aF-pjO"/>
+                        <segue destination="zoY-lt-Ngx" kind="show" identifier="PostDetailsIdentifier" id="NtO-sw-jYo"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJK-lT-WCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -670,12 +640,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXg-L1-6n3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2432" y="-757"/>
+            <point key="canvasLocation" x="2818" y="-1735"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Post Details View Controller-->
         <scene sceneID="RtJ-eb-i6h">
             <objects>
-                <tableViewController id="zoY-lt-Ngx" sceneMemberID="viewController">
+                <tableViewController id="zoY-lt-Ngx" customClass="PostDetailsViewController" customModule="Unicooo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8eC-nJ-WyE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -688,7 +658,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PWw-R0-EwI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2432" y="-47"/>
+            <point key="canvasLocation" x="2512" y="-757"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0dk-Pf-gob">
