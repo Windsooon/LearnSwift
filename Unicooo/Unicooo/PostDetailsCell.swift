@@ -22,7 +22,7 @@ class PostDetailsCell: UITableViewCell {
     var postDetails: String = "" {
         didSet {
             if (postDetails != oldValue) {
-                postDetailsText.text = postDetails
+                postDetailsLabel.text = postDetails
             }
         }
     }
@@ -51,13 +51,31 @@ class PostDetailsCell: UITableViewCell {
         }
     }
     
+    var postContent: UIView! {
+        didSet {
+            if (postContent != oldValue) {
+                postContentView = postContent
+            }
+        }
+    }
+    
+    var postHeightLayout: CGFloat! {
+        didSet {
+            if (postHeightLayout != oldValue) {
+                postContentLayoutConstraint.constant = postHeightLayout
+            }
+        }
+    }
+    
+    
     
     @IBOutlet weak var authorImage: UIImageView!
     @IBOutlet weak var authorNameLabel: UILabel!
     @IBOutlet weak var postContentView: UIView!
-    @IBOutlet weak var postDetailsText: UITextView!
+    @IBOutlet weak var postDetailsLabel: UILabel!
     @IBOutlet weak var likesCountLabel: UILabel!
     @IBOutlet weak var commentsCountLabel: UILabel!
+    @IBOutlet weak var postContentLayoutConstraint: NSLayoutConstraint!
 
     
     override func awakeFromNib() {

@@ -152,9 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				DC099D6A1C50BDF10081C2FC /* ActListCell.swift */,
+				DC918F901C5CA906004F36D3 /* PostListCell.swift */,
 				DC38426F1CE7404A00C328C9 /* PostDetailsCell.swift */,
 				DC3842711CE750ED00C328C9 /* PostCommentsCell.swift */,
-				DC918F901C5CA906004F36D3 /* PostListCell.swift */,
 				DC6571B11C61CF5A00AAB9A9 /* RoundedCornersView.swift */,
 			);
 			name = Views;

@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 
 class PostDetailsViewController: UITableViewController {
+    let screenSize: CGRect = UIScreen.mainScreen().bounds
     var postId: Int!
     var postMime: Int!
     var postAuthor: String!
@@ -25,7 +26,7 @@ class PostDetailsViewController: UITableViewController {
         super.viewDidLoad()
         customeCell()
         requestPostDetails()
-        self.tableView.rowHeight = 400
+        self.tableView.rowHeight = 800
     }
     
     
@@ -58,30 +59,36 @@ class PostDetailsViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        var number: Int!
-        
-        if section == 0 {
-            number = 1
-        }
-        return number
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return self.screenSize.width/self.postRadio + 200
     }
 
     func customeCell() {
         tableView.registerNib(UINib(nibName: "PostDetailsCell", bundle: nil), forCellReuseIdentifier: postDetailsIdentifier)
-        tableView.registerNib(UINib(nibName: "CommentsCell", bundle: nil), forCellReuseIdentifier: postCommentsIdentifier)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCellWithIdentifier(postDetailsIdentifier, forIndexPath: indexPath) as! PostDetailsCell
-            cell.authorName = postAuthor
-            cell.postDetails = postContent
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
-            
-            return cell
+        let cell = tableView.dequeueReusableCellWithIdentifier(postDetailsIdentifier, forIndexPath: indexPath) as! PostDetailsCell
+        cell.authorName = postAuthor
+        cell.postDetails = postContent
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        if postMime == 0 { //image here
+            let imageUrl = postUrl
+            cell.postContent = nil
+            cell.postHeightLayout = screenSize.width/self.postRadio
+            cell.request?.cancel()
+            cell.request = Alamofire.request(.GET, imageUrl).responseImage {
+                response in
+                guard let image = response.result.value where response.result.error == nil else { return }
+                cell.setNeedsLayout()
+                let imageView = UIImageView(frame:CGRectMake(0, 0, self.screenSize.width, self.screenSize.width/self.postRadio))
+                imageView.image = image
+                cell.postContentView.addSubview(imageView)
+            }
         }
-        else {
-            return tableView.dequeueReusableCellWithIdentifier(postCommentsIdentifier, forIndexPath: indexPath) as! PostCommentsCell
-        }
+        return cell
     }
 }

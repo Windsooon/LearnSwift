@@ -69,7 +69,7 @@ extension Alamofire.Request {
 
 struct Unicooo {
     enum Router: URLRequestConvertible {
-        static let baseURLString = "http://127.0.0.1:8000/api"
+        static let baseURLString = "https://unicooo.com/api"
         static var OAuthToken: String?
         
         case CreateUser([String: AnyObject])
