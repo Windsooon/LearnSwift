@@ -14,6 +14,8 @@ class PostDetailsViewController: UITableViewController {
     var postId: Int!
     var postMime: Int!
     var postAuthor: String!
+    var postCommentsCount: Int!
+    var postlikes: Int!
     var postUrl: String!
     var postPosttime: String!
     var postContent: String!
@@ -27,6 +29,7 @@ class PostDetailsViewController: UITableViewController {
         customeCell()
         requestPostDetails()
         self.tableView.rowHeight = 800
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
     
     
@@ -41,6 +44,66 @@ class PostDetailsViewController: UITableViewController {
         }
     }
 
+    func barButtonItemWithImageNamed(imageName: String?, title: String?, action: Selector? = nil) -> UIBarButtonItem {
+        let button = UIButton(type: .Custom)
+        
+        if imageName != nil {
+            button.setImage(UIImage(named: imageName!)!.imageWithRenderingMode(.AlwaysTemplate), forState: .Normal)
+        }
+        
+        if title != nil {
+            button.setTitle(title, forState: .Normal)
+            button.titleEdgeInsets = UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 0.0)
+            
+            let font = UIFont.preferredFontForTextStyle(UIFontTextStyleFootnote)
+            button.titleLabel?.font = font
+        }
+        
+        let size = button.sizeThatFits(CGSize(width: 90.0, height: 30.0))
+        button.frame.size = CGSize(width: min(size.width + 10.0, 60), height: size.height)
+        
+        if action != nil {
+            button.addTarget(self, action: action!, forControlEvents: .TouchUpInside)
+        }
+        
+        let barButton = UIBarButtonItem(customView: button)
+        
+        return barButton
+    }
+    
+    func addButtomBar() {
+        var items = [UIBarButtonItem]()
+        
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        
+        items.append(barButtonItemWithImageNamed("hamburger", title: nil, action: #selector(self.showComments)))
+        
+        if postCommentsCount > 0 {
+            items.append(barButtonItemWithImageNamed("bubble", title: "\(postCommentsCount ?? 0)", action: #selector(self.doLike)))
+        }
+        
+        items.append(flexibleSpace)
+        items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: #selector(self.showAction)))
+        items.append(flexibleSpace)
+        
+        items.append(barButtonItemWithImageNamed("like", title: "\(postlikes ?? 0)"))
+        
+        self.setToolbarItems(items, animated: true)
+        navigationController?.setToolbarHidden(false, animated: true)
+    }
+    
+    func showComments() {
+    
+    }
+    
+    func doLike() {
+    
+    }
+    
+    func showAction() {
+    
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

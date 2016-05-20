@@ -43,6 +43,8 @@ class PostListController: UICollectionViewController {
         
         postDetails.postId = postPhotosInfo.id
         postDetails.postAuthor = postPhotosInfo.author
+        postDetails.postCommentsCount = postPhotosInfo.comment_count
+        postDetails.postLikes = postPhotosInfo.likes
         postDetails.postMime = postPhotosInfo.mime_types
         postDetails.postUrl = httpsUrl + postPhotosInfo.url + postList
         postDetails.postRadio = (postPhotosInfo.width)/(postPhotosInfo.height)
@@ -107,6 +109,8 @@ class PostListController: UICollectionViewController {
                             title: ($0["post_title"] as! String),
                             content: ($0["post_content"] as! String),
                             author: ($0["post_user"]!["user_name"] as! String),
+                            comment_count: ($0["comment_count"] as! Int),
+                            likes: ($0["likes"] as! Int),
                             mime_types: ($0["post_mime_types"] as! Int),
                             createTime: ($0["post_create_time"] as! String),
                             width: ($0["post_thumb_width"] as! CGFloat),
