@@ -196,6 +196,7 @@ class PostPhotoInfo: NSObject {
     let title: String
     let content: String
     let author: String
+    let avatar: String
     let comment_count: Int
     let likes: Int
     let mime_types: Int
@@ -203,12 +204,13 @@ class PostPhotoInfo: NSObject {
     let width: CGFloat
     let height: CGFloat
     
-    init(id: Int, url: String, title: String, content: String, author: String, comment_count: Int, likes: Int, mime_types: Int, createTime: String, width: CGFloat, height: CGFloat) {
+    init(id: Int, url: String, title: String, content: String, author: String, avatar: String, comment_count: Int, likes: Int, mime_types: Int, createTime: String, width: CGFloat, height: CGFloat) {
         self.id = id
         self.url = url
         self.title = title
         self.content = content
         self.author = author
+        self.avatar = avatar
         self.comment_count = comment_count
         self.likes = likes
         self.mime_types = mime_types
@@ -223,6 +225,7 @@ class PostPhotoInfo: NSObject {
         self.title = representation.valueForKeyPath("postPhotoInfo.postt_title") as! String
         self.content = representation.valueForKeyPath("postPhotoInfo.post_content") as! String
         self.author = representation.valueForKeyPath("postPhotoInfo.post_user.user_name") as! String
+        self.avatar = representation.valueForKeyPath("postPhotoInfo.post_user.user_avatar") as! String
         self.comment_count = representation.valueForKeyPath("postPhotoInfo.comment_count") as! Int
         self.likes = representation.valueForKeyPath("postPhotoInfo.likes") as! Int
         self.mime_types = representation.valueForKeyPath("postPhotoInfo.post_mime_types") as! Int

@@ -35,18 +35,18 @@ class PostDetailsCell: UITableViewCell {
         }
     }
     
-    var likesCount: String = "" {
+    var likesCount: Int = 0 {
         didSet {
             if (likesCount != oldValue) {
-                likesCountLabel.text = likesCount
+                likesCountLabel.text = String(likesCount)
             }
         }
     }
     
-    var commentsCount: String = "" {
+    var commentsCount: Int = 0 {
         didSet {
             if (commentsCount != oldValue) {
-                commentsCountLabel.text = commentsCount
+                commentsCountLabel.text = String(commentsCount)
             }
         }
     }

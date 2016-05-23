@@ -14,8 +14,9 @@ class PostDetailsViewController: UITableViewController {
     var postId: Int!
     var postMime: Int!
     var postAuthor: String!
+    var postAvatar: String!
     var postCommentsCount: Int!
-    var postlikes: Int!
+    var postLikes: Int!
     var postUrl: String!
     var postPosttime: String!
     var postContent: String!
@@ -28,6 +29,7 @@ class PostDetailsViewController: UITableViewController {
         super.viewDidLoad()
         customeCell()
         requestPostDetails()
+        addButtomBar()
         self.tableView.rowHeight = 800
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
     }
@@ -73,21 +75,13 @@ class PostDetailsViewController: UITableViewController {
     
     func addButtomBar() {
         var items = [UIBarButtonItem]()
-        
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        
-        items.append(barButtonItemWithImageNamed("hamburger", title: nil, action: #selector(self.showComments)))
-        
+        items.append(barButtonItemWithImageNamed("bubble", title: nil, action: #selector(self.showComments)))
         if postCommentsCount > 0 {
-            items.append(barButtonItemWithImageNamed("bubble", title: "\(postCommentsCount ?? 0)", action: #selector(self.doLike)))
+            items.append(barButtonItemWithImageNamed("heart", title: "\(postCommentsCount ?? 0)", action: #selector(self.doLike)))
         }
-        
         items.append(flexibleSpace)
-        items.append(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: #selector(self.showAction)))
-        items.append(flexibleSpace)
-        
-        items.append(barButtonItemWithImageNamed("like", title: "\(postlikes ?? 0)"))
-        
+        items.append(barButtonItemWithImageNamed("like", title: "\(postLikes ?? 0)"))
         self.setToolbarItems(items, animated: true)
         navigationController?.setToolbarHidden(false, animated: true)
     }
@@ -138,6 +132,18 @@ class PostDetailsViewController: UITableViewController {
         cell.authorName = postAuthor
         cell.postDetails = postContent
         cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.likesCount = postLikes
+        cell.commentsCount = postCommentsCount
+        
+        if let postAvatarThumb = postAvatar {
+            let authorThumbUrl = httpsUrl + postAvatarThumb
+            cell.request = Alamofire.request(.GET, authorThumbUrl).responseImage {
+                response in
+                guard let image = response.result.value where response.result.error == nil else { return }
+                cell.authorThumb = image
+            }
+        }
+        
         if postMime == 0 { //image here
             let imageUrl = postUrl
             cell.postContent = nil

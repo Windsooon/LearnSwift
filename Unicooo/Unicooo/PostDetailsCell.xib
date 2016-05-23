@@ -47,17 +47,35 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BaB-n1-79E" userLabel="Like">
-                        <rect key="frame" x="371" y="377" width="30" height="30"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bubble" translatesAutoresizingMaskIntoConstraints="NO" id="BaB-n1-79E" userLabel="Like">
+                        <rect key="frame" x="381" y="383" width="20" height="20"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="iIs-ui-ghp"/>
-                            <constraint firstAttribute="height" constant="30" id="xrN-bb-hI5"/>
+                            <constraint firstAttribute="width" constant="20" id="iIs-ui-ghp"/>
+                            <constraint firstAttribute="height" constant="20" id="xrN-bb-hI5"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK8-lL-nx5" userLabel="CommentsCount">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="WPB-Ef-IMB" userLabel="Like">
+                        <rect key="frame" x="311" y="383" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="NQS-OM-Fed"/>
+                            <constraint firstAttribute="width" constant="20" id="hc2-Di-ThI"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4K-Bj-5kp" userLabel="LikesCount">
+                        <rect key="frame" x="339" y="384" width="24" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="Rpb-u5-zP4"/>
+                            <constraint firstAttribute="width" constant="24" id="Xvg-JF-3O9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK8-lL-nx5" userLabel="CommentsCount">
                         <rect key="frame" x="409" y="384" width="24" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="Fxy-Zo-uwP"/>
+                            <constraint firstAttribute="width" constant="24" id="XOB-um-S5M"/>
                             <constraint firstAttribute="width" constant="24" id="xAt-1i-lQ0"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -69,34 +87,18 @@
                             </mask>
                         </variation>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPB-Ef-IMB" userLabel="Like">
-                        <rect key="frame" x="301" y="377" width="30" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="NQS-OM-Fed"/>
-                            <constraint firstAttribute="width" constant="30" id="hc2-Di-ThI"/>
-                        </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4K-Bj-5kp" userLabel="LikesCount">
-                        <rect key="frame" x="339" y="384" width="24" height="17"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="17" id="Rpb-u5-zP4"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="eGZ-AR-1yW" firstAttribute="leading" secondItem="svu-UV-SCo" secondAttribute="trailing" constant="8" id="2jU-iN-pSl"/>
                     <constraint firstAttribute="topMargin" secondItem="svu-UV-SCo" secondAttribute="top" id="6Tl-zE-R6p"/>
                     <constraint firstAttribute="leadingMargin" secondItem="k3I-uz-cnr" secondAttribute="leading" id="7z9-r2-wuv"/>
-                    <constraint firstItem="BaB-n1-79E" firstAttribute="top" secondItem="k3I-uz-cnr" secondAttribute="bottom" constant="17" id="FKL-Vq-478"/>
+                    <constraint firstItem="BaB-n1-79E" firstAttribute="top" secondItem="k3I-uz-cnr" secondAttribute="bottom" constant="23" id="FKL-Vq-478"/>
                     <constraint firstAttribute="trailingMargin" secondItem="rK8-lL-nx5" secondAttribute="trailing" id="Ljo-2L-KH8"/>
-                    <constraint firstItem="WPB-Ef-IMB" firstAttribute="top" secondItem="k3I-uz-cnr" secondAttribute="bottom" constant="17" id="TD8-Ls-dSr"/>
-                    <constraint firstItem="rK8-lL-nx5" firstAttribute="baseline" secondItem="BaB-n1-79E" secondAttribute="baseline" id="XPN-0o-sLM"/>
+                    <constraint firstItem="WPB-Ef-IMB" firstAttribute="top" secondItem="k3I-uz-cnr" secondAttribute="bottom" constant="23" id="TD8-Ls-dSr"/>
+                    <constraint firstItem="rK8-lL-nx5" firstAttribute="baseline" secondItem="BaB-n1-79E" secondAttribute="baseline" constant="-6" id="XPN-0o-sLM"/>
                     <constraint firstAttribute="trailingMargin" secondItem="BaB-n1-79E" secondAttribute="trailing" constant="32" id="d9c-pK-pog"/>
                     <constraint firstItem="rK8-lL-nx5" firstAttribute="leading" secondItem="BaB-n1-79E" secondAttribute="trailing" constant="8" id="dCh-EW-z9U"/>
-                    <constraint firstItem="r4K-Bj-5kp" firstAttribute="baseline" secondItem="WPB-Ef-IMB" secondAttribute="baseline" id="eGh-Wf-SU0"/>
+                    <constraint firstItem="r4K-Bj-5kp" firstAttribute="baseline" secondItem="WPB-Ef-IMB" secondAttribute="baseline" constant="-6" id="eGh-Wf-SU0"/>
                     <constraint firstItem="r4K-Bj-5kp" firstAttribute="leading" secondItem="WPB-Ef-IMB" secondAttribute="trailing" constant="8" id="eV6-lz-OoK"/>
                     <constraint firstAttribute="leadingMargin" secondItem="hKT-lz-Ozn" secondAttribute="leading" id="ebT-KR-syk"/>
                     <constraint firstAttribute="trailingMargin" secondItem="WPB-Ef-IMB" secondAttribute="trailing" constant="102" id="flR-2D-Npe"/>
@@ -122,4 +124,8 @@
             <point key="canvasLocation" x="338.5" y="282.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="bubble" width="16" height="16"/>
+        <image name="heart" width="16" height="16"/>
+    </resources>
 </document>
