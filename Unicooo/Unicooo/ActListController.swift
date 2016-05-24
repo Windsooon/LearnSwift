@@ -75,9 +75,7 @@ class ActListController: UITableViewController {
             cell.actThumb = image
         }
         return cell
-            
     }
-    
     
     func customTableCell() {
         let nib = UINib(nibName: "ActListCell", bundle: nil)

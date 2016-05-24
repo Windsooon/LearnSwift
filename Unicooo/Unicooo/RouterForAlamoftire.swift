@@ -84,15 +84,19 @@ struct Unicooo {
         case UpdatePost(String, [String: AnyObject])
         case DestroyPost(String)
         
+        case CreateComment([String: AnyObject])
+        case ReadCommentList([String: AnyObject]?)
+        case DestroyComment(String)
+        
         var method: Alamofire.Method {
             switch self {
-            case .CreateUser, .CreateAct, .CreatePost:
+            case .CreateUser, .CreateAct, .CreatePost, .CreateComment:
                 return .POST
-            case .ReadActList, .ReadPostList:
+            case .ReadActList, .ReadPostList, .ReadCommentList:
                 return .GET
             case .UpdateAct, .UpdatePost:
                 return .PUT
-            case .DestroyAct, .DestroyPost:
+            case .DestroyAct, .DestroyPost, .DestroyComment:
                 return .DELETE
             }
         }
@@ -120,6 +124,12 @@ struct Unicooo {
                 return "/posts/\(postId)"
             case .DestroyPost(let postId):
                 return "/posts/\(postId)"
+            case .CreateComment:
+                return "/comments/"
+            case .ReadCommentList:
+                return "/comments/"
+            case .DestroyComment(let commentId):
+                return "/comments/\(commentId)"
             }
         }
         
@@ -147,6 +157,11 @@ struct Unicooo {
             case .ReadPostList(let parameters):
                 return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
             case .UpdatePost(_, let parameters):
+                return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
+            //for comment
+            case .CreateComment(let parameters):
+                return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
+            case .ReadCommentList(let parameters):
                 return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
             default:
                 return mutableURLRequest
@@ -246,5 +261,37 @@ class PostPhotoInfo: NSObject {
         let constraintRect = CGSize(width: width, height: CGFloat.max)
         let boundingBox = NSString(string: content).boundingRectWithSize(constraintRect, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
         return boundingBox.height
+    }
+}
+
+class CommentsInfo: NSObject {
+    let id: Int
+    let url: String
+    let content: String
+    let author: String
+    let createTime: String
+    
+    init(id: Int, url: String, content: String, author: String, createTime: String) {
+        self.id = id
+        self.url = url
+        self.content = content
+        self.author = author
+        self.createTime = createTime
+    }
+    
+    required init(response: NSHTTPURLResponse, representation: AnyObject) {
+        self.id = representation.valueForKeyPath("commentsInfo.id") as! Int
+        self.url = representation.valueForKeyPath("commentsInfo.comment_user.user_avatar") as! String
+        self.content = representation.valueForKeyPath("commentsInfo.comment_content") as! String
+        self.author = representation.valueForKeyPath("commentsInfo.comment_author") as! String
+        self.createTime = representation.valueForKeyPath("commentsInfo.commment_create_time") as! String
+    }
+    
+    override func isEqual(object: AnyObject!) -> Bool {
+        return (object as! CommentsInfo).id == self.id
+    }
+    
+    override var hash: Int {
+        return (self as CommentsInfo).id
     }
 }

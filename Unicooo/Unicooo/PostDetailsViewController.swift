@@ -87,6 +87,12 @@ class PostDetailsViewController: UITableViewController {
     }
     
     func showComments() {
+        let postDetailsCommentsController = storyboard?.instantiateViewControllerWithIdentifier("PostDetailsComments") as? PostDetailsCommentsController
+        postDetailsCommentsController?.modalPresentationStyle = .Popover
+        postDetailsCommentsController?.modalTransitionStyle = .CoverVertical
+        postDetailsCommentsController?.postId = postId
+        //postDetailsCommentsController?.popoverPresentationController?.delegate = self
+        presentViewController(postDetailsCommentsController!, animated: true, completion: nil)
     
     }
     
