@@ -42,8 +42,7 @@
             <connections>
                 <outlet property="commentAuthorImage" destination="LHQ-7c-7pp" id="dUT-r3-920"/>
                 <outlet property="commentAuthorNameLabel" destination="gVy-T8-97T" id="bok-MR-J2F"/>
-                <outlet property="commentText" destination="8qR-Nb-DEH" id="4xV-Et-vVO"/>
-                <outlet property="commentTextText" destination="8qR-Nb-DEH" id="x2f-PF-ced"/>
+                <outlet property="commentTextText" destination="8qR-Nb-DEH" id="0UL-gw-PaM"/>
                 <outlet property="commentTimeLabel" destination="blm-nE-JFL" id="gbF-rN-egC"/>
             </connections>
             <point key="canvasLocation" x="532.5" y="355.5"/>

@@ -507,11 +507,16 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BnG-n5-5z7">
                                                     <rect key="frame" x="14" y="168" width="158" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="pwd-Ei-GYG"/>
+                                                        <constraint firstAttribute="width" constant="200" id="pwd-Ei-GYG"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="pwd-Ei-GYG"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="362-4y-RJL">
                                                     <rect key="frame" x="14" y="148" width="150" height="10"/>
@@ -531,6 +536,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="BnG-n5-5z7" secondAttribute="trailing" constant="8" id="FzW-VL-s2k"/>
                                                 <constraint firstItem="362-4y-RJL" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="28" id="HNJ-qR-8c7"/>
                                                 <constraint firstItem="rVh-Mr-mIN" firstAttribute="top" secondItem="IVa-of-Jaj" secondAttribute="top" id="Owy-yn-Uqg"/>
+                                                <constraint firstAttribute="trailing" secondItem="BnG-n5-5z7" secondAttribute="trailing" constant="8" id="Shm-wI-4ec"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BnG-n5-5z7" secondAttribute="bottom" constant="10" id="V8r-GW-X3F"/>
                                                 <constraint firstItem="I2f-ok-KIc" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="14" id="VQN-OO-Hto"/>
                                                 <constraint firstItem="rVh-Mr-mIN" firstAttribute="leading" secondItem="IVa-of-Jaj" secondAttribute="leading" id="Z4p-5i-eZj"/>
@@ -542,6 +548,11 @@
                                                     <real key="value" value="4"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Shm-wI-4ec"/>
+                                                </mask>
+                                            </variation>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

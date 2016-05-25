@@ -112,7 +112,6 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="CommentsCountLabel" destination="Tod-4w-ODr" id="Z1R-N6-XJc"/>
-                <outlet property="LikesCountLabel" destination="r4K-Bj-5kp" id="zsO-y1-SXn"/>
                 <outlet property="authorImage" destination="svu-UV-SCo" id="OH8-2v-nZS"/>
                 <outlet property="authorNameLabel" destination="eGZ-AR-1yW" id="64o-FW-iI6"/>
                 <outlet property="commentsCountLabel" destination="rK8-lL-nx5" id="d25-Cc-sLx"/>

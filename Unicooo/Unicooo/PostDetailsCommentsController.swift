@@ -67,6 +67,7 @@ class PostDetailsCommentsController: UITableViewController {
                     }
                     
                     let lastItem = self.commentSet.count
+                    print(lastItem)
                     
                     self.commentSet.addObjectsFromArray(commentDetailsInfos)
                     let indexPaths = (lastItem..<self.commentSet.count).map { NSIndexPath(forItem: $0, inSection: 0)}
@@ -92,7 +93,7 @@ class PostDetailsCommentsController: UITableViewController {
         //let content = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).content
         //cell.actTitle = title
         //cell.actContent = content
-        //cell.actThumb = nil
+        cell.commentAuthorName = "hey"
         //cell.request?.cancel()
         //
         //cell.request = Alamofire.request(.GET, imageURL).responseImage {
