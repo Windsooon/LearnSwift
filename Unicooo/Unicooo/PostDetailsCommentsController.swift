@@ -18,9 +18,13 @@ class PostDetailsCommentsController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 80.0
+        
         commentsCustomTableCell()
         requestCommentsList()
-        
+       
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Done, target: self, action: #selector(PostDetailsCommentsController.dismiss))
     }
 
@@ -32,12 +36,10 @@ class PostDetailsCommentsController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return commentSet.count
     }
     
@@ -55,7 +57,7 @@ class PostDetailsCommentsController: UITableViewController {
             return
         }
         requestingCommentsList = true
-        Alamofire.request(Unicooo.Router.ReadCommentList(["page": self.currentPage])).validate().responseJSON {
+        Alamofire.request(Unicooo.Router.ReadCommentList(["page": self.currentPage, "post_id": self.postId])).validate().responseJSON {
             response in
             switch response.result {
             case .Success:
@@ -67,11 +69,8 @@ class PostDetailsCommentsController: UITableViewController {
                     }
                     
                     let lastItem = self.commentSet.count
-                    print(lastItem)
-                    
                     self.commentSet.addObjectsFromArray(commentDetailsInfos)
                     let indexPaths = (lastItem..<self.commentSet.count).map { NSIndexPath(forItem: $0, inSection: 0)}
-                    
                     dispatch_async(dispatch_get_main_queue()) {
                         self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
                     }
@@ -93,7 +92,8 @@ class PostDetailsCommentsController: UITableViewController {
         //let content = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).content
         //cell.actTitle = title
         //cell.actContent = content
-        cell.commentAuthorName = "hey"
+        cell.commentAuthorName = (commentSet.objectAtIndex(indexPath.row) as! CommentsInfo).author
+        cell.commentText = (commentSet.objectAtIndex(indexPath.row) as! CommentsInfo).content
         //cell.request?.cancel()
         //
         //cell.request = Alamofire.request(.GET, imageURL).responseImage {
@@ -104,6 +104,11 @@ class PostDetailsCommentsController: UITableViewController {
         //}
         return cell
     }
+    
+    //override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    //{
+    //    return 100.0;//Choose your custom row height
+    //}
 
     /*
     // Override to support conditional editing of the table view.

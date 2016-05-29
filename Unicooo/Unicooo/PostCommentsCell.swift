@@ -37,7 +37,7 @@ class PostCommentsCell: UITableViewCell {
     var commentText: String = "" {
         didSet {
             if (commentText != oldValue) {
-                commentTextText.text = commentText
+                commentContentLabel.text = commentText
             }
         }
     }
@@ -46,7 +46,7 @@ class PostCommentsCell: UITableViewCell {
     @IBOutlet weak var commentAuthorImage: UIImageView!
     @IBOutlet weak var commentAuthorNameLabel: UILabel!
     @IBOutlet weak var commentTimeLabel: UILabel!
-    @IBOutlet weak var commentTextText: UITextView!
+    @IBOutlet weak var commentContentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -98,7 +98,7 @@ class ActListController: UITableViewController {
             return
         }
         requestingActList = true
-        Alamofire.request(Unicooo.Router.ReadActList(["page": self.currentPage, "act_type": 1])).validate().responseJSON {
+        Alamofire.request(Unicooo.Router.ReadActList(["page": self.currentPage, "act_type": 2])).validate().responseJSON {
             response in
                 switch response.result {
                 case .Success:
