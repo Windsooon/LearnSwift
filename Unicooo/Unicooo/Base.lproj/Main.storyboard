@@ -422,7 +422,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="D71-6f-bls">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D71-6f-bls" id="O3f-QT-Spq">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -446,7 +446,7 @@
                     </items>
                 </navigationBar>
             </objects>
-            <point key="canvasLocation" x="3262" y="-1009"/>
+            <point key="canvasLocation" x="3331" y="-1484"/>
         </scene>
         <!--Search Results Table View Controller-->
         <scene sceneID="QFl-ub-Y5n">
@@ -671,6 +671,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dzB-ck-fXa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="324" y="562"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lYN-j0-oXs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dTd-iK-8aG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Xe-tQ-Qaq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2WO-P6-31a" kind="relationship" relationship="rootViewController" id="cbD-6V-lAh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wGp-vg-tcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2519" y="-1484"/>
         </scene>
     </scenes>
     <resources>

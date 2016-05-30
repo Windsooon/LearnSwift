@@ -49,7 +49,7 @@ class PostDetailsCommentsController: UITableViewController {
     }
     
     func dismiss() {
-        dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController!.popViewControllerAnimated(true)
     }
     
     func requestCommentsList() {

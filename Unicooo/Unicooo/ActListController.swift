@@ -59,7 +59,6 @@ class ActListController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellTableIdentifier, forIndexPath: indexPath) as! ActListCell
-        
         let imageURL = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).url
         let title = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).title
         let content = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).content

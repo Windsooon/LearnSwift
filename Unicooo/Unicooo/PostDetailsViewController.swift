@@ -92,7 +92,8 @@ class PostDetailsViewController: UITableViewController {
         //postDetailsCommentsController?.modalTransitionStyle = .CoverVertical
         postDetailsCommentsController?.postId = postId
         //postDetailsCommentsController?.popoverPresentationController?.delegate = self
-        presentViewController(postDetailsCommentsController!, animated: true, completion: nil)
+        self.navigationController!.pushViewController(postDetailsCommentsController!, animated: true)
+        //presentViewController(postDetailsCommentsController!, animated: true, completion: nil)
     
     }
     
@@ -140,10 +141,13 @@ class PostDetailsViewController: UITableViewController {
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.likesCount = postLikes
         cell.commentsCount = postCommentsCount
+        //cell.authorThumb = nil
+        //cell.request?.cancel()
         
-        if let postAvatarThumb = postAvatar {
-            let authorThumbUrl = httpsUrl + postAvatarThumb
-            cell.request = Alamofire.request(.GET, authorThumbUrl).responseImage {
+       
+        let authorThumbUrl = httpsUrl + postAvatar + actCoverSmall
+        if postAvatar != nil {
+            Alamofire.request(.GET, authorThumbUrl).responseImage {
                 response in
                 guard let image = response.result.value where response.result.error == nil else { return }
                 cell.authorThumb = image
