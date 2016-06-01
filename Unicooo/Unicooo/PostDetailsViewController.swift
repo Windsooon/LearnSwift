@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class PostDetailsViewController: UITableViewController {
+class PostDetailsViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     let screenSize: CGRect = UIScreen.mainScreen().bounds
     var postId: Int!
     var postMime: Int!
@@ -77,11 +77,11 @@ class PostDetailsViewController: UITableViewController {
         var items = [UIBarButtonItem]()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         items.append(barButtonItemWithImageNamed("bubble", title: nil, action: #selector(self.showComments)))
-        if postCommentsCount > 0 {
-            items.append(barButtonItemWithImageNamed("heart", title: "\(postCommentsCount ?? 0)", action: #selector(self.doLike)))
-        }
+        items.append(barButtonItemWithImageNamed("heart", title: "\(postCommentsCount ?? 0)", action: #selector(self.doLike)))
         items.append(flexibleSpace)
         items.append(barButtonItemWithImageNamed("like", title: "\(postLikes ?? 0)"))
+        items.append(flexibleSpace)
+        items.append(barButtonItemWithImageNamed("bubble", title: nil, action: #selector(self.joinAct)))
         self.setToolbarItems(items, animated: true)
         navigationController?.setToolbarHidden(false, animated: true)
     }
@@ -95,6 +95,16 @@ class PostDetailsViewController: UITableViewController {
         self.navigationController!.pushViewController(postDetailsCommentsController!, animated: true)
         //presentViewController(postDetailsCommentsController!, animated: true, completion: nil)
     
+    }
+    
+    func joinAct() {
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.sourceType = UIImagePickerControllerSourceType.Camera
+            picker.cameraDevice = UIImagePickerControllerCameraDevice.Front
+            presentViewController(picker, animated: true, completion: nil)
+        }
     }
     
     func doLike() {
@@ -169,5 +179,15 @@ class PostDetailsViewController: UITableViewController {
             }
         }
         return cell
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let selectedImage: UIImage? = info[UIImagePickerControllerEditedImage] as? UIImage
+        let originalImage: UIImage? = info[UIImagePickerControllerOriginalImage] as? UIImage
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
     }
 }
