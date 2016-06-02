@@ -1,14 +1,14 @@
 //
-//  CameraUITests.swift
-//  CameraUITests
+//  cameraUITests.swift
+//  cameraUITests
 //
-//  Created by Windson on 16/1/22.
+//  Created by Windson on 16/6/2.
 //  Copyright © 2016年 Windson. All rights reserved.
 //
 
 import XCTest
 
-class CameraUITests: XCTestCase {
+class cameraUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()

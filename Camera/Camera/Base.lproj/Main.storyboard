@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Camera" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,98 +15,11 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnZ-Tb-lVq">
-                                <rect key="frame" x="20" y="545" width="560" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="2VG-r9-uHE"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="Aty-t9-MeD"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="CHc-P7-FNg"/>
-                                    <constraint firstAttribute="height" constant="30" id="hCv-ay-7GR"/>
-                                    <constraint firstAttribute="width" constant="117" id="uYH-wW-3VD"/>
-                                    <constraint firstAttribute="width" constant="600" id="y2b-VP-Jo7"/>
-                                </constraints>
-                                <state key="normal" title="Pick from Library"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="2VG-r9-uHE"/>
-                                        <exclude reference="Aty-t9-MeD"/>
-                                        <exclude reference="CHc-P7-FNg"/>
-                                        <exclude reference="uYH-wW-3VD"/>
-                                        <exclude reference="y2b-VP-Jo7"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="selectExistingPictureOrVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1ug-rO-NaX"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mJF-ea-h7O">
-                                <rect key="frame" x="20" y="20" width="560" height="450"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcb-q7-ST7">
-                                <rect key="frame" x="20" y="494" width="560" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="137" id="04H-jP-znO"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="600" id="BpB-Er-dhu"/>
-                                    <constraint firstAttribute="width" constant="600" id="SPm-vy-BrA"/>
-                                    <constraint firstAttribute="width" constant="137" id="Zro-rf-2pD"/>
-                                    <constraint firstAttribute="height" constant="30" id="bsh-Fi-1FU"/>
-                                    <constraint firstAttribute="height" constant="30" id="lbF-8g-bbD"/>
-                                </constraints>
-                                <state key="normal" title="New Photo or Video"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="04H-jP-znO"/>
-                                        <exclude reference="BpB-Er-dhu"/>
-                                        <exclude reference="SPm-vy-BrA"/>
-                                        <exclude reference="Zro-rf-2pD"/>
-                                        <exclude reference="lbF-8g-bbD"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="shootPictureOrVideo:" destination="BYZ-38-t0r" eventType="touchDragInside" id="dfm-ba-nkN"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wcb-q7-ST7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0LJ-Kp-o0E"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wcb-q7-ST7" secondAttribute="trailing" id="CDm-xn-arZ"/>
-                            <constraint firstItem="WnZ-Tb-lVq" firstAttribute="top" secondItem="wcb-q7-ST7" secondAttribute="bottom" constant="21" id="L53-xE-oSd"/>
-                            <constraint firstItem="wcb-q7-ST7" firstAttribute="top" secondItem="mJF-ea-h7O" secondAttribute="bottom" constant="24" id="Ncb-hC-1Jn"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WnZ-Tb-lVq" secondAttribute="bottom" constant="25" id="PTT-h5-ZiE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mJF-ea-h7O" secondAttribute="trailing" constant="-20" id="R4v-2W-j0W"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WnZ-Tb-lVq" secondAttribute="bottom" constant="25" id="Tta-J9-zGI"/>
-                            <constraint firstItem="mJF-ea-h7O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aCc-zQ-GyQ"/>
-                            <constraint firstItem="mJF-ea-h7O" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ccY-pv-Bob"/>
-                            <constraint firstItem="WnZ-Tb-lVq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="czC-vZ-48A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WnZ-Tb-lVq" secondAttribute="trailing" id="dui-Ds-3tC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="mJF-ea-h7O" secondAttribute="trailing" id="fWX-mY-lcH"/>
-                            <constraint firstItem="mJF-ea-h7O" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="paD-oc-fPM"/>
-                            <constraint firstItem="WnZ-Tb-lVq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="pmQ-dd-BJf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WnZ-Tb-lVq" secondAttribute="trailing" constant="-20" id="rBM-jP-xkT"/>
-                            <constraint firstItem="mJF-ea-h7O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="zX6-q1-FHB"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="R4v-2W-j0W"/>
-                                <exclude reference="ccY-pv-Bob"/>
-                                <exclude reference="zX6-q1-FHB"/>
-                                <exclude reference="pmQ-dd-BJf"/>
-                                <exclude reference="rBM-jP-xkT"/>
-                                <exclude reference="PTT-h5-ZiE"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <connections>
-                        <outlet property="imageView" destination="mJF-ea-h7O" id="7ep-zb-BTr"/>
-                        <outlet property="takePictureButton" destination="wcb-q7-ST7" id="9Ax-wK-u3A"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="523" y="477"/>
         </scene>
     </scenes>
 </document>

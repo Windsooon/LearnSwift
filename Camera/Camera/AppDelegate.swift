@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Camera
+//  camera
 //
-//  Created by Windson on 16/1/22.
+//  Created by Windson on 16/6/2.
 //  Copyright © 2016年 Windson. All rights reserved.
 //
 
