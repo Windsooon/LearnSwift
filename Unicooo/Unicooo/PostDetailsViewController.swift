@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import MediaPlayer
+import MobileCoreServices
 
 class PostDetailsViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     let screenSize: CGRect = UIScreen.mainScreen().bounds
@@ -25,6 +27,11 @@ class PostDetailsViewController: UITableViewController, UIImagePickerControllerD
     var postDetailsIdentifier: String = "PostDetailsIdentifier"
     var postCommentsIdentifier: String = "PostCommentsIdentifier"
     
+    var moviePlayerController:MPMoviePlayerController?
+    var postNewImage:UIImage?
+    var postNewMovieURL:NSURL?
+    var postNewLastChosenMediaType:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         customeCell()
@@ -32,6 +39,10 @@ class PostDetailsViewController: UITableViewController, UIImagePickerControllerD
         addButtomBar()
         self.tableView.rowHeight = 800
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     
@@ -77,11 +88,10 @@ class PostDetailsViewController: UITableViewController, UIImagePickerControllerD
         var items = [UIBarButtonItem]()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         items.append(barButtonItemWithImageNamed("bubble", title: nil, action: #selector(self.showComments)))
-        items.append(barButtonItemWithImageNamed("heart", title: "\(postCommentsCount ?? 0)", action: #selector(self.doLike)))
         items.append(flexibleSpace)
-        items.append(barButtonItemWithImageNamed("like", title: "\(postLikes ?? 0)"))
+        items.append(barButtonItemWithImageNamed("heart", title: nil, action: #selector(self.doLike)))
         items.append(flexibleSpace)
-        items.append(barButtonItemWithImageNamed("bubble", title: nil, action: #selector(self.joinAct)))
+        items.append(barButtonItemWithImageNamed("like", title: nil, action: #selector(self.joinAct)))
         self.setToolbarItems(items, animated: true)
         navigationController?.setToolbarHidden(false, animated: true)
     }
@@ -98,13 +108,22 @@ class PostDetailsViewController: UITableViewController, UIImagePickerControllerD
     }
     
     func joinAct() {
-        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = UIImagePickerControllerSourceType.Camera
-            picker.cameraDevice = UIImagePickerControllerCameraDevice.Front
-            presentViewController(picker, animated: true, completion: nil)
-        }
+        let optionMenu = UIAlertController(title: nil, message: "Join Act", preferredStyle: .ActionSheet)
+        let newAction = UIAlertAction(title: "New Photo or Video", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.pickMediaFromSource(UIImagePickerControllerSourceType.Camera)
+        })
+        let pickAction = UIAlertAction(title: "Pick from Library", style: .Default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.pickMediaFromSource(UIImagePickerControllerSourceType.PhotoLibrary)
+        })
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+        })
+        optionMenu.addAction(newAction)
+        optionMenu.addAction(pickAction)
+        optionMenu.addAction(cancelAction)
+        self.presentViewController(optionMenu, animated: true, completion: nil)
     }
     
     func doLike() {
@@ -181,13 +200,43 @@ class PostDetailsViewController: UITableViewController, UIImagePickerControllerD
         return cell
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let selectedImage: UIImage? = info[UIImagePickerControllerEditedImage] as? UIImage
-        let originalImage: UIImage? = info[UIImagePickerControllerOriginalImage] as? UIImage
-        picker.dismissViewControllerAnimated(true, completion: nil)
+    func pickMediaFromSource(sourceType:UIImagePickerControllerSourceType) {
+        let mediaTypes = UIImagePickerController.availableMediaTypesForSourceType(sourceType)!
+        if UIImagePickerController.isSourceTypeAvailable(sourceType) && mediaTypes.count > 0 {
+            let picker = UIImagePickerController()
+            picker.mediaTypes = mediaTypes
+            picker.delegate = self
+            picker.allowsEditing = true
+            picker.sourceType = sourceType
+            presentViewController(picker, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(
+                title:"Error accessing media", message: "Unsupported media source.",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil)
+            alertController.addAction(okAction)
+            presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        postNewLastChosenMediaType = info[UIImagePickerControllerMediaType] as? String
+        let postNewController = self.storyboard?.instantiateViewControllerWithIdentifier("PostNewController") as! PostNewController
+        if let mediaType = postNewLastChosenMediaType {
+            if mediaType == kUTTypeImage as NSString {
+                postNewImage = info[UIImagePickerControllerEditedImage] as? UIImage
+                postNewController.postNewImage = postNewImage
+                presentViewController(postNewController, animated: true, completion: nil)
+            } else if mediaType == kUTTypeMovie as NSString {
+                postNewMovieURL = info[UIImagePickerControllerMediaURL] as? NSURL
+                postNewController.postNewNSURL = postNewMovieURL
+                presentViewController(postNewController, animated: true, completion: nil)
+            }
+        }
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        picker.dismissViewControllerAnimated(true, completion: nil)
+        picker.dismissViewControllerAnimated(true, completion:nil)
     }
 }
