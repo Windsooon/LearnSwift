@@ -103,7 +103,6 @@ class PostDetailsViewController: UITableViewController, UIImagePickerControllerD
         postDetailsCommentsController?.postId = postId
         //postDetailsCommentsController?.popoverPresentationController?.delegate = self
         self.navigationController!.pushViewController(postDetailsCommentsController!, animated: true)
-        //presentViewController(postDetailsCommentsController!, animated: true, completion: nil)
     
     }
     
@@ -227,11 +226,23 @@ class PostDetailsViewController: UITableViewController, UIImagePickerControllerD
             if mediaType == kUTTypeImage as NSString {
                 postNewImage = info[UIImagePickerControllerEditedImage] as? UIImage
                 postNewController.postNewImage = postNewImage
-                presentViewController(postNewController, animated: true, completion: nil)
+                postNewController.postNewLastChosenMediaType = postNewLastChosenMediaType
+                if var topController = UIApplication.sharedApplication().keyWindow?.rootViewController {
+                    while let presentedViewController = topController.presentedViewController {
+                        topController = presentedViewController
+                    }
+                    topController.presentViewController(postNewController, animated: true, completion: nil)
+                }
             } else if mediaType == kUTTypeMovie as NSString {
                 postNewMovieURL = info[UIImagePickerControllerMediaURL] as? NSURL
                 postNewController.postNewNSURL = postNewMovieURL
-                presentViewController(postNewController, animated: true, completion: nil)
+                postNewController.postNewLastChosenMediaType = postNewLastChosenMediaType
+                if var topController = UIApplication.sharedApplication().keyWindow?.rootViewController {
+                    while let presentedViewController = topController.presentedViewController {
+                        topController = presentedViewController
+                    }
+                    topController.presentViewController(postNewController, animated: true, completion: nil)
+                }
             }
         }
     }

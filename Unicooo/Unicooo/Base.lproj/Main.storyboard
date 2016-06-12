@@ -450,7 +450,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdR-Vm-XP7">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdR-Vm-XP7">
                                 <rect key="frame" x="0.0" y="20" width="600" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="350" id="qnn-qh-FAv"/>
@@ -596,8 +596,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="BnG-n5-5z7" secondAttribute="trailing" constant="8" id="FzW-VL-s2k"/>
                                                 <constraint firstItem="362-4y-RJL" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="28" id="HNJ-qR-8c7"/>
                                                 <constraint firstItem="rVh-Mr-mIN" firstAttribute="top" secondItem="IVa-of-Jaj" secondAttribute="top" id="Owy-yn-Uqg"/>
-                                                <constraint firstAttribute="trailing" secondItem="BnG-n5-5z7" secondAttribute="trailing" constant="8" id="Shm-wI-4ec"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="BnG-n5-5z7" secondAttribute="bottom" constant="10" id="V8r-GW-X3F"/>
+                                                <constraint firstAttribute="bottom" secondItem="BnG-n5-5z7" secondAttribute="bottom" constant="10" id="V8r-GW-X3F"/>
                                                 <constraint firstItem="I2f-ok-KIc" firstAttribute="top" secondItem="rVh-Mr-mIN" secondAttribute="bottom" constant="14" id="VQN-OO-Hto"/>
                                                 <constraint firstItem="rVh-Mr-mIN" firstAttribute="leading" secondItem="IVa-of-Jaj" secondAttribute="leading" id="Z4p-5i-eZj"/>
                                                 <constraint firstItem="362-4y-RJL" firstAttribute="leading" secondItem="IVa-of-Jaj" secondAttribute="leading" constant="14" id="aJu-at-LaU"/>
@@ -610,7 +609,7 @@
                                             </userDefinedRuntimeAttributes>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="Shm-wI-4ec"/>
+                                                    <exclude reference="V8r-GW-X3F"/>
                                                 </mask>
                                             </variation>
                                         </view>
