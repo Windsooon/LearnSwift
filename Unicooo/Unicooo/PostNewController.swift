@@ -18,6 +18,7 @@ class PostNewController: UIViewController {
     var moviePlayerController:MPMoviePlayerController?
     
 
+    @IBOutlet weak var postBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var postNewImageView: UIImageView!
     @IBOutlet weak var postNewContent: UITextField!
     
@@ -27,8 +28,7 @@ class PostNewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostNewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostNewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
+        registerKeyboard()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -80,18 +80,33 @@ class PostNewController: UIViewController {
         //    metrics:nil, views:views))
     }
     
-    func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            print(keyboardSize.height)
-            self.view.frame.origin.y -= keyboardSize.height
-        }
-        
+    func registerKeyboard() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostNewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostNewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-            self.view.frame.origin.y += keyboardSize.height
-        }
+    func keyboardWillShow(notification:NSNotification) {
+        adjustingHeight(true, notification: notification)
+    }
+    
+    func keyboardWillHide(notification:NSNotification) {
+        adjustingHeight(false, notification: notification)
+    }
+    
+    func adjustingHeight(show:Bool, notification:NSNotification) {
+        // 1
+        var userInfo = notification.userInfo!
+        // 2
+        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+        // 3
+        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
+        // 4
+        let changeInHeight = (CGRectGetHeight(keyboardFrame) + 40) * (show ? 1 : -1)
+        //5
+        UIView.animateWithDuration(animationDurarion, animations: { () -> Void in
+            self.postBottomConstraint.constant += changeInHeight
+        })
+        
     }
     /*
     // MARK: - Navigation

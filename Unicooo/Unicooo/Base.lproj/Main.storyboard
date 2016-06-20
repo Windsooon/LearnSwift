@@ -477,6 +477,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="postBottomConstraint" destination="hR8-04-t3k" id="7f7-SS-afe"/>
                         <outlet property="postNewContent" destination="CWb-Eu-PRF" id="k3V-mt-sBt"/>
                         <outlet property="postNewImageView" destination="jdR-Vm-XP7" id="XMw-mZ-ssH"/>
                     </connections>
