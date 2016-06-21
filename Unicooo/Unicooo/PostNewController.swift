@@ -18,6 +18,7 @@ class PostNewController: UIViewController {
     var moviePlayerController:MPMoviePlayerController?
     
 
+    @IBOutlet weak var postNew: UIScrollView!
     @IBOutlet weak var postBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var postNewImageView: UIImageView!
     @IBOutlet weak var postNewContent: UITextField!
@@ -25,11 +26,14 @@ class PostNewController: UIViewController {
     @IBAction func textFieldDoneEditing(sender: UITextField) {
         sender.resignFirstResponder()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         registerKeyboard()
+        hideTap()
+
     }
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -80,6 +84,16 @@ class PostNewController: UIViewController {
         //    metrics:nil, views:views))
     }
     
+    func hideTap() {
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PostNewController.hideKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        postNew.addGestureRecognizer(tapGesture)
+    }
+    
+    func hideKeyboard() {
+        postNewContent.resignFirstResponder()
+    }
+    
     func registerKeyboard() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostNewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(PostNewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
@@ -104,7 +118,8 @@ class PostNewController: UIViewController {
         let changeInHeight = (CGRectGetHeight(keyboardFrame) + 40) * (show ? 1 : -1)
         //5
         UIView.animateWithDuration(animationDurarion, animations: { () -> Void in
-            self.postBottomConstraint.constant += changeInHeight
+            self.postNew.contentInset.bottom += changeInHeight
+            self.postNew.scrollIndicatorInsets.bottom += changeInHeight
         })
         
     }
