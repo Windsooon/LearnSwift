@@ -453,8 +453,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBi-xT-8z3">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4h-Wx-eK9" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4h-Wx-eK9" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="590"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jdR-Vm-XP7">
                                                 <rect key="frame" x="0.0" y="20" width="600" height="350"/>
@@ -470,33 +470,38 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tell somthing about this topic" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="CWb-Eu-PRF">
-                                                <rect key="frame" x="8" y="414" width="584" height="150"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fpL-R6-0fw" userLabel="Post Content">
+                                                <rect key="frame" x="8" y="378" width="584" height="72"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="LNs-gW-g9C"/>
+                                                    <constraint firstAttribute="height" constant="72" id="dhc-3q-n5M"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <action selector="textFieldDoneEditing:" destination="PBS-8w-2zQ" eventType="editingDidEndOnExit" id="jkm-IM-dgT"/>
-                                                </connections>
-                                            </textField>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osl-Ao-ZU8">
+                                                <rect key="frame" x="8" y="460" width="584" height="30"/>
+                                                <state key="normal" title="Post It"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="jdR-Vm-XP7" firstAttribute="top" secondItem="k4h-Wx-eK9" secondAttribute="top" constant="20" id="2df-qf-Va9"/>
-                                            <constraint firstAttribute="bottom" secondItem="CWb-Eu-PRF" secondAttribute="bottom" constant="50" id="4Jq-j5-dIU"/>
+                                            <constraint firstItem="osl-Ao-ZU8" firstAttribute="leading" secondItem="k4h-Wx-eK9" secondAttribute="leading" constant="8" id="EB8-pH-839"/>
                                             <constraint firstItem="jdR-Vm-XP7" firstAttribute="leading" secondItem="k4h-Wx-eK9" secondAttribute="leading" id="ECT-X9-yUB"/>
-                                            <constraint firstItem="CWb-Eu-PRF" firstAttribute="leading" secondItem="k4h-Wx-eK9" secondAttribute="leading" constant="8" id="KEL-K0-KxZ"/>
-                                            <constraint firstItem="CWb-Eu-PRF" firstAttribute="top" secondItem="jdR-Vm-XP7" secondAttribute="bottom" constant="44" id="kZi-bb-rUY"/>
+                                            <constraint firstAttribute="trailing" secondItem="fpL-R6-0fw" secondAttribute="trailing" constant="8" id="LKT-bU-Gck"/>
+                                            <constraint firstItem="osl-Ao-ZU8" firstAttribute="top" secondItem="fpL-R6-0fw" secondAttribute="bottom" constant="10" id="MBm-rn-pVI"/>
+                                            <constraint firstAttribute="bottom" secondItem="fpL-R6-0fw" secondAttribute="bottom" constant="140" id="brc-Fd-ueX"/>
+                                            <constraint firstItem="fpL-R6-0fw" firstAttribute="top" secondItem="jdR-Vm-XP7" secondAttribute="bottom" constant="8" id="gyP-po-vMl"/>
+                                            <constraint firstItem="fpL-R6-0fw" firstAttribute="leading" secondItem="k4h-Wx-eK9" secondAttribute="leading" constant="8" id="h3d-Yq-NGG"/>
                                             <constraint firstAttribute="trailing" secondItem="jdR-Vm-XP7" secondAttribute="trailing" id="l10-EI-cBl"/>
-                                            <constraint firstAttribute="trailing" secondItem="CWb-Eu-PRF" secondAttribute="trailing" constant="8" id="syq-ab-8QD"/>
+                                            <constraint firstAttribute="trailing" secondItem="osl-Ao-ZU8" secondAttribute="trailing" constant="8" id="sJs-X8-QIr"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="k4h-Wx-eK9" firstAttribute="leading" secondItem="GBi-xT-8z3" secondAttribute="leading" id="9Bf-8b-ual"/>
-                                    <constraint firstAttribute="bottom" secondItem="k4h-Wx-eK9" secondAttribute="bottom" id="Lo9-nQ-Dsb"/>
+                                    <constraint firstAttribute="bottom" secondItem="k4h-Wx-eK9" secondAttribute="bottom" constant="10" id="Lo9-nQ-Dsb"/>
                                     <constraint firstItem="k4h-Wx-eK9" firstAttribute="top" secondItem="GBi-xT-8z3" secondAttribute="top" id="TqS-SF-fRW"/>
                                     <constraint firstAttribute="trailing" secondItem="k4h-Wx-eK9" secondAttribute="trailing" id="d7n-AV-dfi"/>
                                 </constraints>
@@ -512,9 +517,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="postBottomConstraint" destination="4Jq-j5-dIU" id="LpZ-v4-Mh9"/>
+                        <outlet property="postBottomConstraint" destination="brc-Fd-ueX" id="jJp-wE-CWF"/>
+                        <outlet property="postContent" destination="fpL-R6-0fw" id="2kK-pX-oUM"/>
                         <outlet property="postNew" destination="GBi-xT-8z3" id="mUi-bh-xo2"/>
-                        <outlet property="postNewContent" destination="CWb-Eu-PRF" id="k3V-mt-sBt"/>
                         <outlet property="postNewImageView" destination="jdR-Vm-XP7" id="XMw-mZ-ssH"/>
                     </connections>
                 </viewController>

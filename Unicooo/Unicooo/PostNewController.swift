@@ -19,31 +19,24 @@ class PostNewController: UIViewController {
     
 
     @IBOutlet weak var postNew: UIScrollView!
-    @IBOutlet weak var postBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var postNewImageView: UIImageView!
-    @IBOutlet weak var postNewContent: UITextField!
+    @IBOutlet weak var postContent: UITextView!
+    @IBOutlet weak var postBottomConstraint: NSLayoutConstraint!
     
-    @IBAction func textFieldDoneEditing(sender: UITextField) {
-        sender.resignFirstResponder()
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         registerKeyboard()
         hideTap()
-
+        setTextBorder()
     }
-    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         updateDisplay()
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func updateDisplay() {
@@ -73,6 +66,12 @@ class PostNewController: UIViewController {
         }
     }
     
+    func setTextBorder() {
+        postContent.layer.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0).CGColor
+        postContent.layer.borderWidth = 1.0;
+        postContent.layer.cornerRadius = 5.0;
+    }
+    
     func setMoviePlayerLayoutConstraints() {
         //let moviePlayerView = moviePlayerController!.view
         //moviePlayerView.translatesAutoresizingMaskIntoConstraints = false
@@ -91,7 +90,7 @@ class PostNewController: UIViewController {
     }
     
     func hideKeyboard() {
-        postNewContent.resignFirstResponder()
+        postContent.resignFirstResponder()
     }
     
     func registerKeyboard() {
@@ -100,28 +99,38 @@ class PostNewController: UIViewController {
     }
     
     func keyboardWillShow(notification:NSNotification) {
-        adjustingHeight(true, notification: notification)
+        if let userInfo = notification.userInfo {
+            if let keyboardSize:CGSize = userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size {
+                let contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height,  0.0);
+                self.postNew.contentInset = contentInset
+                self.postNew.scrollIndicatorInsets = contentInset
+                self.postNew.contentOffset = CGPointMake(self.postNew.contentOffset.x, 0 + keyboardSize.height)
+            }
+        }
+        //adjustingHeight(true, notification: notification)
     }
     
     func keyboardWillHide(notification:NSNotification) {
-        adjustingHeight(false, notification: notification)
+        if let userInfo = notification.userInfo {
+            if let _:CGSize =  userInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size {
+                let contentInset = UIEdgeInsetsZero;
+                self.postNew.contentInset = contentInset
+                self.postNew.scrollIndicatorInsets = contentInset
+                self.postNew.contentOffset = CGPointMake(self.postNew.contentOffset.x, self.postNew.contentOffset.y)
+            }
+        }
+        //adjustingHeight(false, notification: notification)
     }
     
     func adjustingHeight(show:Bool, notification:NSNotification) {
-        // 1
         var userInfo = notification.userInfo!
-        // 2
         let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
-        // 3
         let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! NSTimeInterval
-        // 4
         let changeInHeight = (CGRectGetHeight(keyboardFrame) + 40) * (show ? 1 : -1)
-        //5
         UIView.animateWithDuration(animationDurarion, animations: { () -> Void in
             self.postNew.contentInset.bottom += changeInHeight
             self.postNew.scrollIndicatorInsets.bottom += changeInHeight
         })
-        
     }
     /*
     // MARK: - Navigation
