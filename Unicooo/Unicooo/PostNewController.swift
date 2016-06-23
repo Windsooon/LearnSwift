@@ -21,7 +21,15 @@ class PostNewController: UIViewController {
     @IBOutlet weak var postNew: UIScrollView!
     @IBOutlet weak var postNewImageView: UIImageView!
     @IBOutlet weak var postContent: UITextView!
-    @IBOutlet weak var postBottomConstraint: NSLayoutConstraint!
+    @IBAction func dissmissPostNew() {
+        var presentingViewController: UIViewController! = self.presentingViewController
+        self.dismissViewControllerAnimated(true) {
+            presentingViewController.dismissViewControllerAnimated(false, completion: nil)
+        self.dismissViewControllerAnimated(true, completion: {});
+        }
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
