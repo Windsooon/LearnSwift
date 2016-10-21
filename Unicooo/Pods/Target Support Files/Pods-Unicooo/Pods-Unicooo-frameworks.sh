@@ -85,9 +85,11 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Unicooo/Alamofire.framework"
+  install_framework "Pods-Unicooo/KeychainAccess.framework"
   install_framework "Pods-Unicooo/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Unicooo/Alamofire.framework"
+  install_framework "Pods-Unicooo/KeychainAccess.framework"
   install_framework "Pods-Unicooo/SwiftyJSON.framework"
 fi

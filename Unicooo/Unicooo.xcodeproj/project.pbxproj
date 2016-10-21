@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		230CFBD3846FC2350E9CA3C6 /* Pods_Unicooo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47BF622AF38977B38D32B07 /* Pods_Unicooo.framework */; };
-		C731E5865D9E627B252ECD6E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9DA7C409396D6590B44A881 /* Pods.framework */; };
 		DC099D691C50B5400081C2FC /* ActListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC099D681C50B5400081C2FC /* ActListCell.xib */; };
 		DC099D6B1C50BDF10081C2FC /* ActListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC099D6A1C50BDF10081C2FC /* ActListCell.swift */; };
 		DC14C7121D02E6F4008D35B6 /* PostNewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14C7111D02E6F4008D35B6 /* PostNewController.swift */; };
@@ -62,6 +61,8 @@
 
 /* Begin PBXFileReference section */
 		582BA29363EED99C79540782 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7C395FFD403C376F4EE61AFE /* Pods-Unicooo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unicooo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Unicooo/Pods-Unicooo.debug.xcconfig"; sourceTree = "<group>"; };
+		80A6E24E862E24A379E657BD /* Pods-Unicooo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unicooo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unicooo/Pods-Unicooo.release.xcconfig"; sourceTree = "<group>"; };
 		C47BF622AF38977B38D32B07 /* Pods_Unicooo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unicooo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DA7C409396D6590B44A881 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC099D681C50B5400081C2FC /* ActListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActListCell.xib; sourceTree = "<group>"; };
@@ -110,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C731E5865D9E627B252ECD6E /* Pods.framework in Frameworks */,
 				230CFBD3846FC2350E9CA3C6 /* Pods_Unicooo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +137,8 @@
 			children = (
 				F81107F282B8F96234DA2C30 /* Pods.debug.xcconfig */,
 				582BA29363EED99C79540782 /* Pods.release.xcconfig */,
+				7C395FFD403C376F4EE61AFE /* Pods-Unicooo.debug.xcconfig */,
+				80A6E24E862E24A379E657BD /* Pods-Unicooo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -611,7 +613,7 @@
 		};
 		DC9379EC1C48D80D009272D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F81107F282B8F96234DA2C30 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 7C395FFD403C376F4EE61AFE /* Pods-Unicooo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Unicooo/Info.plist;
@@ -623,7 +625,7 @@
 		};
 		DC9379ED1C48D80D009272D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 582BA29363EED99C79540782 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 80A6E24E862E24A379E657BD /* Pods-Unicooo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Unicooo/Info.plist;

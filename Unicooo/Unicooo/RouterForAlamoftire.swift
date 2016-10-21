@@ -29,7 +29,9 @@ extension Alamofire.Request {
                     return .Success(JSON)
                 } else {
                     let failureReason = "JSON could not be serialized into response object \(value)"
-                    let error =  Error.errorWithCode(.JSONSerializationFailed, failureReason: failureReason)
+                    let userInfo: Dictionary<NSObject, AnyObject> = [NSLocalizedFailureReasonErrorKey: failureReason, Error.UserInfoKeys.StatusCode: response!.statusCode]
+                    let error = NSError(domain: Error.Domain, code: Error.Code.StatusCodeValidationFailed.rawValue, userInfo: userInfo)
+                    //let error =  Error.errorWithCode(.JSONSerializationFailed, failureReason: failureReason)
                     return .Failure(error)
                 }
             case .Failure(let error):
@@ -49,13 +51,17 @@ extension Alamofire.Request {
             
             guard let validData = data else {
                 let failureReason = "Data could not be serialized. Input data was nil"
-                let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
+                let userInfo: Dictionary<NSObject, AnyObject> = [NSLocalizedFailureReasonErrorKey: failureReason, Error.UserInfoKeys.StatusCode: response!.statusCode]
+                let error = NSError(domain: Error.Domain, code: Error.Code.StatusCodeValidationFailed.rawValue, userInfo: userInfo)
+                //let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
                 return .Failure(error)
             }
             
             guard let image = UIImage(data: validData, scale: UIScreen.mainScreen().scale) else {
                 let failureReason = "Data could not be converted to UIImage"
-                let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
+                let userInfo: Dictionary<NSObject, AnyObject> = [NSLocalizedFailureReasonErrorKey: failureReason, Error.UserInfoKeys.StatusCode: response!.statusCode]
+                let error = NSError(domain: Error.Domain, code: Error.Code.StatusCodeValidationFailed.rawValue, userInfo: userInfo)
+                //let error = Error.errorWithCode(.DataSerializationFailed, failureReason: failureReason)
                 return .Failure(error)
             }
             return .Success(image)
@@ -69,7 +75,7 @@ extension Alamofire.Request {
 
 struct Unicooo {
     enum Router: URLRequestConvertible {
-        static let baseURLString = "https://unicooo.com/api"
+        static let baseURLString = "http://127.0.0.1:8000/api"
         static var OAuthToken: String?
         
         case CreateUser([String: AnyObject])
@@ -143,7 +149,7 @@ struct Unicooo {
             switch self {
             //for user
             case .CreateUser(let parameters):
-                return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
+                return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
             //for act
             case .CreateAct(let parameters):
                 return Alamofire.ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0

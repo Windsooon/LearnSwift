@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DCDB55741DB7C68B008CF091 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDB55731DB7C68B008CF091 /* AppDelegate.swift */; };
+		DCDB55761DB7C68B008CF091 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDB55751DB7C68B008CF091 /* ViewController.swift */; };
+		DCDB55791DB7C68C008CF091 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCDB55771DB7C68C008CF091 /* Main.storyboard */; };
+		DCDB557B1DB7C68C008CF091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCDB557A1DB7C68C008CF091 /* Assets.xcassets */; };
+		DCDB557E1DB7C68C008CF091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCDB557C1DB7C68C008CF091 /* LaunchScreen.storyboard */; };
+		DCDB55891DB7C68C008CF091 /* MoneyBallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDB55881DB7C68C008CF091 /* MoneyBallTests.swift */; };
+		DCDB55941DB7C68C008CF091 /* MoneyBallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDB55931DB7C68C008CF091 /* MoneyBallUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DCDB55851DB7C68C008CF091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCDB55681DB7C68B008CF091 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCDB556F1DB7C68B008CF091;
+			remoteInfo = MoneyBall;
+		};
+		DCDB55901DB7C68C008CF091 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCDB55681DB7C68B008CF091 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCDB556F1DB7C68B008CF091;
+			remoteInfo = MoneyBall;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DCDB55701DB7C68B008CF091 /* MoneyBall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneyBall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDB55731DB7C68B008CF091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DCDB55751DB7C68B008CF091 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DCDB55781DB7C68C008CF091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCDB557A1DB7C68C008CF091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCDB557D1DB7C68C008CF091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DCDB557F1DB7C68C008CF091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCDB55841DB7C68C008CF091 /* MoneyBallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyBallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDB55881DB7C68C008CF091 /* MoneyBallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBallTests.swift; sourceTree = "<group>"; };
+		DCDB558A1DB7C68C008CF091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCDB558F1DB7C68C008CF091 /* MoneyBallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoneyBallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCDB55931DB7C68C008CF091 /* MoneyBallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyBallUITests.swift; sourceTree = "<group>"; };
+		DCDB55951DB7C68C008CF091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCDB556D1DB7C68B008CF091 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDB55811DB7C68C008CF091 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDB558C1DB7C68C008CF091 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DCDB55671DB7C68A008CF091 = {
+			isa = PBXGroup;
+			children = (
+				DCDB55721DB7C68B008CF091 /* MoneyBall */,
+				DCDB55871DB7C68C008CF091 /* MoneyBallTests */,
+				DCDB55921DB7C68C008CF091 /* MoneyBallUITests */,
+				DCDB55711DB7C68B008CF091 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DCDB55711DB7C68B008CF091 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCDB55701DB7C68B008CF091 /* MoneyBall.app */,
+				DCDB55841DB7C68C008CF091 /* MoneyBallTests.xctest */,
+				DCDB558F1DB7C68C008CF091 /* MoneyBallUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCDB55721DB7C68B008CF091 /* MoneyBall */ = {
+			isa = PBXGroup;
+			children = (
+				DCDB55731DB7C68B008CF091 /* AppDelegate.swift */,
+				DCDB55751DB7C68B008CF091 /* ViewController.swift */,
+				DCDB55771DB7C68C008CF091 /* Main.storyboard */,
+				DCDB557A1DB7C68C008CF091 /* Assets.xcassets */,
+				DCDB557C1DB7C68C008CF091 /* LaunchScreen.storyboard */,
+				DCDB557F1DB7C68C008CF091 /* Info.plist */,
+			);
+			path = MoneyBall;
+			sourceTree = "<group>";
+		};
+		DCDB55871DB7C68C008CF091 /* MoneyBallTests */ = {
+			isa = PBXGroup;
+			children = (
+				DCDB55881DB7C68C008CF091 /* MoneyBallTests.swift */,
+				DCDB558A1DB7C68C008CF091 /* Info.plist */,
+			);
+			path = MoneyBallTests;
+			sourceTree = "<group>";
+		};
+		DCDB55921DB7C68C008CF091 /* MoneyBallUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DCDB55931DB7C68C008CF091 /* MoneyBallUITests.swift */,
+				DCDB55951DB7C68C008CF091 /* Info.plist */,
+			);
+			path = MoneyBallUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCDB556F1DB7C68B008CF091 /* MoneyBall */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDB55981DB7C68C008CF091 /* Build configuration list for PBXNativeTarget "MoneyBall" */;
+			buildPhases = (
+				DCDB556C1DB7C68B008CF091 /* Sources */,
+				DCDB556D1DB7C68B008CF091 /* Frameworks */,
+				DCDB556E1DB7C68B008CF091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoneyBall;
+			productName = MoneyBall;
+			productReference = DCDB55701DB7C68B008CF091 /* MoneyBall.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DCDB55831DB7C68C008CF091 /* MoneyBallTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDB559B1DB7C68C008CF091 /* Build configuration list for PBXNativeTarget "MoneyBallTests" */;
+			buildPhases = (
+				DCDB55801DB7C68C008CF091 /* Sources */,
+				DCDB55811DB7C68C008CF091 /* Frameworks */,
+				DCDB55821DB7C68C008CF091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCDB55861DB7C68C008CF091 /* PBXTargetDependency */,
+			);
+			name = MoneyBallTests;
+			productName = MoneyBallTests;
+			productReference = DCDB55841DB7C68C008CF091 /* MoneyBallTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DCDB558E1DB7C68C008CF091 /* MoneyBallUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCDB559E1DB7C68C008CF091 /* Build configuration list for PBXNativeTarget "MoneyBallUITests" */;
+			buildPhases = (
+				DCDB558B1DB7C68C008CF091 /* Sources */,
+				DCDB558C1DB7C68C008CF091 /* Frameworks */,
+				DCDB558D1DB7C68C008CF091 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCDB55911DB7C68C008CF091 /* PBXTargetDependency */,
+			);
+			name = MoneyBallUITests;
+			productName = MoneyBallUITests;
+			productReference = DCDB558F1DB7C68C008CF091 /* MoneyBallUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCDB55681DB7C68B008CF091 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Windson;
+				TargetAttributes = {
+					DCDB556F1DB7C68B008CF091 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 8834TCZAA5;
+						ProvisioningStyle = Automatic;
+					};
+					DCDB55831DB7C68C008CF091 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DCDB556F1DB7C68B008CF091;
+					};
+					DCDB558E1DB7C68C008CF091 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = DCDB556F1DB7C68B008CF091;
+					};
+				};
+			};
+			buildConfigurationList = DCDB556B1DB7C68B008CF091 /* Build configuration list for PBXProject "MoneyBall" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCDB55671DB7C68A008CF091;
+			productRefGroup = DCDB55711DB7C68B008CF091 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCDB556F1DB7C68B008CF091 /* MoneyBall */,
+				DCDB55831DB7C68C008CF091 /* MoneyBallTests */,
+				DCDB558E1DB7C68C008CF091 /* MoneyBallUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCDB556E1DB7C68B008CF091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDB557E1DB7C68C008CF091 /* LaunchScreen.storyboard in Resources */,
+				DCDB557B1DB7C68C008CF091 /* Assets.xcassets in Resources */,
+				DCDB55791DB7C68C008CF091 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDB55821DB7C68C008CF091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDB558D1DB7C68C008CF091 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCDB556C1DB7C68B008CF091 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDB55761DB7C68B008CF091 /* ViewController.swift in Sources */,
+				DCDB55741DB7C68B008CF091 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDB55801DB7C68C008CF091 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDB55891DB7C68C008CF091 /* MoneyBallTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCDB558B1DB7C68C008CF091 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCDB55941DB7C68C008CF091 /* MoneyBallUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DCDB55861DB7C68C008CF091 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCDB556F1DB7C68B008CF091 /* MoneyBall */;
+			targetProxy = DCDB55851DB7C68C008CF091 /* PBXContainerItemProxy */;
+		};
+		DCDB55911DB7C68C008CF091 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCDB556F1DB7C68B008CF091 /* MoneyBall */;
+			targetProxy = DCDB55901DB7C68C008CF091 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DCDB55771DB7C68C008CF091 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCDB55781DB7C68C008CF091 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DCDB557C1DB7C68C008CF091 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCDB557D1DB7C68C008CF091 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCDB55961DB7C68C008CF091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DCDB55971DB7C68C008CF091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCDB55991DB7C68C008CF091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8834TCZAA5;
+				INFOPLIST_FILE = MoneyBall/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.MoneyBall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		DCDB559A1DB7C68C008CF091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8834TCZAA5;
+				INFOPLIST_FILE = MoneyBall/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.MoneyBall;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		DCDB559C1DB7C68C008CF091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MoneyBallTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.MoneyBallTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoneyBall.app/MoneyBall";
+			};
+			name = Debug;
+		};
+		DCDB559D1DB7C68C008CF091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MoneyBallTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.MoneyBallTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoneyBall.app/MoneyBall";
+			};
+			name = Release;
+		};
+		DCDB559F1DB7C68C008CF091 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MoneyBallUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.MoneyBallUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MoneyBall;
+			};
+			name = Debug;
+		};
+		DCDB55A01DB7C68C008CF091 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = MoneyBallUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = unicooo.MoneyBallUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = MoneyBall;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCDB556B1DB7C68B008CF091 /* Build configuration list for PBXProject "MoneyBall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDB55961DB7C68C008CF091 /* Debug */,
+				DCDB55971DB7C68C008CF091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCDB55981DB7C68C008CF091 /* Build configuration list for PBXNativeTarget "MoneyBall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDB55991DB7C68C008CF091 /* Debug */,
+				DCDB559A1DB7C68C008CF091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DCDB559B1DB7C68C008CF091 /* Build configuration list for PBXNativeTarget "MoneyBallTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDB559C1DB7C68C008CF091 /* Debug */,
+				DCDB559D1DB7C68C008CF091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DCDB559E1DB7C68C008CF091 /* Build configuration list for PBXNativeTarget "MoneyBallUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCDB559F1DB7C68C008CF091 /* Debug */,
+				DCDB55A01DB7C68C008CF091 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCDB55681DB7C68B008CF091 /* Project object */;
+}

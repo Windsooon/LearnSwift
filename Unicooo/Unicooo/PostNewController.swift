@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import MediaPlayer
 import MobileCoreServices
 
@@ -16,19 +17,34 @@ class PostNewController: UIViewController {
     var postNewNSURL: NSURL?
     var postNewLastChosenMediaType: String?
     var moviePlayerController:MPMoviePlayerController?
+    var uploadToken: String?
+    var uploadKey: String?
     
 
     @IBOutlet weak var postNew: UIScrollView!
     @IBOutlet weak var postNewImageView: UIImageView!
     @IBOutlet weak var postContent: UITextView!
-    @IBAction func dissmissPostNew() {
-        var presentingViewController: UIViewController! = self.presentingViewController
+    @IBAction func dissmissPostNew(sender: AnyObject) {
+        let presentingViewController: UIViewController! = self.presentingViewController
         self.dismissViewControllerAnimated(true) {
             presentingViewController.dismissViewControllerAnimated(false, completion: nil)
         self.dismissViewControllerAnimated(true, completion: {});
         }
     }
     
+    @IBAction func savePostNew(sender: AnyObject) {
+        Alamofire.upload(.POST, "https://unicooo.com/token/?type=1", file: postNewNSURL!)
+            .progress { bytesWritten, totalBytesWritten, totalBytesExpectedToWrite in
+                print(totalBytesWritten)
+                dispatch_async(dispatch_get_main_queue()) {
+                    print("Total bytes written on main queue: \(totalBytesWritten)")
+                }
+            }
+            .validate()
+            .responseJSON { response in
+                debugPrint(response)
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -41,6 +57,7 @@ class PostNewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         updateDisplay()
+        getToken()
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +88,16 @@ class PostNewController: UIViewController {
                 moviePlayerController!.view.hidden = false
                 moviePlayerController!.play()
             }
+        }
+    }
+    
+    func getToken() {
+        Alamofire.request(.GET, UPLOADTOKEN)
+            .validate()
+            .responseJSON { response in
+                if let JSON = response.result.value {
+                    print(JSON)
+                }
         }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainAccess
 import Alamofire
 
 class SignupController: UIViewController, UITextFieldDelegate{
@@ -19,19 +20,19 @@ class SignupController: UIViewController, UITextFieldDelegate{
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func siguUp(sender: UIButton) {
+    @IBAction func signUp(sender: UIButton) {
         if (emailField.text?.characters.count > 6 && usernameField.text?.characters.count > 6 && passwordField.text?.characters.count > 8) {
             //if the field not empty
-            Alamofire.request(Unicooo.Router.CreateUser(["email": emailField.text!, "user_name": usernameField.text!, "password": passwordField.text!])).validate()
+            let requests = Alamofire.request(Unicooo.Router.CreateUser(["email": emailField.text!, "user_name": usernameField.text!, "password": passwordField.text!])).validate()
                 .responseJSON { response in
                     switch response.result {
                     case .Success:
-                        //Alamofire.request(.POST, REGISTER_ROUTER
-                        print(response.response)
+                        print("yes")
                     case .Failure(let error):
                         print("server may have some problem \(error)")
                     }
             }
+            debugPrint(requests)
         }
         else {
             print("some field is missing")
