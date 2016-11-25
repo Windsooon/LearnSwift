@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FacebookLogin
+
 
 class ViewController: UIViewController {
 
@@ -17,6 +19,11 @@ class ViewController: UIViewController {
         front_icon.layoutIfNeeded()
         front_icon.layer.cornerRadius = front_icon.frame.height/2
         front_icon.clipsToBounds = true
+        let loginButton = LoginButton(readPermissions: [ .PublicProfile ])
+        loginButton.center = view.center
+        
+        view.addSubview(loginButton)
+        
     }
 
     override func didReceiveMemoryWarning() {
