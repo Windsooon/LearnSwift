@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC49E5191DEC7DEB000AD91D /* MoneyList.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC49E5181DEC7DEB000AD91D /* MoneyList.xib */; };
+		DC49E51B1DEC9031000AD91D /* MoneyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC49E51A1DEC9031000AD91D /* MoneyListTableViewController.swift */; };
 		DC59BFBA1DEB34430051D09E /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */; };
 		DC59BFBE1DEB347F0051D09E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59BFBD1DEB347F0051D09E /* AddViewController.swift */; };
 		E7A30F04089084C500000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E2964453B6000000000 /* UIKit.framework */; };
@@ -106,6 +108,8 @@
 		1DD70E29F3841F8A00000000 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		1DD70E29FAD1C5E800000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = MySampleApp/App/SupportingFiles/Info.plist; sourceTree = SOURCE_ROOT; };
 		1DD70E29FB2DFBE600000000 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DC49E5181DEC7DEB000AD91D /* MoneyList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoneyList.xib; path = MySampleApp/App/MoneyList.xib; sourceTree = SOURCE_ROOT; };
+		DC49E51A1DEC9031000AD91D /* MoneyListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoneyListTableViewController.swift; path = MySampleApp/App/MoneyListTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrontPageViewController.swift; path = MySampleApp/App/FrontPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		DC59BFBD1DEB347F0051D09E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddViewController.swift; path = MySampleApp/App/AddViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -143,6 +147,8 @@
 				1DD70E293B491F7900000000 /* Launch Screen.storyboard */,
 				1DD70E29927380A500000000 /* Main.storyboard */,
 				1DD70E29B965701700000000 /* MainViewController.swift */,
+				DC49E51A1DEC9031000AD91D /* MoneyListTableViewController.swift */,
+				DC49E5181DEC7DEB000AD91D /* MoneyList.xib */,
 				DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */,
 				DC59BFBD1DEB347F0051D09E /* AddViewController.swift */,
 				B401C97948AF2BE300000000 /* SignIn */,
@@ -364,6 +370,7 @@
 				E7A30F0494EAB8A100000000 /* Launch Screen.storyboard in Resources */,
 				E7A30F04F6A648FD00000000 /* Images.xcassets in Resources */,
 				E7A30F046E7680CF00000000 /* UserIdentity.storyboard in Resources */,
+				DC49E5191DEC7DEB000AD91D /* MoneyList.xib in Resources */,
 				E7A30F04CB49968A00000000 /* NoSQLDatabase.storyboard in Resources */,
 				E7A30F044A51B70300000000 /* Main.storyboard in Resources */,
 			);
@@ -413,6 +420,7 @@
 				E7A30F04DD4E610700000000 /* NoSQLTableFactory.swift in Sources */,
 				E7A30F04B4EC297500000000 /* AppDelegate.swift in Sources */,
 				E7A30F049ABD591F00000000 /* Owe.swift in Sources */,
+				DC49E51B1DEC9031000AD91D /* MoneyListTableViewController.swift in Sources */,
 				DC59BFBE1DEB347F0051D09E /* AddViewController.swift in Sources */,
 				E7A30F043EE7460000000000 /* DemoFeature.swift in Sources */,
 				E7A30F04128FF38A00000000 /* NoSQLSampleDataGenerator.swift in Sources */,
