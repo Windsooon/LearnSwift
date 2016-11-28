@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DC49E5191DEC7DEB000AD91D /* MoneyList.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC49E5181DEC7DEB000AD91D /* MoneyList.xib */; };
 		DC49E51B1DEC9031000AD91D /* MoneyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC49E51A1DEC9031000AD91D /* MoneyListTableViewController.swift */; };
+		DC49E51E1DEC98F8000AD91D /* MoneyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC49E51D1DEC98F8000AD91D /* MoneyListCell.swift */; };
 		DC59BFBA1DEB34430051D09E /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */; };
 		DC59BFBE1DEB347F0051D09E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59BFBD1DEB347F0051D09E /* AddViewController.swift */; };
 		E7A30F04089084C500000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E2964453B6000000000 /* UIKit.framework */; };
@@ -110,6 +111,7 @@
 		1DD70E29FB2DFBE600000000 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		DC49E5181DEC7DEB000AD91D /* MoneyList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoneyList.xib; path = MySampleApp/App/MoneyList.xib; sourceTree = SOURCE_ROOT; };
 		DC49E51A1DEC9031000AD91D /* MoneyListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoneyListTableViewController.swift; path = MySampleApp/App/MoneyListTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		DC49E51D1DEC98F8000AD91D /* MoneyListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoneyListCell.swift; path = MySampleApp/App/MoneyListCell.swift; sourceTree = SOURCE_ROOT; };
 		DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrontPageViewController.swift; path = MySampleApp/App/FrontPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		DC59BFBD1DEB347F0051D09E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddViewController.swift; path = MySampleApp/App/AddViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 				DC59BFBD1DEB347F0051D09E /* AddViewController.swift */,
 				B401C97948AF2BE300000000 /* SignIn */,
 				B401C9794362C3CB00000000 /* SupportingFiles */,
+				DC49E51C1DEC98D6000AD91D /* View */,
 				B401C9794BEA6ABB00000000 /* Utility */,
 			);
 			name = App;
@@ -305,6 +308,15 @@
 			path = mysampleapp/amazonaws/models;
 			sourceTree = "<group>";
 		};
+		DC49E51C1DEC98D6000AD91D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC49E51D1DEC98F8000AD91D /* MoneyListCell.swift */,
+			);
+			name = View;
+			path = mysampleapp/app/utility;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -424,6 +436,7 @@
 				DC59BFBE1DEB347F0051D09E /* AddViewController.swift in Sources */,
 				E7A30F043EE7460000000000 /* DemoFeature.swift in Sources */,
 				E7A30F04128FF38A00000000 /* NoSQLSampleDataGenerator.swift in Sources */,
+				DC49E51E1DEC98F8000AD91D /* MoneyListCell.swift in Sources */,
 				E7A30F04CE20D89500000000 /* LendTable.swift in Sources */,
 				E7A30F04364EAB4D00000000 /* UtilityFunctions.swift in Sources */,
 				E7A30F04B2D6535B00000000 /* NoSQLTableViewController.swift in Sources */,

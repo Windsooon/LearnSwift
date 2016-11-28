@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoneyListIdentifier" rowHeight="120" id="jBn-fC-yIq">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoneyListIdentifier" rowHeight="120" id="jBn-fC-yIq" customClass="MoneyListCell" customModule="MySampleApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jBn-fC-yIq" id="610-HC-tOW">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="119"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Pvw-Wz-wg1">
@@ -73,6 +73,12 @@
                     <constraint firstItem="6Yn-Sv-b42" firstAttribute="top" secondItem="Ch9-cm-7LT" secondAttribute="bottom" constant="8" id="z2t-B6-UVh"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="commentsLabel" destination="6Yn-Sv-b42" id="ZNc-if-cxr"/>
+                <outlet property="moneyLabel" destination="Ch9-cm-7LT" id="gF4-U5-iYH"/>
+                <outlet property="userAvatarImage" destination="Pvw-Wz-wg1" id="jp8-Qv-MjK"/>
+                <outlet property="userNameLabel" destination="KLQ-ze-PLd" id="dSF-FN-fAo"/>
+            </connections>
             <point key="canvasLocation" x="-26.5" y="-27"/>
         </tableViewCell>
     </objects>
