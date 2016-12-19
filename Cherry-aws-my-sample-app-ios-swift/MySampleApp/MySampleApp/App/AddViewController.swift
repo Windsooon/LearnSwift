@@ -7,37 +7,40 @@
 //
 
 import UIKit
+import AWSDynamoDB
+import AWSMobileHubHelper
 
 class AddViewController: UIViewController {
 
-    @IBOutlet weak var friendField: UITextField!
+    @IBOutlet weak var friend: UITextField!
+    @IBOutlet weak var money: UITextField!
+    @IBOutlet weak var remarks: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func textFieldDoneEditing(sender: UITextField){
         sender.resignFirstResponder()
     }
 
     @IBAction func backgroundTap(sender: UIControl){
-        friendField.resignFirstResponder()
+        friend.resignFirstResponder()
+        money.resignFirstResponder()
+        remarks.resignFirstResponder()
+    }
+    
+    @IBAction func addRecord(sender: UIButton){
+        if (friend.text?.characters.count >= 1 && money.text?.characters.count >= 1 && remarks.text?.characters.count >= 0) {
+            print("you got me")
+        }
+        else {
+            print("some field is missing")
+        }
     }
 }

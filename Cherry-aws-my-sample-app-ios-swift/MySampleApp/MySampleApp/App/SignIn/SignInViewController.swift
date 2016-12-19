@@ -69,6 +69,8 @@ class SignInViewController: UIViewController {
         AWSIdentityManager.defaultIdentityManager().loginWithSignInProvider(signInProvider, completionHandler: {(result: AnyObject?, error: NSError?) -> Void in
             // If no error reported by SignInProvider, discard the sign-in view controller.
             if error == nil {
+                let frontpageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("frontpageViewController") as! FrontPageViewController
+                self.navigationController!.pushViewController(frontpageViewController, animated: true)
                 dispatch_async(dispatch_get_main_queue(),{
                     self.navigationController?.popToRootViewControllerAnimated(true)
                 })

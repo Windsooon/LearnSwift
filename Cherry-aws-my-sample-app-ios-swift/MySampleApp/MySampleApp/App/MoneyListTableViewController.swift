@@ -9,12 +9,13 @@
 import UIKit
 
 class MoneyListTableViewController: UITableViewController {
-
+    let cellTableIdentifier = "MoneyListIdentifier"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        customTableCell()
+        self.tableView.rowHeight = 120
 
-        let nib = UINib(nibName: "MoneyList", bundle: nil)
-        tableView.registerNib(nib, forCellReuseIdentifier: "MoneyListIdentifier")
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,18 +28,15 @@ class MoneyListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellTableIdentifier, forIndexPath: indexPath) as! MoneyListCell
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -84,5 +82,10 @@ class MoneyListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func customTableCell() {
+        let nib = UINib(nibName: "MoneyList", bundle: nil)
+        self.tableView.registerNib(nib, forCellReuseIdentifier: cellTableIdentifier)
+    }
 
 }

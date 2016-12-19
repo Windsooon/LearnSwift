@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import AWSMobileHubHelper
 
 class FrontPageViewController: UIViewController {
+    @IBOutlet weak var userAvatar: UIImageView!
+    @IBOutlet weak var userName: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +22,27 @@ class FrontPageViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let identityManager = AWSIdentityManager.defaultIdentityManager()
+        
+        if let identityUserName = identityManager.userName {
+            userName.text = identityUserName
+        } else {
+            userName.text = NSLocalizedString("Guest User", comment: "Placeholder text for the guest user.")
+        }
+        
+        if let imageURL = identityManager.imageURL {
+            let imageData = NSData(contentsOfURL: imageURL)!
+            if let profileImage = UIImage(data: imageData) {
+                userAvatar.image = profileImage
+            } else {
+                userAvatar.image = UIImage(named: "UserIcon")
+            }
+        }
     }
     
 

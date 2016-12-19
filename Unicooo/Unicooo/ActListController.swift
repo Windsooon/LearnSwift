@@ -69,7 +69,7 @@ class ActListController: UITableViewController {
         
         cell.request = Alamofire.request(.GET, imageURL).responseImage {
             response in
-            guard let image = response.result.value where response.result.error == nil else { return }
+            guard let image = response.result.value, response.result.error == nil else { return }
             cell.setNeedsLayout()
             cell.actThumb = image
         }
