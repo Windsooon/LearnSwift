@@ -16,6 +16,8 @@ class AddViewController: UIViewController {
     @IBOutlet weak var money: UITextField!
     @IBOutlet weak var remarks: UITextField!
     
+    var table: Table?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -37,7 +39,33 @@ class AddViewController: UIViewController {
     
     @IBAction func addRecord(sender: UIButton){
         if (friend.text?.characters.count >= 1 && money.text?.characters.count >= 1 && remarks.text?.characters.count >= 0) {
-            print("you got me")
+            let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
+            var errors: [NSError] = []
+            let group: dispatch_group_t = dispatch_group_create()
+            
+            let itemForGet = OweMoney()
+            
+            itemForGet._userId = AWSIdentityManager.defaultIdentityManager().identityId!
+            itemForGet._createdDate = "demo-createdDate-500000"
+            itemForGet._money = 1
+            itemForGet._otherUserFacebookId = "1"
+            itemForGet._otherUserId = "1"
+            itemForGet._status = 1
+            itemForGet._updatedDate = "1"
+            
+            dispatch_group_enter(group)
+            
+            
+            objectMapper.save(itemForGet, completionHandler: {(error: NSError?) -> Void in
+                if error != nil {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        errors.append(error!)
+                        print("error")
+                    })
+                }
+                print("successed")
+                dispatch_group_leave(group)
+            })
         }
         else {
             print("some field is missing")

@@ -10,6 +10,8 @@
 		DC49E5191DEC7DEB000AD91D /* MoneyList.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC49E5181DEC7DEB000AD91D /* MoneyList.xib */; };
 		DC49E51B1DEC9031000AD91D /* MoneyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC49E51A1DEC9031000AD91D /* MoneyListTableViewController.swift */; };
 		DC49E51E1DEC98F8000AD91D /* MoneyListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC49E51D1DEC98F8000AD91D /* MoneyListCell.swift */; };
+		DC4CF1701E09766600E497C1 /* NoSQLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4CF16F1E09766600E497C1 /* NoSQLTableViewController.swift */; };
+		DC4CF1721E097FE800E497C1 /* OweMoneyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4CF1711E097FE800E497C1 /* OweMoneyTable.swift */; };
 		DC59BFBA1DEB34430051D09E /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */; };
 		DC59BFBE1DEB347F0051D09E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59BFBD1DEB347F0051D09E /* AddViewController.swift */; };
 		DC8E1A531E0832330009F3BF /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E1A521E0832330009F3BF /* FacebookLoginViewController.swift */; };
@@ -95,6 +97,8 @@
 		DC49E5181DEC7DEB000AD91D /* MoneyList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MoneyList.xib; path = MySampleApp/App/MoneyList.xib; sourceTree = SOURCE_ROOT; };
 		DC49E51A1DEC9031000AD91D /* MoneyListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoneyListTableViewController.swift; path = MySampleApp/App/MoneyListTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		DC49E51D1DEC98F8000AD91D /* MoneyListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoneyListCell.swift; path = MySampleApp/App/MoneyListCell.swift; sourceTree = SOURCE_ROOT; };
+		DC4CF16F1E09766600E497C1 /* NoSQLTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoSQLTableViewController.swift; path = MySampleApp/Demo/NoSQL/NoSQLTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		DC4CF1711E097FE800E497C1 /* OweMoneyTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OweMoneyTable.swift; path = mysampleapp/demo/nosql/OweMoneyTable.swift; sourceTree = SOURCE_ROOT; };
 		DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrontPageViewController.swift; path = MySampleApp/App/FrontPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		DC59BFBD1DEB347F0051D09E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddViewController.swift; path = MySampleApp/App/AddViewController.swift; sourceTree = SOURCE_ROOT; };
 		DC8E1A521E0832330009F3BF /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginViewController.swift; path = MySampleApp/App/FacebookLoginViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -270,6 +274,8 @@
 		B401C979D9B9C4EB00000000 /* NoSQL */ = {
 			isa = PBXGroup;
 			children = (
+				DC4CF16F1E09766600E497C1 /* NoSQLTableViewController.swift */,
+				DC4CF1711E097FE800E497C1 /* OweMoneyTable.swift */,
 			);
 			name = NoSQL;
 			path = mysampleapp/demo/nosql;
@@ -407,6 +413,8 @@
 				DC59BFBE1DEB347F0051D09E /* AddViewController.swift in Sources */,
 				E7A30F043EE7460000000000 /* DemoFeature.swift in Sources */,
 				DC49E51E1DEC98F8000AD91D /* MoneyListCell.swift in Sources */,
+				DC4CF1701E09766600E497C1 /* NoSQLTableViewController.swift in Sources */,
+				DC4CF1721E097FE800E497C1 /* OweMoneyTable.swift in Sources */,
 				DC8E1A531E0832330009F3BF /* FacebookLoginViewController.swift in Sources */,
 				E7A30F04364EAB4D00000000 /* UtilityFunctions.swift in Sources */,
 				E7A30F049BCA726300000000 /* MainViewController.swift in Sources */,

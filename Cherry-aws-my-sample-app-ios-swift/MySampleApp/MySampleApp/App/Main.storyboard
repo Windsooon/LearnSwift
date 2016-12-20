@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="owq-lJ-a2C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="owq-lJ-a2C">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -73,7 +73,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KFX-1O-92A" id="gHg-KP-4aj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -281,13 +281,6 @@
                                     <constraint firstItem="6KO-R3-W9I" firstAttribute="top" secondItem="kDC-4Q-6mr" secondAttribute="bottom" constant="44" id="x4J-kA-LdJ"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ZiZ-SK-TiN">
-                                <rect key="frame" x="26" y="567" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="n5M-KC-bLi"/>
-                                    <constraint firstAttribute="width" constant="70" id="oqF-jn-SuN"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icon" translatesAutoresizingMaskIntoConstraints="NO" id="om1-oN-qy1">
                                 <rect key="frame" x="147" y="567" width="80" height="80"/>
                                 <constraints>
@@ -302,6 +295,17 @@
                                     <constraint firstAttribute="width" constant="70" id="tip-2S-08k"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDZ-DH-g6S">
+                                <rect key="frame" x="22" y="567" width="70" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="PR6-8h-6UY"/>
+                                    <constraint firstAttribute="width" constant="70" id="Z32-zc-atc"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="add_icon"/>
+                                <connections>
+                                    <action selector="addDebt:" destination="6aJ-gZ-YEi" eventType="touchUpInside" id="AsL-6Q-p3Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -313,11 +317,11 @@
                             <constraint firstItem="hyT-ki-5kY" firstAttribute="centerX" secondItem="m7y-9M-iPE" secondAttribute="centerX" id="HNl-mn-fVL"/>
                             <constraint firstItem="om1-oN-qy1" firstAttribute="centerX" secondItem="m7y-9M-iPE" secondAttribute="centerX" id="MXp-nl-Ekx"/>
                             <constraint firstItem="u0t-Nh-qh3" firstAttribute="top" secondItem="ATv-Rn-HGB" secondAttribute="bottom" constant="30" id="P30-LL-T8u"/>
+                            <constraint firstItem="u0t-Nh-qh3" firstAttribute="top" secondItem="jDZ-DH-g6S" secondAttribute="bottom" constant="30" id="alt-9y-G2X"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="jDZ-DH-g6S" secondAttribute="leading" constant="10" id="iOW-cl-DSS"/>
                             <constraint firstItem="Z2H-YT-nAZ" firstAttribute="centerX" secondItem="om1-oN-qy1" secondAttribute="centerX" id="kDb-To-tqQ"/>
-                            <constraint firstItem="u0t-Nh-qh3" firstAttribute="top" secondItem="ZiZ-SK-TiN" secondAttribute="bottom" constant="30" id="ogi-Yf-g3v"/>
                             <constraint firstItem="u0t-Nh-qh3" firstAttribute="top" secondItem="om1-oN-qy1" secondAttribute="bottom" constant="20" id="pGz-Pb-fJN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ATv-Rn-HGB" secondAttribute="trailing" constant="10" id="v5J-tT-FkZ"/>
-                            <constraint firstItem="ZiZ-SK-TiN" firstAttribute="leading" secondItem="m7y-9M-iPE" secondAttribute="leadingMargin" constant="10" id="xi9-AK-T1i"/>
                             <constraint firstItem="Z2H-YT-nAZ" firstAttribute="trailing" secondItem="hyT-ki-5kY" secondAttribute="trailing" id="zRg-pZ-VBC"/>
                         </constraints>
                     </view>
@@ -333,7 +337,7 @@
         <!--Add View Controller-->
         <scene sceneID="gWg-JI-QTo">
             <objects>
-                <viewController id="XtK-lF-QoY" customClass="AddViewController" customModule="MySampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addViewController" id="XtK-lF-QoY" customClass="AddViewController" customModule="MySampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KnS-So-Lea"/>
                         <viewControllerLayoutGuide type="bottom" id="rwj-q5-yfD"/>
