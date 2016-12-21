@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import AWSDynamoDB
 import AWSMobileHubHelper
 
@@ -44,14 +45,18 @@ class AddViewController: UIViewController {
             let group: dispatch_group_t = dispatch_group_create()
             
             let itemForGet = OweMoney()
+            let date = NSDate()
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.A"
+            let dateString = dateFormatter.stringFromDate(date)
             
             itemForGet._userId = AWSIdentityManager.defaultIdentityManager().identityId!
-            itemForGet._createdDate = "demo-createdDate-500000"
+            itemForGet._createdDate = dateString
             itemForGet._money = 1
             itemForGet._otherUserFacebookId = "1"
             itemForGet._otherUserId = "1"
             itemForGet._status = 1
-            itemForGet._updatedDate = "1"
+            itemForGet._updatedDate = dateString
             
             dispatch_group_enter(group)
             
