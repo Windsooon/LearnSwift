@@ -39,7 +39,8 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func addRecord(sender: UIButton){
-        if (friend.text?.characters.count >= 1 && money.text?.characters.count >= 1 && remarks.text?.characters.count >= 0) {
+        // 必填全部字段，money需要填数字
+        if (friend.text?.characters.count >= 0 && (money.text?.characters.count)! >= 0 && remarks.text?.characters.count >= 0 && Int(money.text!) != nil) {
             let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
             var errors: [NSError] = []
             let group: dispatch_group_t = dispatch_group_create()
@@ -50,12 +51,13 @@ class AddViewController: UIViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.A"
             let dateString = dateFormatter.stringFromDate(date)
             
+            
             itemForGet._userId = AWSIdentityManager.defaultIdentityManager().identityId!
-            itemForGet._createdDate = dateString
-            itemForGet._money = 1
             itemForGet._otherUserFacebookId = "1"
             itemForGet._otherUserId = "1"
             itemForGet._status = 1
+            itemForGet._money = Int(money.text!)
+            itemForGet._createdDate = dateString
             itemForGet._updatedDate = dateString
             
             dispatch_group_enter(group)
