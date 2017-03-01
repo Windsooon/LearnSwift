@@ -15,6 +15,7 @@
 		DC59BFBA1DEB34430051D09E /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */; };
 		DC59BFBE1DEB347F0051D09E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59BFBD1DEB347F0051D09E /* AddViewController.swift */; };
 		DC8E1A531E0832330009F3BF /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E1A521E0832330009F3BF /* FacebookLoginViewController.swift */; };
+		DCCE4C871E670324004D66A0 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE4C861E670324004D66A0 /* ListTableViewController.swift */; };
 		E7A30F04089084C500000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E2964453B6000000000 /* UIKit.framework */; };
 		E7A30F04170A62E700000000 /* AWSDynamoDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29AFEAAD4500000000 /* AWSDynamoDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E7A30F04170A62E700000001 /* AWSDynamoDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E29AFEAAD4500000000 /* AWSDynamoDB.framework */; };
@@ -102,6 +103,7 @@
 		DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrontPageViewController.swift; path = MySampleApp/App/FrontPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		DC59BFBD1DEB347F0051D09E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddViewController.swift; path = MySampleApp/App/AddViewController.swift; sourceTree = SOURCE_ROOT; };
 		DC8E1A521E0832330009F3BF /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginViewController.swift; path = MySampleApp/App/FacebookLoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		DCCE4C861E670324004D66A0 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListTableViewController.swift; path = MySampleApp/App/ListTableViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */,
 				DC8E1A521E0832330009F3BF /* FacebookLoginViewController.swift */,
 				DC59BFBD1DEB347F0051D09E /* AddViewController.swift */,
+				DCCE4C861E670324004D66A0 /* ListTableViewController.swift */,
 				B401C97948AF2BE300000000 /* SignIn */,
 				B401C9794362C3CB00000000 /* SupportingFiles */,
 				DC49E51C1DEC98D6000AD91D /* View */,
@@ -409,6 +412,7 @@
 				E7A30F04B9E0318700000000 /* SignInViewController.swift in Sources */,
 				E7A30F04B4EC297500000000 /* AppDelegate.swift in Sources */,
 				E7A30F049ABD591F00000000 /* OweMoney.swift in Sources */,
+				DCCE4C871E670324004D66A0 /* ListTableViewController.swift in Sources */,
 				DC49E51B1DEC9031000AD91D /* MoneyListTableViewController.swift in Sources */,
 				DC59BFBE1DEB347F0051D09E /* AddViewController.swift in Sources */,
 				E7A30F043EE7460000000000 /* DemoFeature.swift in Sources */,

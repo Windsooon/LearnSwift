@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="owq-lJ-a2C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6aJ-gZ-YEi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -60,6 +60,34 @@
             </objects>
             <point key="canvasLocation" x="1432" y="467"/>
         </scene>
+        <!--List Table View Controller-->
+        <scene sceneID="MFs-Gw-VPg">
+            <objects>
+                <tableViewController storyboardIdentifier="listTableViewController" id="4hA-6u-ksC" customClass="ListTableViewController" customModule="MySampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="P1Q-Bs-wHb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9E6-hb-0JP">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9E6-hb-0JP" id="CJ1-ie-YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4hA-6u-ksC" id="GJk-Ic-LaX"/>
+                            <outlet property="delegate" destination="4hA-6u-ksC" id="LdW-9M-TR7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="njL-pU-nf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="665" y="1245"/>
+        </scene>
         <!--Money List Controller-->
         <scene sceneID="fAx-4F-mUK">
             <objects>
@@ -73,7 +101,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KFX-1O-92A" id="gHg-KP-4aj">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -148,10 +176,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icon" translatesAutoresizingMaskIntoConstraints="NO" id="3Re-kX-iUc" userLabel="AvatarView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_icon" translatesAutoresizingMaskIntoConstraints="NO" id="3Re-kX-iUc" userLabel="AvatarView">
                                 <rect key="frame" x="123" y="50" width="128" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="we will never post anything on your facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df4-GZ-IR3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="we will never post anything on your facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="df4-GZ-IR3">
                                 <rect key="frame" x="16" y="593" width="344" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="0VY-Q3-Vq2"/>
@@ -176,6 +204,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3Re-kX-iUc" firstAttribute="centerX" secondItem="t4c-kk-zFj" secondAttribute="centerX" id="HCr-Bg-HPE"/>
+                            <constraint firstItem="df4-GZ-IR3" firstAttribute="top" secondItem="iRR-75-CT0" secondAttribute="bottom" constant="34" id="V1U-Ir-pWO"/>
                             <constraint firstItem="3Re-kX-iUc" firstAttribute="top" secondItem="5OX-9i-r4f" secondAttribute="bottom" constant="30" id="Yj7-lp-TWi"/>
                             <constraint firstItem="df4-GZ-IR3" firstAttribute="centerX" secondItem="t4c-kk-zFj" secondAttribute="centerX" id="eJZ-34-DAf"/>
                             <constraint firstItem="iRR-75-CT0" firstAttribute="centerX" secondItem="t4c-kk-zFj" secondAttribute="centerX" id="foW-68-a4G"/>
@@ -281,13 +310,6 @@
                                     <constraint firstItem="6KO-R3-W9I" firstAttribute="top" secondItem="kDC-4Q-6mr" secondAttribute="bottom" constant="44" id="x4J-kA-LdJ"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icon" translatesAutoresizingMaskIntoConstraints="NO" id="om1-oN-qy1">
-                                <rect key="frame" x="147" y="567" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="1yX-Lo-suh"/>
-                                    <constraint firstAttribute="width" constant="80" id="qvf-Hn-jjH"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="finance_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ATv-Rn-HGB">
                                 <rect key="frame" x="279" y="567" width="70" height="70"/>
                                 <constraints>
@@ -295,7 +317,7 @@
                                     <constraint firstAttribute="width" constant="70" id="tip-2S-08k"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDZ-DH-g6S">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDZ-DH-g6S" userLabel="add_button">
                                 <rect key="frame" x="22" y="567" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="PR6-8h-6UY"/>
@@ -304,6 +326,14 @@
                                 <state key="normal" title="Button" image="add_icon"/>
                                 <connections>
                                     <action selector="addDebt:" destination="6aJ-gZ-YEi" eventType="touchUpInside" id="AsL-6Q-p3Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="top" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1z0-hk-SyA" userLabel="list_button">
+                                <rect key="frame" x="142" y="557" width="90" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="home_icon"/>
+                                <connections>
+                                    <action selector="debtList:" destination="6aJ-gZ-YEi" eventType="touchUpInside" id="GtC-SX-H3V"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -315,12 +345,9 @@
                             <constraint firstItem="szt-za-3D2" firstAttribute="centerX" secondItem="m7y-9M-iPE" secondAttribute="centerX" id="EBa-UD-iiH"/>
                             <constraint firstItem="hyT-ki-5kY" firstAttribute="top" secondItem="kbs-Uq-Tf0" secondAttribute="bottom" constant="30" id="Fas-mY-43u"/>
                             <constraint firstItem="hyT-ki-5kY" firstAttribute="centerX" secondItem="m7y-9M-iPE" secondAttribute="centerX" id="HNl-mn-fVL"/>
-                            <constraint firstItem="om1-oN-qy1" firstAttribute="centerX" secondItem="m7y-9M-iPE" secondAttribute="centerX" id="MXp-nl-Ekx"/>
                             <constraint firstItem="u0t-Nh-qh3" firstAttribute="top" secondItem="ATv-Rn-HGB" secondAttribute="bottom" constant="30" id="P30-LL-T8u"/>
                             <constraint firstItem="u0t-Nh-qh3" firstAttribute="top" secondItem="jDZ-DH-g6S" secondAttribute="bottom" constant="30" id="alt-9y-G2X"/>
                             <constraint firstAttribute="leadingMargin" secondItem="jDZ-DH-g6S" secondAttribute="leading" constant="10" id="iOW-cl-DSS"/>
-                            <constraint firstItem="Z2H-YT-nAZ" firstAttribute="centerX" secondItem="om1-oN-qy1" secondAttribute="centerX" id="kDb-To-tqQ"/>
-                            <constraint firstItem="u0t-Nh-qh3" firstAttribute="top" secondItem="om1-oN-qy1" secondAttribute="bottom" constant="20" id="pGz-Pb-fJN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ATv-Rn-HGB" secondAttribute="trailing" constant="10" id="v5J-tT-FkZ"/>
                             <constraint firstItem="Z2H-YT-nAZ" firstAttribute="trailing" secondItem="hyT-ki-5kY" secondAttribute="trailing" id="zRg-pZ-VBC"/>
                         </constraints>
@@ -351,13 +378,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="dfr-NB-hcA"/>
                                     <constraint firstAttribute="width" constant="150" id="hyK-A2-3vF"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cancel_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ipL-2P-O7p">
-                                <rect key="frame" x="46" y="577" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="dAe-xL-HOK"/>
-                                    <constraint firstAttribute="height" constant="70" id="joR-X3-7Dm"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1000" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3eb-OO-cuL">
@@ -443,15 +463,26 @@
                                     <action selector="addRecord:" destination="XtK-lF-QoY" eventType="touchUpInside" id="NtJ-ev-xOc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBs-b9-wpc">
+                                <rect key="frame" x="39" y="567" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="83k-4y-uO3"/>
+                                    <constraint firstAttribute="height" constant="80" id="Bka-aB-DN5"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="cancel_icon"/>
+                                <connections>
+                                    <action selector="returnFrontPage:" destination="XtK-lF-QoY" eventType="touchUpInside" id="P5t-eF-JvR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="yd7-X8-GxH" firstAttribute="top" secondItem="kQ0-nn-Cak" secondAttribute="bottom" constant="22" id="3bE-8b-0hU"/>
+                            <constraint firstItem="rwj-q5-yfD" firstAttribute="top" secondItem="nBs-b9-wpc" secondAttribute="bottom" constant="20" id="A2X-fl-Lll"/>
                             <constraint firstItem="3eb-OO-cuL" firstAttribute="centerX" secondItem="a7X-aR-SWU" secondAttribute="centerX" id="BIp-pA-dAY"/>
-                            <constraint firstItem="GK3-GG-bYZ" firstAttribute="bottom" secondItem="ipL-2P-O7p" secondAttribute="bottom" id="DLr-Zx-z5C"/>
-                            <constraint firstItem="ipL-2P-O7p" firstAttribute="leading" secondItem="a7X-aR-SWU" secondAttribute="leadingMargin" constant="30" id="FK2-qt-RrE"/>
                             <constraint firstItem="yYj-XI-vIA" firstAttribute="top" secondItem="KnS-So-Lea" secondAttribute="bottom" constant="30" id="IYA-nC-KFR"/>
                             <constraint firstItem="yd7-X8-GxH" firstAttribute="centerX" secondItem="a7X-aR-SWU" secondAttribute="centerX" id="KZR-vZ-j8h"/>
+                            <constraint firstItem="nBs-b9-wpc" firstAttribute="leading" secondItem="a7X-aR-SWU" secondAttribute="leadingMargin" constant="23" id="N98-O2-e7J"/>
                             <constraint firstItem="h8n-1v-86X" firstAttribute="centerX" secondItem="a7X-aR-SWU" secondAttribute="centerX" id="Pd1-Lb-SVa"/>
                             <constraint firstItem="kQ0-nn-Cak" firstAttribute="top" secondItem="3eb-OO-cuL" secondAttribute="bottom" constant="22" id="QO7-48-CHn"/>
                             <constraint firstItem="Pi5-SX-VF6" firstAttribute="top" secondItem="yYj-XI-vIA" secondAttribute="bottom" constant="43" id="Sah-FE-hJW"/>
@@ -461,7 +492,7 @@
                             <constraint firstItem="h8n-1v-86X" firstAttribute="top" secondItem="yYj-XI-vIA" secondAttribute="bottom" constant="8" id="ZnM-Vs-H8A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GK3-GG-bYZ" secondAttribute="trailing" constant="30" id="eYI-ln-PgO"/>
                             <constraint firstItem="Pi5-SX-VF6" firstAttribute="centerX" secondItem="a7X-aR-SWU" secondAttribute="centerX" id="hMu-9g-aWB"/>
-                            <constraint firstItem="rwj-q5-yfD" firstAttribute="top" secondItem="ipL-2P-O7p" secondAttribute="bottom" constant="20" id="n9W-EZ-259"/>
+                            <constraint firstItem="rwj-q5-yfD" firstAttribute="top" secondItem="GK3-GG-bYZ" secondAttribute="bottom" constant="20" id="trH-V7-avo"/>
                         </constraints>
                     </view>
                     <connections>
@@ -501,6 +532,7 @@
         <image name="cancel_icon" width="100" height="100"/>
         <image name="finance_icon" width="128" height="128"/>
         <image name="home_icon" width="128" height="128"/>
+        <image name="launch_icon" width="128" height="128"/>
         <image name="lend_icon" width="128" height="128"/>
         <image name="moneybag_icon" width="128" height="128"/>
         <image name="ok_icon" width="101" height="100"/>

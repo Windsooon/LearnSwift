@@ -42,6 +42,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         else{
             cell!.detailTextLabel?.text = "Mr Tolkien"
         }
+        print(indexPath.row)
+        print(indexPath.section)
         cell!.textLabel?.text = dwarves[indexPath.row]
         cell!.textLabel?.font = UIFont.boldSystemFontOfSize(50)
         return cell!

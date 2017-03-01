@@ -50,4 +50,8 @@ class FrontPageViewController: UIViewController {
         self.presentViewController(addViewController, animated: true, completion: nil)
     }
  
+    @IBAction func debtList(sender: UIButton) {
+        let listTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("listTableViewController") as! ListTableViewController
+        self.presentViewController(listTableViewController, animated: true, completion: nil)
+    }
 }

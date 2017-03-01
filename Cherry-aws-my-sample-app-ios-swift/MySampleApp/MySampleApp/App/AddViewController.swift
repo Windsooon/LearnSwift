@@ -39,22 +39,22 @@ class AddViewController: UIViewController {
     }
     
     @IBAction func addRecord(sender: UIButton){
-        // 必填全部字段，money需要填数字
-        if (friend.text?.characters.count >= 0 && (money.text?.characters.count)! >= 0 && remarks.text?.characters.count >= 0 && Int(money.text!) != nil) {
+        // 增加借还纪录
+        if (friend.text?.characters.count >= 0 && (money.text?.characters.count) >= 0 && remarks.text?.characters.count >= 0 && Int(money.text!) != nil) {
             let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
             var errors: [NSError] = []
             let group: dispatch_group_t = dispatch_group_create()
-            
             let itemForGet = OweMoney()
+            // 获取当前时间戳最后四位
             let date = NSDate()
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.A"
             let dateString = dateFormatter.stringFromDate(date)
-            
-            
+            //let time_str = String(NSDate().timeIntervalSince1970)
+            //let last4 = time_str.substringFromIndex(time_str.endIndex.advancedBy(-4))
             itemForGet._userId = AWSIdentityManager.defaultIdentityManager().identityId!
-            itemForGet._otherUserFacebookId = "1"
-            itemForGet._otherUserId = "1"
+            itemForGet._otherUserFacebookId = "unset"
+            itemForGet._otherUserId = friend.text
             itemForGet._status = 1
             itemForGet._money = Int(money.text!)
             itemForGet._createdDate = dateString
@@ -77,5 +77,9 @@ class AddViewController: UIViewController {
         else {
             print("some field is missing")
         }
+    }
+    
+    @IBAction func returnFrontPage(sender: UIButton) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

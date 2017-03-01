@@ -193,6 +193,7 @@
 				TargetAttributes = {
 					DC419D9D1C30E287002735AA = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 8834TCZAA5;
 					};
 					DC419DB11C30E288002735AA = {
 						CreatedOnToolsVersion = 7.2;
@@ -399,10 +400,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8834TCZAA5;
 				INFOPLIST_FILE = "Simple Table/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "unicooo.Simple-Table";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -410,10 +413,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8834TCZAA5;
 				INFOPLIST_FILE = "Simple Table/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "unicooo.Simple-Table";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -484,6 +489,7 @@
 				DC419DC81C30E288002735AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC419DC91C30E288002735AA /* Build configuration list for PBXNativeTarget "Simple TableTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +498,7 @@
 				DC419DCB1C30E288002735AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC419DCC1C30E288002735AA /* Build configuration list for PBXNativeTarget "Simple TableUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +507,7 @@
 				DC419DCE1C30E288002735AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
