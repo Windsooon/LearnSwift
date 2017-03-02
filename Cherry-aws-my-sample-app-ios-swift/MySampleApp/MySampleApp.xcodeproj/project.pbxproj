@@ -14,6 +14,9 @@
 		DC4CF1721E097FE800E497C1 /* OweMoneyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4CF1711E097FE800E497C1 /* OweMoneyTable.swift */; };
 		DC59BFBA1DEB34430051D09E /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */; };
 		DC59BFBE1DEB347F0051D09E /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC59BFBD1DEB347F0051D09E /* AddViewController.swift */; };
+		DC603AD01E6856D9000973AF /* NoSQLTableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC603ACF1E6856D9000973AF /* NoSQLTableFactory.swift */; };
+		DC603AD21E685757000973AF /* LendMoneyTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC603AD11E685757000973AF /* LendMoneyTable.swift */; };
+		DC603AD41E6858F7000973AF /* NoSQLSampleDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC603AD31E6858F7000973AF /* NoSQLSampleDataGenerator.swift */; };
 		DC8E1A531E0832330009F3BF /* FacebookLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8E1A521E0832330009F3BF /* FacebookLoginViewController.swift */; };
 		DCCE4C871E670324004D66A0 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCE4C861E670324004D66A0 /* ListTableViewController.swift */; };
 		E7A30F04089084C500000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD70E2964453B6000000000 /* UIKit.framework */; };
@@ -102,6 +105,9 @@
 		DC4CF1711E097FE800E497C1 /* OweMoneyTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OweMoneyTable.swift; path = mysampleapp/demo/nosql/OweMoneyTable.swift; sourceTree = SOURCE_ROOT; };
 		DC59BFB91DEB34430051D09E /* FrontPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrontPageViewController.swift; path = MySampleApp/App/FrontPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		DC59BFBD1DEB347F0051D09E /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddViewController.swift; path = MySampleApp/App/AddViewController.swift; sourceTree = SOURCE_ROOT; };
+		DC603ACF1E6856D9000973AF /* NoSQLTableFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoSQLTableFactory.swift; path = mysampleapp/demo/nosql/NoSQLTableFactory.swift; sourceTree = SOURCE_ROOT; };
+		DC603AD11E685757000973AF /* LendMoneyTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LendMoneyTable.swift; path = mysampleapp/demo/nosql/LendMoneyTable.swift; sourceTree = SOURCE_ROOT; };
+		DC603AD31E6858F7000973AF /* NoSQLSampleDataGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoSQLSampleDataGenerator.swift; path = MySampleApp/Demo/NoSQL/NoSQLSampleDataGenerator.swift; sourceTree = SOURCE_ROOT; };
 		DC8E1A521E0832330009F3BF /* FacebookLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookLoginViewController.swift; path = MySampleApp/App/FacebookLoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		DCCE4C861E670324004D66A0 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListTableViewController.swift; path = MySampleApp/App/ListTableViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -278,6 +284,9 @@
 			isa = PBXGroup;
 			children = (
 				DC4CF16F1E09766600E497C1 /* NoSQLTableViewController.swift */,
+				DC603ACF1E6856D9000973AF /* NoSQLTableFactory.swift */,
+				DC603AD11E685757000973AF /* LendMoneyTable.swift */,
+				DC603AD31E6858F7000973AF /* NoSQLSampleDataGenerator.swift */,
 				DC4CF1711E097FE800E497C1 /* OweMoneyTable.swift */,
 			);
 			name = NoSQL;
@@ -413,8 +422,10 @@
 				E7A30F04B4EC297500000000 /* AppDelegate.swift in Sources */,
 				E7A30F049ABD591F00000000 /* OweMoney.swift in Sources */,
 				DCCE4C871E670324004D66A0 /* ListTableViewController.swift in Sources */,
+				DC603AD41E6858F7000973AF /* NoSQLSampleDataGenerator.swift in Sources */,
 				DC49E51B1DEC9031000AD91D /* MoneyListTableViewController.swift in Sources */,
 				DC59BFBE1DEB347F0051D09E /* AddViewController.swift in Sources */,
+				DC603AD01E6856D9000973AF /* NoSQLTableFactory.swift in Sources */,
 				E7A30F043EE7460000000000 /* DemoFeature.swift in Sources */,
 				DC49E51E1DEC98F8000AD91D /* MoneyListCell.swift in Sources */,
 				DC4CF1701E09766600E497C1 /* NoSQLTableViewController.swift in Sources */,
@@ -424,6 +435,7 @@
 				E7A30F049BCA726300000000 /* MainViewController.swift in Sources */,
 				DC59BFBA1DEB34430051D09E /* FrontPageViewController.swift in Sources */,
 				E7A30F04FC6352A600000000 /* UserIdentityViewController.swift in Sources */,
+				DC603AD21E685757000973AF /* LendMoneyTable.swift in Sources */,
 				E7A30F04597A6D0A00000000 /* AWSMobileClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

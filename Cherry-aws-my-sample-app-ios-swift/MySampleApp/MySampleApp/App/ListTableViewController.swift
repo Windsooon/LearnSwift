@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import AWSDynamoDB
 
 class ListTableViewController: UITableViewController {
-
+    private var tables: [Table]?
+    let cellTableIdentifier = "MoneyXibListCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        customTableCell()
+        self.tableView.rowHeight = 140
+        tables = NoSQLTableFactory.supportedTables
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,40 +30,51 @@ class ListTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        guard let tables = tables else {return 0}
+        return tables.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellTableIdentifier, forIndexPath: indexPath) as! ActListCell
-        let imageURL = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).url
-        let title = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).title
-        let content = (actPhotos.objectAtIndex(indexPath.row) as! ActPhotoInfo).content
-        cell.actTitle = title
-        cell.actContent = content
-        cell.actThumb = nil
-        cell.request?.cancel()
+        let table = tables![0]
+        // Get item
+        table.getItemWithCompletionHandler?({(response: AWSDynamoDBObjectModel?, error: NSError?) -> Void in
+            if let error = error {
+                self.showAlertWithTitle("Error", message: "Failed to load an item. \(error.localizedDescription)")
+            }
+            else if response != nil {
+                print("----------------")
+                print("2222")
+            }
+            else {
+                self.showAlertWithTitle("Not Found", message: "No items match your criteria. Insert more sample data and try again.")
+            }
+        })
         
-        cell.request = Alamofire.request(.GET, imageURL).responseImage {
-            response in
-            guard let image = response.result.value, response.result.error == nil else { return }
-            cell.setNeedsLayout()
-            cell.actThumb = image
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellTableIdentifier, forIndexPath: indexPath) as! MoneyListCell
+        cell.userName = table.tableDisplayName
         return cell
     }
     
+    func showAlertWithTitle(title: String, message: String) {
+        let alertController: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let cancelAction: UIAlertAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(cancelAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
     func customTableCell() {
-        let nib = UINib(nibName: "ActListCell", bundle: nil)
+        let nib = UINib(nibName: "MoneyList", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: cellTableIdentifier)
     }
 }

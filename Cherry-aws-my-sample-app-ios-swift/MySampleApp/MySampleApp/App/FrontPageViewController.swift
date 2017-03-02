@@ -51,6 +51,7 @@ class FrontPageViewController: UIViewController {
     }
  
     @IBAction func debtList(sender: UIButton) {
+        let showQueryResultSeque = "NoSQLShowQueryResultSegue"
         let listTableViewController = self.storyboard?.instantiateViewControllerWithIdentifier("listTableViewController") as! ListTableViewController
         self.presentViewController(listTableViewController, animated: true, completion: nil)
     }
