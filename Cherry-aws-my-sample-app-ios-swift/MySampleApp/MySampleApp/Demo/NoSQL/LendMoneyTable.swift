@@ -74,7 +74,6 @@ class LendMoneyTable: NSObject, Table {
     
     func getItemWithCompletionHandler(completionHandler: (response: AWSDynamoDBObjectModel?, error: NSError?) -> Void) {
         let objectMapper = AWSDynamoDBObjectMapper.defaultDynamoDBObjectMapper()
-        print(AWSIdentityManager.defaultIdentityManager().identityId!)
         objectMapper.load(LendMoney.self, hashKey: AWSIdentityManager.defaultIdentityManager().identityId!, rangeKey: "demo-createdDate-500000", completionHandler: {(response: AWSDynamoDBObjectModel?, error: NSError?) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
                 completionHandler(response: response, error: error)

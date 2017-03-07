@@ -59,6 +59,7 @@ class AddViewController: UIViewController {
             itemForGet._money = Int(money.text!)
             itemForGet._createdDate = dateString
             itemForGet._updatedDate = dateString
+            itemForGet._remarks = "unset"
             
             dispatch_group_enter(group)
             

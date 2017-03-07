@@ -46,15 +46,14 @@ class ListTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let table = tables![0]
+        let table = tables![1]
         // Get item
         table.getItemWithCompletionHandler?({(response: AWSDynamoDBObjectModel?, error: NSError?) -> Void in
             if let error = error {
                 self.showAlertWithTitle("Error", message: "Failed to load an item. \(error.localizedDescription)")
             }
             else if response != nil {
-                print("----------------")
-                print("2222")
+                self.showAlertWithTitle("Success", message: "Suss")
             }
             else {
                 self.showAlertWithTitle("Not Found", message: "No items match your criteria. Insert more sample data and try again.")
@@ -63,6 +62,9 @@ class ListTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellTableIdentifier, forIndexPath: indexPath) as! MoneyListCell
         cell.userName = table.tableDisplayName
+        let modelDictionary: [NSObject : AnyObject] = table.model.dictionaryValue
+        // cell.comments = "\(modelDictionary[(table.orderedAttributeKeys[indexPath.row])]!)"
+        //cell.comments = modelDictionary[1]
         return cell
     }
     

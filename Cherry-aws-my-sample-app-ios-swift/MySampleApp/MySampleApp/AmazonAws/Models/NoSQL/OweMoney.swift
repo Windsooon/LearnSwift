@@ -23,6 +23,7 @@ class OweMoney: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
     var _otherUserFacebookId: String?
     var _otherUserId: String?
     var _status: NSNumber?
+    var _remarks: String?
     var _updatedDate: String?
     
     class func dynamoDBTableName() -> String {
@@ -48,6 +49,7 @@ class OweMoney: AWSDynamoDBObjectModel, AWSDynamoDBModeling {
             "_otherUserFacebookId" : "otherUserFacebookId",
             "_otherUserId" : "otherUserId",
             "_status" : "status",
+            "_remarks" : "remarks",
             "_updatedDate" : "updatedDate",
         ]
     }

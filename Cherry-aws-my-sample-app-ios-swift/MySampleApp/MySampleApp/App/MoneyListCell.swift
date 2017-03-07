@@ -26,10 +26,10 @@ class MoneyListCell: UITableViewCell {
         }
     }
     
-    var money: String = "" {
+    var money: Int = 0 {
         didSet {
             if (money != oldValue) {
-                moneyLabel.text = money
+                moneyLabel.text = String(money)
             }
         }
     }
